@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - SUBE Academia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/admin.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-dark sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" href="#" data-section="dashboard">
+                                <i class="fas fa-home"></i> Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#" data-section="blog">
+                                <i class="fas fa-blog"></i> Blog
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#" data-section="courses">
+                                <i class="fas fa-graduation-cap"></i> Cursos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="#" data-section="competencias">
+                                <i class="fas fa-award"></i> Competencias
+                            </a>
+                        </li>
+                        <li class="nav-item mt-5">
+                            <a class="nav-link text-white" href="#" onclick="logout()">
+                                <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Panel de Administración</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group me-2">
+                            <button type="button" class="btn btn-sm btn-outline-secondary" id="refreshData">
+                                <i class="fas fa-sync-alt"></i> Actualizar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Section -->
+                <section id="dashboard" class="content-section">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card bg-primary text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Total Artículos</h5>
+                                    <p class="card-text h2" id="totalPosts">0</p>
+                                    <div class="mt-3">
+                                        <a href="#" class="btn btn-light btn-sm" data-section="blog">Ver Artículos</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card bg-success text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Total Cursos</h5>
+                                    <p class="card-text h2" id="totalCourses">0</p>
+                                    <div class="mt-3">
+                                        <a href="#" class="btn btn-light btn-sm" data-section="courses">Ver Cursos</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4 mb-4">
+                            <div class="card bg-info text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Competencias</h5>
+                                    <p class="card-text h2">13</p>
+                                    <div class="mt-3">
+                                        <a href="#" class="btn btn-light btn-sm" data-section="competencias">Ver Competencias</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h5 class="card-title mb-0">Actividad Reciente</h5>
+                                    <button type="button" class="btn btn-sm btn-outline-primary" id="refreshActivity">
+                                        <i class="fas fa-sync-alt"></i>
+                                    </button>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-group" id="recentActivity">
+                                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                                            Cargando actividad reciente...
+                                            <div class="spinner-border spinner-border-sm text-primary" role="status">
+                                                <span class="visually-hidden">Cargando...</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Blog Section -->
+                <section id="blog" class="content-section d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2>Gestión de Blog</h2>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#blogPostModal">
+                            <i class="fas fa-plus"></i> Nuevo Artículo
+                        </button>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <h5 class="mb-0">Artículos Publicados</h5>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="blogSearch" placeholder="Buscar artículos...">
+                                        <button class="btn btn-outline-secondary" type="button" id="clearBlogSearch">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Título</th>
+                                            <th>Fecha</th>
+                                            <th>Estado</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="blogPostsList"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Courses Section -->
+                <section id="courses" class="content-section d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2>Gestión de Cursos</h2>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#courseModal">
+                            <i class="fas fa-plus"></i> Nuevo Curso
+                        </button>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <div class="row align-items-center">
+                                <div class="col-md-6">
+                                    <h5 class="mb-0">Cursos Disponibles</h5>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-group">
+                                        <select class="form-select" id="courseFilter">
+                                            <option value="">Todas las categorías</option>
+                                            <option value="ia">Inteligencia Artificial</option>
+                                            <option value="ml">Machine Learning</option>
+                                            <option value="ds">Data Science</option>
+                                            <option value="dl">Deep Learning</option>
+                                            <option value="nlp">Procesamiento de Lenguaje Natural</option>
+                                            <option value="cv">Computer Vision</option>
+                                            <option value="rl">Reinforcement Learning</option>
+                                        </select>
+                                        <input type="text" class="form-control" id="courseSearch" placeholder="Buscar cursos...">
+                                        <button class="btn btn-outline-secondary" type="button" id="clearCourseSearch">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Título</th>
+                                            <th>Categoría</th>
+                                            <th>Estado</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="coursesList"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Competencias Section -->
+                <section id="competencias" class="content-section d-none">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h2>Gestión de Competencias</h2>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h5 class="mb-0">Las 13 Competencias Clave para la Era de la IA</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4 mb-4">
+                                    <div class="card h-100">
+                                        <div class="card-header bg-primary text-white">
+                                            <h5 class="mb-0">Competencias Fundamentales</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <ol class="list-group list-group-numbered">
+                                                <li class="list-group-item">Pensamiento Analítico e Innovación</li>
+                                                <li class="list-group-item">Aprendizaje Activo y Continuo</li>
+                                                <li class="list-group-item">Resolución de Problemas Complejos</li>
+                                                <li class="list-group-item">Pensamiento Crítico y Análisis</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card h-100">
+                                        <div class="card-header bg-success text-white">
+                                            <h5 class="mb-0">Competencias de Innovación y Liderazgo</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <ol class="list-group list-group-numbered" start="5">
+                                                <li class="list-group-item">Creatividad, Originalidad e Iniciativa</li>
+                                                <li class="list-group-item">Competencias Digitales y Manejo de Tecnología</li>
+                                                <li class="list-group-item">Programación y Diseño Tecnológico</li>
+                                                <li class="list-group-item">Liderazgo e Influencia Social</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-4">
+                                    <div class="card h-100">
+                                        <div class="card-header bg-info text-white">
+                                            <h5 class="mb-0">Competencias de Adaptación y Responsabilidad</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <ol class="list-group list-group-numbered" start="9">
+                                                <li class="list-group-item">Resiliencia, Tolerancia al Estrés y Adaptabilidad</li>
+                                                <li class="list-group-item">Razonamiento y Pensamiento Sistémico</li>
+                                                <li class="list-group-item">Inteligencia Emocional y Empatía</li>
+                                                <li class="list-group-item">Comunicación y Colaboración Efectiva</li>
+                                                <li class="list-group-item">Conciencia Ética y Responsabilidad</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-4">
+                                <p>Cada competencia se desarrolla progresivamente a través de siete niveles de dominio, desde el nivel "Explorador" hasta "Visionario/Transformador", permitiendo una evolución gradual y medible del profesional en formación.</p>
+                                <a href="../competencias.html" target="_blank" class="btn btn-primary">
+                                    <i class="fas fa-external-link-alt"></i> Ver página de competencias
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <!-- Blog Post Modal -->
+    <div class="modal fade" id="blogPostModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nuevo Artículo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="blogPostForm">
+                        <div class="mb-3">
+                            <label class="form-label">Título</label>
+                            <input type="text" class="form-control" name="title" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Autor</label>
+                            <input type="text" class="form-control" name="author" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Perfil de LinkedIn</label>
+                            <input type="url" class="form-control" name="linkedinProfile" placeholder="https://www.linkedin.com/in/your-profile">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Imagen Destacada</label>
+                            <input type="file" class="form-control" name="image" accept="image/*" required>
+                            <small class="form-text text-muted">Recomendado: 1200x630px. Máximo 2MB.</small>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Contenido</label>
+                            <div id="editor"></div>
+                            <input type="hidden" name="content">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="saveBlogPost">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Course Modal -->
+    <div class="modal fade" id="courseModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Nuevo Curso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="courseForm">
+                        <div class="mb-3">
+                            <label class="form-label">Título</label>
+                            <input type="text" class="form-control" name="title" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Categoría</label>
+                            <select class="form-control" name="category" required>
+                                <option value="">Seleccionar categoría</option>
+                                <option value="ia">Inteligencia Artificial</option>
+                                <option value="ml">Machine Learning</option>
+                                <option value="ds">Data Science</option>
+                                <option value="dl">Deep Learning</option>
+                                <option value="nlp">Procesamiento de Lenguaje Natural</option>
+                                <option value="cv">Computer Vision</option>
+                                <option value="rl">Reinforcement Learning</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Imagen del Curso</label>
+                            <input type="file" class="form-control" name="image" accept="image/*" required>
+                            <small class="form-text text-muted">Recomendado: 800x450px. Máximo 2MB.</small>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Descripción Breve</label>
+                            <textarea class="form-control" name="description" rows="3" required></textarea>
+                            <small class="form-text text-muted">Resumen del curso que aparecerá en la lista de cursos (150-200 caracteres).</small>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Contenido del Curso</label>
+                            <textarea class="form-control" name="content" rows="10" required></textarea>
+                            <small class="form-text text-muted">Puedes usar formato Markdown para estructurar el contenido.</small>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Competencias</label>
+                            <div class="competency-checkboxes">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="competencies" value="pensamiento-analitico" id="comp1">
+                                            <label class="form-check-label" for="comp1">Pensamiento Analítico e Innovación</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="competencies" value="aprendizaje-continuo" id="comp2">
+                                            <label class="form-check-label" for="comp2">Aprendizaje Activo y Continuo</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="competencies" value="resolucion-problemas" id="comp3">
+                                            <label class="form-check-label" for="comp3">Resolución de Problemas Complejos</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="competencies" value="pensamiento-critico" id="comp4">
+                                            <label class="form-check-label" for="comp4">Pensamiento Crítico y Análisis</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="competencies" value="creatividad" id="comp5">
+                                            <label class="form-check-label" for="comp5">Creatividad, Originalidad e Iniciativa</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="competencies" value="competencias-digitales" id="comp6">
+                                            <label class="form-check-label" for="comp6">Competencias Digitales y Manejo de Tecnología</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="competencies" value="programacion" id="comp7">
+                                            <label class="form-check-label" for="comp7">Programación y Diseño Tecnológico</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="competencies" value="liderazgo" id="comp8">
+                                            <label class="form-check-label" for="comp8">Liderazgo e Influencia Social</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="competencies" value="resiliencia" id="comp9">
+                                            <label class="form-check-label" for="comp9">Resiliencia, Tolerancia al Estrés y Adaptabilidad</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="competencies" value="pensamiento-sistemico" id="comp10">
+                                            <label class="form-check-label" for="comp10">Razonamiento y Pensamiento Sistémico</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="competencies" value="inteligencia-emocional" id="comp11">
+                                            <label class="form-check-label" for="comp11">Inteligencia Emocional y Empatía</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="competencies" value="comunicacion" id="comp12">
+                                            <label class="form-check-label" for="comp12">Comunicación y Colaboración Efectiva</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="competencies" value="etica" id="comp13">
+                                            <label class="form-check-label" for="comp13">Conciencia Ética y Responsabilidad</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="saveCourse">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sistema de notificaciones Toast -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 5">
+        <div id="notificationToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i class="fas fa-info-circle me-2" id="notificationIcon"></i>
+                <strong class="me-auto" id="notificationTitle">Notificación</strong>
+                <small id="notificationTime">Ahora</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body" id="notificationMessage">
+                Se ha completado la acción.
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay de carga global -->
+    <div id="loadingOverlay" class="position-fixed top-0 start-0 w-100 h-100 bg-dark bg-opacity-50 d-flex justify-content-center align-items-center" style="z-index: 9999; display: none;">
+        <div class="text-white text-center">
+            <div class="spinner-border mb-3" role="status">
+                <span class="visually-hidden">Cargando...</span>
+            </div>
+            <h5 id="loadingMessage">Cargando...</h5>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-storage-compat.js"></script>
+    <!-- TinyMCE -->
+    <script src="https://cdn.tiny.cloud/1/lz1904s7vwyejrm0iix4y5z8lp3o6i717qfm9beuzmya6qm5/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <!-- Custom JS -->
+    <script src="../assets/js/firebase-config.js"></script>
+    <script src="js/ui-utils.js"></script>
+    <script src="js/blog-generator.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
