@@ -29,16 +29,822 @@
     <!-- Owl Carousel -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
     <!-- Favicon -->
     <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.subeacademia.cl/contacto.html">
+
+    <style>
+        :root {
+            --primary: #3A86FF;
+            --secondary: #8338EC;
+            --tertiary: #06D6A0;
+            --accent: #FFD166;
+            --danger: #EF476F;
+            --dark: #0a0a1a;
+            --darker: #050510;
+            --light-blue: rgba(58, 134, 255, 0.2);
+            --light-purple: rgba(131, 56, 236, 0.2);
+            --light-green: rgba(6, 214, 160, 0.2);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --card-highlight: rgba(255, 255, 255, 0.05);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-tertiary: rgba(255, 255, 255, 0.5);
+            --glow-blue: 0 0 15px rgba(58, 134, 255, 0.7);
+            --glow-purple: 0 0 15px rgba(131, 56, 236, 0.7);
+            --glow-green: 0 0 15px rgba(6, 214, 160, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            background-color: var(--dark);
+            color: var(--text-primary);
+            position: relative;
+            perspective: 1000px;
+        }
+        
+        /* Particles */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            opacity: 0.4;
+            pointer-events: none;
+            animation: float 60s linear infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            5% {
+                opacity: 0.4;
+            }
+            95% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Grid Background */
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), 
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            transform-style: preserve-3d;
+            transform: rotateX(75deg) translateY(-100px) translateZ(-100px);
+            perspective: 1000px;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* General Styles */
+        a {
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+        
+        .btn {
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            color: var(--text-primary);
+            box-shadow: var(--glow-blue);
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary), var(--tertiary));
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            z-index: -1;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glow-purple);
+        }
+        
+        .btn-primary:hover::before {
+            left: 0;
+        }
+        
+        .btn-outline-primary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline-primary:hover {
+            background: var(--primary);
+            color: var(--text-primary);
+            box-shadow: var(--glow-blue);
+            transform: translateY(-5px);
+        }
+        
+        .btn-outline-light {
+            background: transparent;
+            border: 1px solid var(--text-primary);
+            color: var(--text-primary);
+        }
+        
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            position: relative;
+            text-align: center;
+            color: var(--text-primary);
+            text-shadow: var(--glow-blue);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        /* Top Bar */
+        .topbar {
+            background: rgba(5, 5, 20, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--card-border);
+        }
+        
+        /* Navbar */
+        .navbar {
+            background-color: rgba(10, 10, 26, 0.8) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--card-border);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .navbar-light .navbar-nav .nav-link {
+            color: var(--text-primary);
+            font-weight: 500;
+            padding: 10px 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .navbar-light .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .navbar-light .navbar-nav .nav-link:hover,
+        .navbar-light .navbar-nav .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .navbar-light .navbar-nav .nav-link:hover::after,
+        .navbar-light .navbar-nav .nav-link.active::after {
+            width: 80%;
+        }
+        
+        .navbar-light .navbar-toggler {
+            border-color: var(--card-border);
+            background-color: var(--card-bg);
+        }
+        
+        /* Page Header Styles */
+        .page-header {
+            position: relative;
+            overflow: hidden;
+            padding: 120px 0 100px;
+            background: linear-gradient(135deg, var(--dark), var(--darker));
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, var(--light-blue), transparent 70%);
+            z-index: 0;
+        }
+        
+        .page-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 50%, var(--light-purple), transparent 70%);
+            z-index: 0;
+        }
+        
+        .page-header .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .page-header h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            text-shadow: var(--glow-blue);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards 0.5s;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards 0.8s;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(58, 134, 255, 0.05), transparent);
+            z-index: 1;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, var(--light-purple), transparent 70%);
+            z-index: -1;
+        }
+        
+        .contact-section .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            transform-style: preserve-3d;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            overflow: hidden;
+        }
+        
+        .contact-section .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .contact-section .card-body {
+            padding: 2rem;
+        }
+        
+        .contact-section .card-title {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+        
+        .contact-section .card-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+        
+        .contact-section .form-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        .contact-section .form-control {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            padding: 12px 15px;
+            border-radius: 5px;
+        }
+        
+        .contact-section .form-control:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.25rem rgba(58, 134, 255, 0.25);
+        }
+        
+        .contact-section .form-control::placeholder {
+            color: var(--text-tertiary);
+        }
+        
+        .contact-section .form-check-input {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--card-border);
+        }
+        
+        .contact-section .form-check-input:checked {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .contact-section .form-check-label {
+            color: var(--text-tertiary);
+        }
+        
+        .contact-section .btn-primary {
+            padding: 12px 25px;
+        }
+        
+        /* Contact Info */
+        .contact-info-list li {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            transform-style: preserve-3d;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info-list li:hover {
+            transform: translateX(5px);
+        }
+        
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-right: 1rem;
+            transition: all 0.3s ease;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            box-shadow: var(--glow-blue);
+            transform: translateZ(20px);
+        }
+        
+        .contact-info-list li:hover .icon-box {
+            transform: translateZ(30px) scale(1.1);
+            box-shadow: var(--glow-purple);
+        }
+        
+        .contact-info-list h5 {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-info-list p {
+            color: var(--text-secondary);
+            margin-bottom: 0;
+        }
+        
+        /* Social Links */
+        .social-links {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .social-link {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            background: var(--primary);
+            box-shadow: var(--glow-blue);
+            transform-style: preserve-3d;
+            transform: translateZ(10px);
+        }
+        
+        .social-link:hover {
+            transform: translateZ(20px) scale(1.1) translateY(-5px);
+            box-shadow: var(--glow-purple);
+            background: var(--secondary);
+        }
+        
+        /* Map Section */
+        .map-section {
+            position: relative;
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            overflow: hidden;
+        }
+        
+        .map-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 70%, var(--light-green), transparent 70%);
+            z-index: 0;
+        }
+        
+        .map-container {
+            position: relative;
+            z-index: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: 1px solid var(--card-border);
+        }
+        
+        .map-container:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(-5deg);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            border-color: var(--tertiary);
+        }
+        
+        .map-container iframe {
+            display: block;
+            filter: grayscale(0.7) brightness(0.7) contrast(1.2);
+            transition: all 0.5s ease;
+        }
+        
+        .map-container:hover iframe {
+            filter: grayscale(0) brightness(1) contrast(1.2);
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 80px 0 40px;
+            position: relative;
+            background: var(--darker);
+            border-top: 1px solid var(--card-border);
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            opacity: 0.5;
+        }
+        
+        .footer-heading {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+        
+        .footer p {
+            color: var(--text-tertiary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer .list-unstyled li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer .list-unstyled a {
+            color: var(--text-tertiary);
+            transition: all 0.3s ease;
+        }
+        
+        .footer .list-unstyled a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+            display: inline-block;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: var(--glow-blue);
+        }
+        
+        /* Copyright */
+        .copyright {
+            background: var(--darker);
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .copyright small {
+            color: var(--text-tertiary);
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: scale(0) rotate(180deg);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            z-index: 99;
+            box-shadow: var(--glow-blue);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary);
+            transform: scale(1.1);
+            box-shadow: var(--glow-purple);
+        }
+        
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .preloader.loaded {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .spinner {
+            width: 80px;
+            height: 80px;
+            perspective: 800px;
+        }
+        
+        .cube-wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: spin 3s infinite linear;
+        }
+        
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+        }
+        
+        .cube-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(58, 134, 255, 0.8);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(58, 134, 255, 0.5) inset;
+        }
+        
+        .cube-face-front {
+            transform: translateZ(40px);
+        }
+        
+        .cube-face-back {
+            transform: rotateY(180deg) translateZ(40px);
+        }
+        
+        .cube-face-right {
+            transform: rotateY(90deg) translateZ(40px);
+        }
+        
+        .cube-face-left {
+            transform: rotateY(-90deg) translateZ(40px);
+        }
+        
+        .cube-face-top {
+            transform: rotateX(90deg) translateZ(40px);
+        }
+        
+        .cube-face-bottom {
+            transform: rotateX(-90deg) translateZ(40px);
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotateX(0) rotateY(0) rotateZ(0);
+            }
+            100% {
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeInLeft {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 991px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-section {
+                padding: 70px 0;
+            }
+            
+            .map-section {
+                padding: 50px 0;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .page-header {
+                padding: 100px 0 80px;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-section .card-body {
+                padding: 1.5rem;
+            }
+            
+            .icon-box {
+                width: 40px;
+                height: 40px;
+                font-size: 0.9rem;
+            }
+            
+            .social-link {
+                width: 35px;
+                height: 35px;
+            }
+            
+            .footer-heading {
+                margin-top: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="spinner">
+            <div class="cube-wrapper">
+                <div class="cube">
+                    <div class="cube-face cube-face-front"></div>
+                    <div class="cube-face cube-face-back"></div>
+                    <div class="cube-face cube-face-right"></div>
+                    <div class="cube-face cube-face-left"></div>
+                    <div class="cube-face cube-face-top"></div>
+                    <div class="cube-face cube-face-bottom"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="particles-container" id="particles-container"></div>
+    <div class="grid-bg"></div>
+
     <!-- Top Bar -->
-    <div class="topbar bg-dark py-2">
+    <div class="topbar py-2">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-6">
@@ -59,7 +865,7 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <img src="assets/img/logo.png" alt="SUBE Academia" height="50">
@@ -79,6 +885,9 @@
                         <a class="nav-link" href="cursos.html">Cursos</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="competencias.html">Competencias</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="blog.html">Blog</a>
                     </li>
                     <li class="nav-item">
@@ -90,7 +899,7 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="page-header py-5 bg-primary text-white">
+    <header class="page-header">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
@@ -102,14 +911,14 @@
     </header>
 
     <!-- Contact Section -->
-    <section class="contact-section py-5">
+    <section class="contact-section">
         <div class="container">
             <div class="row">
                 <!-- Contact Form -->
-                <div class="col-lg-7 mb-4 mb-lg-0">
-                    <div class="card border-0 shadow-sm">
-                        <div class="card-body p-4 p-md-5">
-                            <h2 class="section-title mb-4">Envíanos un mensaje</h2>
+                <div class="col-lg-7 mb-4 mb-lg-0" data-aos="fade-right" data-aos-delay="200">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <h2 class="card-title">Envíanos un mensaje</h2>
                             <form id="contactForm" action="#" method="POST" class="needs-validation" novalidate>
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
@@ -163,13 +972,13 @@
                 </div>
                 
                 <!-- Contact Info -->
-                <div class="col-lg-5">
+                <div class="col-lg-5" data-aos="fade-left" data-aos-delay="400">
                     <div class="card border-0 shadow-sm mb-4">
-                        <div class="card-body p-4">
-                            <h3 class="card-title mb-4">Información de contacto</h3>
+                        <div class="card-body">
+                            <h3 class="card-title">Información de contacto</h3>
                             <ul class="list-unstyled contact-info-list">
                                 <li class="d-flex mb-4">
-                                    <div class="icon-box bg-primary text-white me-3">
+                                    <div class="icon-box me-3">
                                         <i class="fas fa-map-marker-alt"></i>
                                     </div>
                                     <div>
@@ -178,7 +987,7 @@
                                     </div>
                                 </li>
                                 <li class="d-flex mb-4">
-                                    <div class="icon-box bg-primary text-white me-3">
+                                    <div class="icon-box me-3">
                                         <i class="fas fa-phone-alt"></i>
                                     </div>
                                     <div>
@@ -187,7 +996,7 @@
                                     </div>
                                 </li>
                                 <li class="d-flex mb-4">
-                                    <div class="icon-box bg-primary text-white me-3">
+                                    <div class="icon-box me-3">
                                         <i class="fas fa-envelope"></i>
                                     </div>
                                     <div>
@@ -196,7 +1005,7 @@
                                     </div>
                                 </li>
                                 <li class="d-flex">
-                                    <div class="icon-box bg-primary text-white me-3">
+                                    <div class="icon-box me-3">
                                         <i class="fas fa-clock"></i>
                                     </div>
                                     <div>
@@ -210,22 +1019,22 @@
                     
                     <!-- Social Media -->
                     <div class="card border-0 shadow-sm">
-                        <div class="card-body p-4">
-                            <h3 class="card-title mb-4">Síguenos</h3>
+                        <div class="card-body">
+                            <h3 class="card-title">Síguenos</h3>
                             <div class="social-links d-flex">
-                                <a href="#" class="social-link bg-primary text-white">
+                                <a href="#" class="social-link">
                                     <i class="fab fa-facebook-f"></i>
                                 </a>
-                                <a href="#" class="social-link bg-primary text-white">
+                                <a href="#" class="social-link">
                                     <i class="fab fa-twitter"></i>
                                 </a>
-                                <a href="#" class="social-link bg-primary text-white">
+                                <a href="#" class="social-link">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="#" class="social-link bg-primary text-white">
+                                <a href="#" class="social-link">
                                     <i class="fab fa-instagram"></i>
                                 </a>
-                                <a href="#" class="social-link bg-primary text-white">
+                                <a href="#" class="social-link">
                                     <i class="fab fa-youtube"></i>
                                 </a>
                             </div>
@@ -237,12 +1046,12 @@
     </section>
 
     <!-- Map Section -->
-    <section class="map-section py-5 bg-light">
+    <section class="map-section">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <h2 class="section-title text-center mb-5">Nuestra ubicación</h2>
-                    <div class="map-container shadow-sm">
+                    <div class="map-container shadow-sm" data-aos="zoom-in">
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.8457900582364!2d-70.62108548480193!3d-33.42613798078132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf69995a8c47%3A0x8c700ebee0bab9f6!2sAv.%20Providencia%201208%2C%20Providencia%2C%20Regi%C3%B3n%20Metropolitana!5e0!3m2!1ses!2scl!4v1625764215583!5m2!1ses!2scl" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
@@ -251,12 +1060,12 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer bg-dark text-white py-5">
+    <footer class="footer">
         <div class="container">
             <div class="row">
                 <!-- About Column -->
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <h5 class="text-uppercase mb-4">SUBE Academia</h5>
+                    <h5 class="footer-heading">SUBE Academia</h5>
                     <p class="small">Formación especializada en Inteligencia Artificial, Machine Learning y Data Science para profesionales que buscan destacar en la era digital.</p>
                     <div class="social-links mt-4">
                         <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
@@ -268,11 +1077,12 @@
                 
                 <!-- Links Column 1 -->
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <h5 class="text-uppercase mb-4">Enlaces rápidos</h5>
+                    <h5 class="footer-heading">Enlaces rápidos</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="index.html" class="text-white text-decoration-none">Inicio</a></li>
                         <li class="mb-2"><a href="nosotros.html" class="text-white text-decoration-none">Nosotros</a></li>
                         <li class="mb-2"><a href="cursos.html" class="text-white text-decoration-none">Cursos</a></li>
+                        <li class="mb-2"><a href="competencias.html" class="text-white text-decoration-none">Competencias</a></li>
                         <li class="mb-2"><a href="blog.html" class="text-white text-decoration-none">Blog</a></li>
                         <li class="mb-2"><a href="contacto.html" class="text-white text-decoration-none">Contacto</a></li>
                     </ul>
@@ -280,7 +1090,7 @@
                 
                 <!-- Links Column 2 -->
                 <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
-                    <h5 class="text-uppercase mb-4">Cursos</h5>
+                    <h5 class="footer-heading">Cursos</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="#" class="text-white text-decoration-none">Fundamentos de IA</a></li>
                         <li class="mb-2"><a href="#" class="text-white text-decoration-none">Machine Learning</a></li>
@@ -292,7 +1102,7 @@
                 
                 <!-- Contact Column -->
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="text-uppercase mb-4">Contacto</h5>
+                    <h5 class="footer-heading">Contacto</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Av. Providencia 1208, Of. 1603</li>
                         <li class="mb-2"><i class="fas fa-phone-alt me-2"></i>+56 9 1234 5678</li>
@@ -310,17 +1120,121 @@
         </div>
     </div>
 
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Owl Carousel JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <!-- Custom JS -->
-    <script src="assets/js/main.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     
-    <!-- Contact Form JS -->
-    <script src="assets/js/contact.js"></script>
-
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const preloader = document.getElementById('preloader');
+                if (preloader) {
+                    preloader.classList.add('loaded');
+                }
+            }, 1000);
+        });
+        
+        // Navbar scroll
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.getElementById('mainNav').classList.add('scrolled');
+            } else {
+                document.getElementById('mainNav').classList.remove('scrolled');
+            }
+            
+            // Back to top button
+            if (window.scrollY > 300) {
+                document.getElementById('backToTop').classList.add('visible');
+            } else {
+                document.getElementById('backToTop').classList.remove('visible');
+            }
+        });
+        
+        // Create particles
+        function createParticles() {
+            const container = document.getElementById('particles-container');
+            const colors = ['#3A86FF', '#8338EC', '#06D6A0'];
+            
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random properties
+                const size = Math.random() * 10 + 5;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const left = Math.random() * 100;
+                const delay = Math.random() * 60;
+                
+                // Apply styles
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.backgroundColor = color;
+                particle.style.left = `${left}%`;
+                particle.style.animationDelay = `${delay}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-in-out'
+        });
+        
+        // Form validation
+        (function() {
+            'use strict';
+            
+            // Fetch all forms to apply validation
+            var forms = document.querySelectorAll('.needs-validation');
+            
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms).forEach(function(form) {
+                form.addEventListener('submit', function(event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    } else {
+                        event.preventDefault();
+                        
+                        // Simulate form submission
+                        setTimeout(function() {
+                            document.getElementById('submitSuccessMessage').classList.remove('d-none');
+                            form.reset();
+                            
+                            // Hide success message after 5 seconds
+                            setTimeout(function() {
+                                document.getElementById('submitSuccessMessage').classList.add('d-none');
+                            }, 5000);
+                        }, 1000);
+                    }
+                    
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+        
+        // Back to top button click
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Initialize particles
+        createParticles();
+    </script>
 </body>
 </html>
