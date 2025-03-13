@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - SUBE Academia</title>
+    <!-- Meta tags para SEO -->
+    <meta name="description" content="Blog de SUBE Academia: Artículos, tutoriales y noticias sobre Inteligencia Artificial, Machine Learning y Data Science.">
+    <meta name="keywords" content="blog inteligencia artificial, artículos machine learning, noticias IA, tutoriales data science, tendencias tecnológicas">
+    <meta name="author" content="SUBE Academia">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.subeacademia.cl/blog.html">
+    <meta property="og:title" content="Blog - SUBE Academia">
+    <meta property="og:description" content="Blog de SUBE Academia: Artículos, tutoriales y noticias sobre Inteligencia Artificial, Machine Learning y Data Science.">
+    <meta property="og:image" content="assets/img/og-blog.jpg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.subeacademia.cl/blog.html">
+    <meta property="twitter:title" content="Blog - SUBE Academia">
+    <meta property="twitter:description" content="Blog de SUBE Academia: Artículos, tutoriales y noticias sobre Inteligencia Artificial, Machine Learning y Data Science.">
+    <meta property="twitter:image" content="assets/img/og-blog.jpg">
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- AOS - Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.subeacademia.cl/blog.html">
+
+    <style>
+        /* Variables de colores y efectos */
+        :root {
+            --primary: #3A86FF;
+            --secondary: #8338EC;
+            --tertiary: #06D6A0;
+            --accent: #FFD166;
+            --danger: #EF476F;
+            --dark: #0a0a1a;
+            --darker: #050510;
+            --light-blue: rgba(58, 134, 255, 0.2);
+            --light-purple: rgba(131, 56, 236, 0.2);
+            --light-green: rgba(6, 214, 160, 0.2);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --card-highlight: rgba(255, 255, 255, 0.05);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-tertiary: rgba(255, 255, 255, 0.5);
+            --glow-blue: 0 0 15px rgba(58, 134, 255, 0.7);
+            --glow-purple: 0 0 15px rgba(131, 56, 236, 0.7);
+            --glow-green: 0 0 15px rgba(6, 214, 160, 0.7);
+        }
+
+        /* Estilos Generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            background-color: var(--dark);
+            color: var(--text-primary);
+            position: relative;
+            perspective: 1000px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .btn {
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            color: var(--text-primary);
+            box-shadow: var(--glow-blue);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glow-purple);
+        }
+
+        .btn-outline-primary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--primary);
+            color: var(--text-primary);
+            box-shadow: var(--glow-blue);
+            transform: translateY(-5px);
+        }
+
+        /* Efectos de fondo */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            opacity: 0.4;
+            pointer-events: none;
+            animation: float 60s linear infinite;
+        }
+
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(58, 134, 255, 0.03) 1px, transparent 1px), 
+                            linear-gradient(90deg, rgba(58, 134, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            transform-style: preserve-3d;
+            transform: rotateX(75deg) translateY(-100px) translateZ(-100px);
+            perspective: 1000px;
+        }
+
+        /* Top Bar */
+        .topbar {
+            background: rgba(5, 5, 20, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: rgba(10, 10, 26, 0.8) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--card-border);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: var(--text-primary);
+            font-weight: 500;
+            padding: 10px 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .navbar-light .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover,
+        .navbar-light .navbar-nav .nav-link.active {
+            color: var(--primary);
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover::after,
+        .navbar-light .navbar-nav .nav-link.active::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .blog-hero {
+            position: relative;
+            padding: 120px 0 80px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+        }
+
+        .blog-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, var(--light-purple), transparent 70%);
+            z-index: 0;
+        }
+
+        .blog-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, var(--light-blue), transparent 70%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            text-shadow: var(--glow-blue);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards 0.3s;
+        }
+
+        .hero-search {
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards 0.6s;
+        }
+
+        .hero-search .form-control {
+            height: 60px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            padding: 0 20px;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .hero-search .form-control::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .hero-search .form-control:focus {
+            box-shadow: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .hero-search .btn {
+            height: 60px;
+            width: 60px;
+            background: var(--primary);
+            border: none;
+            border-radius: 0 5px 5px 0;
+            box-shadow: var(--glow-blue);
+        }
+
+        /* Blog Featured Section */
+        .blog-featured {
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(6, 214, 160, 0.05), transparent);
+        }
+
+        .blog-featured::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, var(--light-green), transparent 70%);
+            z-index: 0;
+        }
+
+        /* Title Styles */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            text-align: center;
+            color: var(--text-primary);
+            text-shadow: var(--glow-blue);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* Featured Post Card */
+        .featured-post {
+            position: relative;
+            height: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+        }
+
+        .featured-post:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .featured-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .featured-post:hover .featured-img {
+            transform: scale(1.1);
+        }
+
+        .featured-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px;
+            background: linear-gradient(to top, rgba(5, 5, 20, 0.9), transparent);
+            transition: all 0.5s ease;
+        }
+
+        .featured-post:hover .featured-overlay {
+            padding-bottom: 50px;
+        }
+
+        .featured-category {
+            display: inline-block;
+            padding: 5px 10px;
+            background: var(--primary);
+            color: var(--text-primary);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 3px;
+            margin-bottom: 15px;
+            box-shadow: var(--glow-blue);
+        }
+
+        .featured-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .featured-excerpt {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            font-size: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .featured-meta {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--text-tertiary);
+        }
+
+        .featured-author {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+
+        .featured-author img {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+            border: 2px solid var(--primary);
+            box-shadow: var(--glow-blue);
+        }
+
+        /* Blog Posts Grid Section */
+        .blog-posts {
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(58, 134, 255, 0.05), transparent);
+        }
+
+        .blog-posts::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, var(--light-blue), transparent 70%);
+            z-index: 0;
+        }
+
+        /* Post Card */
+        .post-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            overflow: hidden;
+            height: 100%;
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transform-style: preserve-3d;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .post-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+
+        .post-image {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+            filter: brightness(0.8);
+        }
+
+        .post-card:hover .post-image img {
+            transform: scale(1.1);
+            filter: brightness(1);
+        }
+
+        .post-category {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            z-index: 1;
+            background: var(--secondary);
+            color: var(--text-primary);
+            box-shadow: var(--glow-purple);
+        }
+
+        .post-content {
+            padding: 20px;
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            color: var(--text-tertiary);
+            font-size: 0.8rem;
+        }
+
+        .post-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .post-author img {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 8px;
+            border: 1px solid var(--primary);
+        }
+
+        .post-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            line-height: 1.4;
+            transition: all 0.3s ease;
+        }
+
+        .post-card:hover .post-title {
+            color: var(--primary);
+        }
+
+        .post-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            line-height: 1.6;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .post-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .post-tag {
+            padding: 3px 8px;
+            background: rgba(6, 214, 160, 0.1);
+            border: 1px solid rgba(6, 214, 160, 0.3);
+            border-radius: 50px;
+            font-size: 0.7rem;
+            color: var(--tertiary);
+            white-space: nowrap;
+        }
+
+        .post-footer {
+            padding: 15px 20px;
+            border-top: 1px solid var(--card-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .read-more {
+            padding: 8px 15px;
+            font-size: 0.85rem;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .sidebar-widget:hover {
+            border-color: var(--secondary);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .widget-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            position: relative;
+            color: var(--text-primary);
+        }
+
+        .widget-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        /* Search Widget */
+        .search-form .form-control {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            padding: 12px 15px;
+            border-radius: 5px 0 0 5px;
+            height: auto;
+        }
+
+        .search-form .form-control:focus {
+            box-shadow: none;
+            border-color: var(--secondary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .search-form .btn {
+            padding: 0;
+            width: 45px;
+            border-radius: 0 5px 5px 0;
+            background: var(--secondary);
+            border: none;
+        }
+
+        /* Categories Widget */
+        .categories-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .categories-list li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .categories-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .categories-list a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .categories-list a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .categories-list .count {
+            display: inline-block;
+            padding: 2px 8px;
+            background: rgba(131, 56, 236, 0.1);
+            color: var(--secondary);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Popular Posts Widget */
+        .popular-post {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .popular-post:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .popular-post-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .popular-post-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .popular-post:hover .popular-post-img img {
+            transform: scale(1.1);
+        }
+
+        .popular-post-content h6 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            line-height: 1.4;
+            margin-bottom: 5px;
+        }
+
+        .popular-post-content h6 a {
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .popular-post-content h6 a:hover {
+            color: var(--secondary);
+        }
+
+        .popular-post-content .post-date {
+            font-size: 0.8rem;
+            color: var(--text-tertiary);
+        }
+
+        /* Tags Widget */
+        .tags-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag-link {
+            display: inline-block;
+            padding: 5px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            border-radius: 50px;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+
+        .tag-link:hover {
+            background: var(--secondary);
+            color: var(--text-primary);
+            border-color: var(--secondary);
+            box-shadow: var(--glow-purple);
+            transform: translateY(-3px);
+        }
+
+        /* Pagination */
+        .blog-pagination {
+            margin-top: 50px;
+        }
+
+        .pagination {
+            justify-content: center;
+        }
+
+        .page-link {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 5px;
+            border-radius: 50% !important;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+
+        .page-link:hover {
+            background: var(--primary);
+            color: var(--text-primary);
+            border-color: var(--primary);
+            box-shadow: var(--glow-blue);
+        }
+
+        .page-item.active .page-link {
+            background: var(--primary);
+            border-color: var(--primary);
+            box-shadow: var(--glow-blue);
+        }
+
+        /* Newsletter Section */
+        .newsletter-section {
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--secondary), var(--primary));
+        }
+
+        .newsletter-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+            background-size: 100px 100px;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .newsletter-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .newsletter-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .newsletter-text {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .newsletter-form .form-control {
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-primary);
+            font-size: 1rem;
+            padding: 0 20px;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .newsletter-form .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .newsletter-form .form-control:focus {
+            box-shadow: none;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .newsletter-form .btn {
+            height: 50px;
+            background: var(--text-primary);
+            color: var(--secondary);
+            font-weight: 600;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form .btn:hover {
+            background: var(--tertiary);
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--darker);
+            padding: 80px 0 40px;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            opacity: 0.5;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+            height: 40px;
+            width: auto;
+        }
+
+        .footer-about {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: var(--glow-blue);
+        }
+
+        .footer-heading {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .contact-icon {
+            width: 20px;
+            margin-right: 15px;
+            font-size: 1rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .contact-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .copyright {
+            background: var(--darker);
+            padding: 20px 0;
+            position: relative;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: scale(0) rotate(180deg);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            z-index: 99;
+            box-shadow: var(--glow-blue);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+
+        .back-to-top:hover {
+            background: var(--secondary);
+            transform: scale(1.1);
+            box-shadow: var(--glow-purple);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            5% {
+                opacity: 0.4;
+            }
+            95% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1199px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-description {
+                font-size: 1.2rem;
+            }
+            
+            .featured-title {
+                font-size: 1.6rem;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+            
+            .blog-hero, .blog-featured, .blog-posts, .newsletter-section {
+                padding: 60px 0;
+            }
+            
+            .hero-search {
+                max-width: 100%;
+            }
+            
+            .featured-post {
+                height: 400px;
+            }
+            
+            .featured-title {
+                font-size: 1.4rem;
+            }
+            
+            .sidebar {
+                margin-top: 50px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            .hero-search .form-control, .hero-search .btn {
+                height: 50px;
+            }
+            
+            .blog-hero, .blog-featured, .blog-posts, .newsletter-section {
+                padding: 50px 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            
+            .featured-post {
+                height: 350px;
+                margin-bottom: 30px;
+            }
+            
+            .featured-title {
+                font-size: 1.3rem;
+            }
+            
+            .newsletter-title {
+                font-size: 1.8rem;
+            }
+            
+            .newsletter-text {
+                font-size: 1rem;
+            }
+            
+            .newsletter-form .form-control, .newsletter-form .btn {
+                height: 45px;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .featured-post {
+                height: 300px;
+            }
+            
+            .featured-title {
+                font-size: 1.2rem;
+            }
+            
+            .featured-excerpt {
+                -webkit-line-clamp: 2;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles -->
+    <div class="particles-container" id="particles-container"></div>
+    <div class="grid-bg"></div>
+
+    <!-- Top Bar -->
+    <div class="topbar py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="contact-info d-flex align-items-center">
+                        <a href="mailto:info@subeacademia.com" class="me-3 text-white text-decoration-none">
+                            <i class="fas fa-envelope me-1"></i> info@subeacademia.com
+                        </a>
+                        <a href="tel:+123456789" class="text-white text-decoration-none">
+                            <i class="fas fa-phone-alt me-1"></i> +123 456 789
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="ave.html" class="btn btn-sm btn-outline-light">Acceso Aula Virtual Evolutiva (AVE)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/img/logo.png" alt="SUBE Academia" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cursos.html">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="competencias.html">Competencias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html" aria-current="page">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="blog-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Blog de SUBE Academia</h1>
+                <p class="hero-description">Explora nuestros artículos, tutoriales y noticias sobre Inteligencia Artificial, Machine Learning y Data Science. Mantente a la vanguardia en el mundo de la tecnología.</p>
+                <div class="hero-search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Buscar en el blog...">
+                        <button class="btn" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post Section -->
+    <section class="blog-featured">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Artículo Destacado</h2>
+            <div class="row">
+                <div class="col-lg-10 mx-auto" data-aos="fade-up">
+                    <div class="featured-post">
+                        <img src="assets/img/blog/featured-post.jpg" alt="Tendencias de Inteligencia Artificial 2025" class="featured-img">
+                        <div class="featured-overlay">
+                            <div class="featured-category">Tendencias</div>
+                            <h3 class="featured-title"><a href="blog/tendencias-inteligencia-artificial-2025.html" class="text-white text-decoration-none">Tendencias de Inteligencia Artificial que Transformarán el 2025</a></h3>
+                            <p class="featured-excerpt">Exploramos las tendencias más disruptivas en IA que están redefiniendo el panorama tecnológico y empresarial en 2025. Desde IA generativa avanzada hasta sistemas híbridos de decisión humano-IA.</p>
+                            <div class="featured-meta">
+                                <div class="featured-author">
+                                    <img src="assets/img/team-1.jpg" alt="Dr. Alejandro Méndez">
+                                    <span>Dr. Alejandro Méndez</span>
+                                </div>
+                                <div class="featured-date">
+                                    <i class="far fa-calendar-alt me-2"></i>15 de Febrero, 2025
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Section -->
+    <section class="blog-posts">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Artículos Recientes</h2>
+            <p class="section-subtitle" data-aos="fade-up">Descubre nuestro contenido más reciente sobre tecnologías avanzadas</p>
+            
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row g-4">
+                        <!-- Post 1 -->
+                        <div class="col-md-6" data-aos="fade-up">
+                            <div class="post-card">
+                                <div class="post-image">
+                                    <img src="assets/img/blog/post-1.jpg" alt="Inteligencia Artificial Generativa">
+                                    <div class="post-category">IA Generativa</div>
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <div class="post-author">
+                                            <img src="assets/img/team-2.jpg" alt="Dra. Carla Rodríguez">
+                                            <span>Dra. Carla Rodríguez</span>
+                                        </div>
+                                        <div class="post-date">10 Feb, 2025</div>
+                                    </div>
+                                    <h3 class="post-title"><a href="blog/guia-completa-inteligencia-artificial-generativa.html">Guía Completa: Inteligencia Artificial Generativa</a></h3>
+                                    <p class="post-excerpt">Un recorrido profundo por el mundo de la IA generativa, desde los conceptos básicos hasta las aplicaciones más avanzadas y el impacto en diferentes industrias.</p>
+                                    <div class="post-tags">
+                                        <span class="post-tag">IA Generativa</span>
+                                        <span class="post-tag">GPT</span>
+                                        <span class="post-tag">Creatividad</span>
+                                    </div>
+                                </div>
+                                <div class="post-footer">
+                                    <a href="blog/guia-completa-inteligencia-artificial-generativa.html" class="btn btn-outline-primary read-more">Leer más</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Post 2 -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="post-card">
+                                <div class="post-image">
+                                    <img src="assets/img/blog/post-2.jpg" alt="Machine Learning en Medicina">
+                                    <div class="post-category">Salud</div>
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <div class="post-author">
+                                            <img src="assets/img/team-3.jpg" alt="Dr. Gabriel López">
+                                            <span>Dr. Gabriel López</span>
+                                        </div>
+                                        <div class="post-date">5 Feb, 2025</div>
+                                    </div>
+                                    <h3 class="post-title"><a href="blog/machine-learning-revolucion-medicina.html">Machine Learning: La Revolución en Medicina</a></h3>
+                                    <p class="post-excerpt">Cómo los algoritmos de machine learning están transformando el diagnóstico médico, la investigación de fármacos y la atención personalizada al paciente.</p>
+                                    <div class="post-tags">
+                                        <span class="post-tag">Medicina</span>
+                                        <span class="post-tag">ML</span>
+                                        <span class="post-tag">Diagnóstico</span>
+                                    </div>
+                                </div>
+                                <div class="post-footer">
+                                    <a href="blog/machine-learning-revolucion-medicina.html" class="btn btn-outline-primary read-more">Leer más</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Post 3 -->
+                        <div class="col-md-6" data-aos="fade-up">
+                            <div class="post-card">
+                                <div class="post-image">
+                                    <img src="assets/img/blog/post-3.jpg" alt="Ética en Inteligencia Artificial">
+                                    <div class="post-category">Ética</div>
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <div class="post-author">
+                                            <img src="assets/img/team-4.jpg" alt="Dra. Mónica Silva">
+                                            <span>Dra. Mónica Silva</span>
+                                        </div>
+                                        <div class="post-date">1 Feb, 2025</div>
+                                    </div>
+                                    <h3 class="post-title"><a href="blog/etica-desarrollo-inteligencia-artificial.html">Ética en el Desarrollo de Inteligencia Artificial</a></h3>
+                                    <p class="post-excerpt">Una exploración de los dilemas éticos que surgen en el desarrollo y despliegue de sistemas de IA, y cómo abordarlos de manera responsable.</p>
+                                    <div class="post-tags">
+                                        <span class="post-tag">Ética</span>
+                                        <span class="post-tag">Responsabilidad</span>
+                                        <span class="post-tag">Regulación</span>
+                                    </div>
+                                </div>
+                                <div class="post-footer">
+                                    <a href="blog/etica-desarrollo-inteligencia-artificial.html" class="btn btn-outline-primary read-more">Leer más</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Post 4 -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="post-card">
+                                <div class="post-image">
+                                    <img src="assets/img/blog/post-4.jpg" alt="Deep Learning Tutorial">
+                                    <div class="post-category">Tutorial</div>
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <div class="post-author">
+                                            <img src="assets/img/team-5.jpg" alt="Ing. Carlos Mendoza">
+                                            <span>Ing. Carlos Mendoza</span>
+                                        </div>
+                                        <div class="post-date">25 Ene, 2025</div>
+                                    </div>
+                                    <h3 class="post-title"><a href="blog/tutorial-deep-learning-principiantes-pytorch.html">Tutorial de Deep Learning para Principiantes con PyTorch</a></h3>
+                                    <p class="post-excerpt">Una guía paso a paso para crear y entrenar tu primera red neuronal con PyTorch, explicada de manera sencilla y con ejemplos prácticos.</p>
+                                    <div class="post-tags">
+                                        <span class="post-tag">Deep Learning</span>
+                                        <span class="post-tag">PyTorch</span>
+                                        <span class="post-tag">Tutorial</span>
+                                    </div>
+                                </div>
+                                <div class="post-footer">
+                                    <a href="blog/tutorial-deep-learning-principiantes-pytorch.html" class="btn btn-outline-primary read-more">Leer más</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Post 5 -->
+                        <div class="col-md-6" data-aos="fade-up">
+                            <div class="post-card">
+                                <div class="post-image">
+                                    <img src="assets/img/blog/post-5.jpg" alt="Computer Vision Aplicaciones">
+                                    <div class="post-category">Computer Vision</div>
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <div class="post-author">
+                                            <img src="assets/img/team-6.jpg" alt="Dr. Roberto Torres">
+                                            <span>Dr. Roberto Torres</span>
+                                        </div>
+                                        <div class="post-date">20 Ene, 2025</div>
+                                    </div>
+                                    <h3 class="post-title"><a href="blog/5-aplicaciones-innovadoras-computer-vision.html">5 Aplicaciones Innovadoras de Computer Vision</a></h3>
+                                    <p class="post-excerpt">Exploramos cinco casos de uso innovadores donde la visión por computadora está transformando industrias y generando nuevas oportunidades.</p>
+                                    <div class="post-tags">
+                                        <span class="post-tag">Computer Vision</span>
+                                        <span class="post-tag">Innovación</span>
+                                        <span class="post-tag">Caso de Uso</span>
+                                    </div>
+                                </div>
+                                <div class="post-footer">
+                                    <a href="blog/5-aplicaciones-innovadoras-computer-vision.html" class="btn btn-outline-primary read-more">Leer más</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Post 6 -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="post-card">
+                                <div class="post-image">
+                                    <img src="assets/img/blog/post-6.jpg" alt="Transformación Digital con IA">
+                                    <div class="post-category">Negocios</div>
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <div class="post-author">
+                                            <img src="assets/img/team-7.jpg" alt="Mg. Laura Sánchez">
+                                            <span>Mg. Laura Sánchez</span>
+                                        </div>
+                                        <div class="post-date">15 Ene, 2025</div>
+                                    </div>
+                                    <h3 class="post-title"><a href="blog/transformacion-digital-empresas-inteligencia-artificial.html">Transformación Digital en Empresas con IA</a></h3>
+                                    <p class="post-excerpt">Estrategias para implementar inteligencia artificial en procesos empresariales y lograr una transformación digital exitosa con casos reales.</p>
+                                    <div class="post-tags">
+                                        <span class="post-tag">Negocios</span>
+                                        <span class="post-tag">Transformación Digital</span>
+                                        <span class="post-tag">ROI</span>
+                                    </div>
+                                </div>
+                                <div class="post-footer">
+                                    <a href="blog/transformacion-digital-empresas-inteligencia-artificial.html" class="btn btn-outline-primary read-more">Leer más</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Post 7 -->
+                        <div class="col-md-6" data-aos="fade-up">
+                            <div class="post-card">
+                                <div class="post-image">
+                                    <img src="assets/img/blog/post-7.jpg" alt="Modelos de Difusión">
+                                    <div class="post-category">IA Generativa</div>
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <div class="post-author">
+                                            <img src="assets/img/team-1.jpg" alt="Dr. Alejandro Méndez">
+                                            <span>Dr. Alejandro Méndez</span>
+                                        </div>
+                                        <div class="post-date">10 Ene, 2025</div>
+                                    </div>
+                                    <h3 class="post-title"><a href="blog/modelos-difusion-ultima-revolucion-generacion-imagenes.html">Modelos de Difusión: La Última Revolución en Generación de Imágenes</a></h3>
+                                    <p class="post-excerpt">Un análisis de los modelos de difusión, cómo funcionan y por qué representan un salto cualitativo en la generación de imágenes con inteligencia artificial.</p>
+                                    <div class="post-tags">
+                                        <span class="post-tag">Modelos de Difusión</span>
+                                        <span class="post-tag">Stable Diffusion</span>
+                                        <span class="post-tag">Imagen</span>
+                                    </div>
+                                </div>
+                                <div class="post-footer">
+                                    <a href="blog/modelos-difusion-ultima-revolucion-generacion-imagenes.html" class="btn btn-outline-primary read-more">Leer más</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Post 8 -->
+                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                            <div class="post-card">
+                                <div class="post-image">
+                                    <img src="assets/img/blog/post-8.jpg" alt="MLOps">
+                                    <div class="post-category">MLOps</div>
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <div class="post-author">
+                                            <img src="assets/img/team-8.jpg" alt="Ing. Fernando Quintero">
+                                            <span>Ing. Fernando Quintero</span>
+                                        </div>
+                                        <div class="post-date">5 Ene, 2025</div>
+                                    </div>
+                                    <h3 class="post-title"><a href="blog/mlops-buenas-practicas-despliegue-modelos.html">MLOps: Buenas Prácticas para el Despliegue de Modelos</a></h3>
+                                    <p class="post-excerpt">Una guía completa sobre las mejores prácticas en MLOps para garantizar un ciclo de vida efectivo en la implementación de modelos de machine learning.</p>
+                                    <div class="post-tags">
+                                        <span class="post-tag">MLOps</span>
+                                        <span class="post-tag">CI/CD</span>
+                                        <span class="post-tag">DevOps</span>
+                                    </div>
+                                </div>
+                                <div class="post-footer">
+                                    <a href="blog/mlops-buenas-practicas-despliegue-modelos.html" class="btn btn-outline-primary read-more">Leer más</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <nav class="blog-pagination">
+                        <ul class="pagination">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <i class="fas fa-chevron-left"></i>
+                                </a>
+                            </li>
+                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <!-- Search Widget -->
+                    <div class="sidebar-widget" data-aos="fade-up">
+                        <h4 class="widget-title">Buscar</h4>
+                        <form class="search-form">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Buscar...">
+                                <button class="btn btn-primary" type="submit"><i class="fas fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Categories Widget -->
+                    <div class="sidebar-widget" data-aos="fade-up">
+                        <h4 class="widget-title">Categorías</h4>
+                        <ul class="categories-list">
+                            <li><a href="#">IA Generativa <span class="count">12</span></a></li>
+                            <li><a href="#">Machine Learning <span class="count">24</span></a></li>
+                            <li><a href="#">Deep Learning <span class="count">18</span></a></li>
+                            <li><a href="#">Computer Vision <span class="count">10</span></a></li>
+                            <li><a href="#">Procesamiento de Lenguaje Natural <span class="count">15</span></a></li>
+                            <li><a href="#">Ética en IA <span class="count">8</span></a></li>
+                            <li><a href="#">Tutoriales <span class="count">16</span></a></li>
+                            <li><a href="#">Negocios <span class="count">9</span></a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Popular Posts Widget -->
+                    <div class="sidebar-widget" data-aos="fade-up">
+                        <h4 class="widget-title">Artículos Populares</h4>
+                        <div class="popular-posts">
+                            <!-- Popular Post 1 -->
+                            <div class="popular-post">
+                                <div class="popular-post-img">
+                                    <img src="assets/img/blog/popular-1.jpg" alt="Artículo popular">
+                                </div>
+                                <div class="popular-post-content">
+                                    <h6><a href="blog/guia-completa-inteligencia-artificial-generativa.html">Guía Completa: Inteligencia Artificial Generativa</a></h6>
+                                    <div class="post-date"><i class="far fa-calendar-alt me-1"></i> 10 Feb, 2025</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Popular Post 2 -->
+                            <div class="popular-post">
+                                <div class="popular-post-img">
+                                    <img src="assets/img/blog/popular-2.jpg" alt="Artículo popular">
+                                </div>
+                                <div class="popular-post-content">
+                                    <h6><a href="blog/machine-learning-revolucion-medicina.html">Machine Learning: La Revolución en Medicina</a></h6>
+                                    <div class="post-date"><i class="far fa-calendar-alt me-1"></i> 5 Feb, 2025</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Popular Post 3 -->
+                            <div class="popular-post">
+                                <div class="popular-post-img">
+                                    <img src="assets/img/blog/popular-3.jpg" alt="Artículo popular">
+                                </div>
+                                <div class="popular-post-content">
+                                    <h6><a href="blog/tutorial-deep-learning-principiantes-pytorch.html">Tutorial de Deep Learning para Principiantes con PyTorch</a></h6>
+                                    <div class="post-date"><i class="far fa-calendar-alt me-1"></i> 25 Ene, 2025</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tags Widget -->
+                    <div class="sidebar-widget" data-aos="fade-up">
+                        <h4 class="widget-title">Etiquetas</h4>
+                        <div class="tags-cloud">
+                            <a href="#" class="tag-link">IA Generativa</a>
+                            <a href="#" class="tag-link">Machine Learning</a>
+                            <a href="#" class="tag-link">Deep Learning</a>
+                            <a href="#" class="tag-link">PyTorch</a>
+                            <a href="#" class="tag-link">TensorFlow</a>
+                            <a href="#" class="tag-link">NLP</a>
+                            <a href="#" class="tag-link">Computer Vision</a>
+                            <a href="#" class="tag-link">MLOps</a>
+                            <a href="#" class="tag-link">Ética</a>
+                            <a href="#" class="tag-link">Negocios</a>
+                            <a href="#" class="tag-link">Tutoriales</a>
+                            <a href="#" class="tag-link">Investigación</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Newsletter Widget -->
+                    <div class="sidebar-widget" data-aos="fade-up">
+                        <h4 class="widget-title">Newsletter</h4>
+                        <p class="mb-4">Suscríbete para recibir nuestros últimos artículos directamente en tu bandeja de entrada.</p>
+                        <form class="search-form">
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Tu email...">
+                                <button class="btn btn-primary" type="submit"><i class="fas fa-paper-plane"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title" data-aos="fade-up">Mantente Actualizado</h2>
+                <p class="newsletter-text" data-aos="fade-up">Suscríbete a nuestro newsletter y recibe contenido exclusivo, tutoriales y las últimas noticias en el mundo de la IA y Machine Learning.</p>
+                <form class="newsletter-form" data-aos="fade-up">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" placeholder="Tu dirección de email" required>
+                                <button class="btn" type="submit">Suscribirme</button>
+                            </div>
+                            <div class="form-check text-start ms-2">
+                                <input class="form-check-input" type="checkbox" id="privacyCheck" required>
+                                <label class="form-check-label" for="privacyCheck">
+                                    Acepto recibir emails y confirmo que he leído la <a href="#" class="text-white text-decoration-underline">política de privacidad</a>.
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <img src="assets/img/logo-footer.png" alt="SUBE Academia" class="footer-logo">
+                    <p class="footer-about">
+                        Academia especializada en formación de vanguardia en Inteligencia Artificial, Machine Learning y Data Science. Desarrollamos las competencias del futuro digital.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h3 class="footer-heading">Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="cursos.html">Cursos</a></li>
+                        <li><a href="competencias.html">Competencias</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h3 class="footer-heading">Cursos Populares</h3>
+                    <ul class="footer-links">
+                        <li><a href="curso-detalle.html?id=1">Fundamentos de IA Generativa</a></li>
+                        <li><a href="curso-detalle.html?id=7">Generación de Imágenes con IA</a></li>
+                        <li><a href="curso-detalle.html?id=13">Big Data con Apache Spark</a></li>
+                        <li><a href="curso-detalle.html?id=4">Deep Learning Fundamentals</a></li>
+                        <li><a href="curso-detalle.html?id=16">Desarrollo de Chatbots Avanzados</a></li>
+                        <li><a href="rutas-aprendizaje.html">Ver todas las rutas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h3 class="footer-heading">Contacto</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-text">
+                            Av. Providencia 1234, Oficina 502<br>
+                            Providencia, Santiago, Chile
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-text">
+                            +56 2 2345 6789<br>
+                            +56 9 8765 4321
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-text">
+                            info@subeacademia.cl<br>
+                            contacto@subeacademia.cl
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="copyright">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2025 SUBE Academia. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="privacidad.html" class="me-3 text-white text-decoration-none">Política de Privacidad</a>
+                    <a href="terminos.html" class="text-white text-decoration-none">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- AOS - Animate On Scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+        
+        $(document).ready(function() {
+            // Navbar scrolled effect
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 50) {
+                    $('#mainNav').addClass('scrolled');
+                    $('#backToTop').addClass('visible');
+                } else {
+                    $('#mainNav').removeClass('scrolled');
+                    $('#backToTop').removeClass('visible');
+                }
+            });
+            
+            // Back to top function
+            $('#backToTop').click(function() {
+                $('html, body').animate({scrollTop: 0}, 800);
+                return false;
+            });
+            
+            // Generate particles
+            function createParticles() {
+                const container = document.getElementById('particles-container');
+                const colors = ['#3A86FF', '#8338EC', '#06D6A0'];
+                
+                for (let i = 0; i < 50; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    
+                    // Random size
+                    const size = Math.random() * 5 + 3;
+                    particle.style.width = size + 'px';
+                    particle.style.height = size + 'px';
+                    
+                    // Random position
+                    particle.style.left = Math.random() * 100 + 'vw';
+                    
+                    // Random color
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    particle.style.backgroundColor = color;
+                    
+                    // Random animation duration and delay
+                    const duration = Math.random() * 40 + 20;
+                    const delay = Math.random() * 10;
+                    particle.style.animationDuration = duration + 's';
+                    particle.style.animationDelay = delay + 's';
+                    
+                    container.appendChild(particle);
+                }
+            }
+            
+            createParticles();
+        });
+    </script>
+</body>
+</html>

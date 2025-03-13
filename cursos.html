@@ -1,0 +1,3222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos - SUBE Academia</title>
+    
+    <!-- Meta tags para SEO -->
+    <meta name="description" content="Explora nuestro catálogo de cursos especializados en Inteligencia Artificial, Machine Learning y Data Science. Formación de vanguardia para profesionales.">
+    <meta name="keywords" content="cursos inteligencia artificial, formación machine learning, cursos data science, certificaciones IA, programas especializados">
+    <meta name="author" content="SUBE Academia">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.subeacademia.cl/cursos.html">
+    <meta property="og:title" content="Cursos - SUBE Academia">
+    <meta property="og:description" content="Explora nuestro catálogo de cursos especializados en Inteligencia Artificial, Machine Learning y Data Science. Formación de vanguardia para profesionales.">
+    <meta property="og:image" content="assets/img/og-cursos.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.subeacademia.cl/cursos.html">
+    <meta property="twitter:title" content="Cursos - SUBE Academia">
+    <meta property="twitter:description" content="Explora nuestro catálogo de cursos especializados en Inteligencia Artificial, Machine Learning y Data Science. Formación de vanguardia para profesionales.">
+    <meta property="twitter:image" content="assets/img/og-cursos.jpg">
+    
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    
+    <!-- AOS - Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.subeacademia.cl/cursos.html">
+
+    <style>
+        /* Variables de colores y efectos */
+        :root {
+            --primary: #3A86FF;
+            --secondary: #8338EC;
+            --tertiary: #06D6A0;
+            --accent: #FFD166;
+            --danger: #EF476F;
+            --dark: #0a0a1a;
+            --darker: #050510;
+            --light-blue: rgba(58, 134, 255, 0.2);
+            --light-purple: rgba(131, 56, 236, 0.2);
+            --light-green: rgba(6, 214, 160, 0.2);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --card-highlight: rgba(255, 255, 255, 0.05);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-tertiary: rgba(255, 255, 255, 0.5);
+            --glow-blue: 0 0 15px rgba(58, 134, 255, 0.7);
+            --glow-purple: 0 0 15px rgba(131, 56, 236, 0.7);
+            --glow-green: 0 0 15px rgba(6, 214, 160, 0.7);
+        }
+
+        /* Estilos Generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            background-color: var(--dark);
+            color: var(--text-primary);
+            position: relative;
+            perspective: 1000px;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        /* Efectos de fondo */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            opacity: 0.4;
+            pointer-events: none;
+            animation: float 60s linear infinite;
+        }
+
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(58, 134, 255, 0.03) 1px, transparent 1px), 
+                            linear-gradient(90deg, rgba(58, 134, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            transform-style: preserve-3d;
+            transform: rotateX(75deg) translateY(-100px) translateZ(-100px);
+            perspective: 1000px;
+        }
+
+        /* Botones */
+        .btn {
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            color: var(--text-primary);
+            box-shadow: var(--glow-blue);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glow-purple);
+        }
+
+        .btn-outline-primary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--primary);
+            color: var(--text-primary);
+            box-shadow: var(--glow-blue);
+            transform: translateY(-5px);
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            border: 1px solid var(--text-primary);
+            color: var(--text-primary);
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Títulos de sección */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            text-align: center;
+            color: var(--text-primary);
+            text-shadow: var(--glow-blue);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* Navbar */
+        .topbar {
+            background: rgba(5, 5, 20, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .navbar {
+            background-color: rgba(10, 10, 26, 0.8) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--card-border);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: var(--text-primary);
+            font-weight: 500;
+            padding: 10px 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .navbar-light .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover,
+        .navbar-light .navbar-nav .nav-link.active {
+            color: var(--primary);
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover::after,
+        .navbar-light .navbar-nav .nav-link.active::after {
+            width: 80%;
+        }
+
+        /* Hero Section */
+        .courses-hero {
+            position: relative;
+            padding: 120px 0 80px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+        }
+
+        .courses-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, var(--light-blue), transparent 70%);
+            z-index: 0;
+        }
+
+        .courses-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, var(--light-purple), transparent 70%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            text-shadow: var(--glow-blue);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards 0.3s;
+        }
+
+        .hero-search {
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards 0.6s;
+        }
+
+        .hero-search .form-control {
+            height: 60px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            padding: 0 20px;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .hero-search .form-control:focus {
+            box-shadow: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .hero-search .btn {
+            height: 60px;
+            width: 60px;
+            background: var(--primary);
+            border: none;
+            border-radius: 0 5px 5px 0;
+            box-shadow: var(--glow-blue);
+        }
+
+        /* Elementos flotantes */
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.2;
+            transform-style: preserve-3d;
+            animation: float 15s ease-in-out infinite alternate;
+        }
+
+        .shape-1 {
+            top: 20%;
+            left: 10%;
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+
+        .shape-2 {
+            top: 60%;
+            left: 5%;
+            width: 120px;
+            height: 120px;
+            border: 2px solid var(--secondary);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+
+        .shape-3 {
+            top: 30%;
+            right: 10%;
+            width: 100px;
+            height: 100px;
+            background: var(--tertiary);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        /* Course Filters */
+        .course-filters {
+            padding: 20px 0;
+            background: rgba(10, 10, 26, 0.5);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--card-border);
+            position: relative;
+            z-index: 2;
+        }
+
+        .filter-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-select, .form-control {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .form-select:focus, .form-control:focus {
+            box-shadow: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .form-select option {
+            background-color: var(--dark);
+            color: var(--text-primary);
+        }
+
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .filter-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            border-radius: 50px;
+            padding: 5px 15px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-tag:hover {
+            background: rgba(58, 134, 255, 0.1);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .filter-tag.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--text-primary);
+            box-shadow: var(--glow-blue);
+        }
+
+        /* Career Paths Section */
+        .career-paths {
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(58, 134, 255, 0.05), transparent);
+        }
+
+        .career-paths::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, var(--light-blue), transparent 70%);
+            z-index: 0;
+        }
+
+        .path-container {
+            position: relative;
+            padding: 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            overflow: hidden;
+            height: 100%;
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .path-container:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .path-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .path-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+            text-shadow: var(--glow-blue);
+        }
+
+        .path-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .path-steps {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .path-steps::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 15px;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary), var(--tertiary));
+            border-radius: 2px;
+        }
+
+        .path-step {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .path-step:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-indicator {
+            position: absolute;
+            top: 0;
+            left: -30px;
+            width: 30px;
+            height: 30px;
+            background: var(--card-bg);
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--primary);
+            box-shadow: var(--glow-blue);
+            z-index: 1;
+        }
+
+        .step-content {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .path-step:hover .step-content {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .step-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .step-courses {
+            margin-top: 10px;
+            font-size: 0.85rem;
+        }
+
+        .step-course {
+            display: block;
+            color: var(--text-secondary);
+            padding: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .step-course:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .path-footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Course Categories Section */
+        .course-categories {
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(131, 56, 236, 0.05), transparent);
+        }
+
+        .course-categories::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, var(--light-purple), transparent 70%);
+            z-index: 0;
+        }
+
+        .category-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .category-tab {
+            padding: 10px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 50px;
+            font-size: 1rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .category-tab:hover {
+            background: rgba(131, 56, 236, 0.1);
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        .category-tab.active {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            color: var(--text-primary);
+            box-shadow: var(--glow-purple);
+        }
+
+        .category-icon {
+            margin-right: 8px;
+        }
+
+        .subcategory-selector {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .subcategory-item {
+            padding: 5px 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--card-border);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .subcategory-item:hover {
+            background: rgba(131, 56, 236, 0.1);
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        .subcategory-item.active {
+            background: rgba(131, 56, 236, 0.2);
+            border-color: var(--secondary);
+            color: var(--secondary);
+        }
+
+        /* Course Cards */
+        .course-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            overflow: hidden;
+            height: 100%;
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transform-style: preserve-3d;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+
+        .course-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+
+        .course-image {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+            filter: brightness(0.8);
+        }
+
+        .course-card:hover .course-image img {
+            transform: scale(1.1);
+            filter: brightness(1);
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            z-index: 1;
+        }
+
+        .course-badge.bestseller {
+            background: var(--primary);
+            color: var(--text-primary);
+            box-shadow: var(--glow-blue);
+        }
+
+        .course-badge.new {
+            background: var(--secondary);
+            color: var(--text-primary);
+            box-shadow: var(--glow-purple);
+        }
+
+        .course-badge.popular {
+            background: var(--tertiary);
+            color: var(--text-primary);
+            box-shadow: var(--glow-green);
+        }
+
+        .course-badge.discount {
+            background: var(--accent);
+            color: var(--dark);
+            box-shadow: 0 0 15px rgba(255, 209, 102, 0.7);
+        }
+
+        .course-content {
+            padding: 20px;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .course-category {
+            padding: 3px 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .course-rating {
+            display: flex;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--accent);
+        }
+
+        .course-rating i {
+            margin-right: 2px;
+        }
+
+        .course-rating span {
+            color: var(--text-secondary);
+            margin-left: 5px;
+        }
+
+        .course-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            line-height: 1.4;
+            transition: all 0.3s ease;
+        }
+
+        .course-card:hover .course-title {
+            color: var(--primary);
+        }
+
+        .course-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .course-stat {
+            display: flex;
+            align-items: center;
+        }
+
+        .course-stat i {
+            margin-right: 5px;
+        }
+
+        .course-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .course-instructor {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .instructor-avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+            border: 2px solid var(--primary);
+        }
+
+        .instructor-name {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .course-competencies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            margin-bottom: 15px;
+        }
+
+        .competency-tag {
+            padding: 3px 8px;
+            background: rgba(6, 214, 160, 0.1);
+            border: 1px solid rgba(6, 214, 160, 0.3);
+            border-radius: 50px;
+            font-size: 0.7rem;
+            color: var(--tertiary);
+            white-space: nowrap;
+        }
+
+        .course-footer {
+            padding: 15px 20px;
+            border-top: 1px solid var(--card-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .course-price {
+            font-weight: 600;
+        }
+
+        .course-price .original {
+            font-size: 0.8rem;
+            text-decoration: line-through;
+            color: var(--text-tertiary);
+            margin-right: 5px;
+        }
+
+        .course-price .current {
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+
+        .course-button {
+            padding: 8px 15px;
+            font-size: 0.85rem;
+        }
+
+        /* Promotional Banner */
+        .promotional-banner {
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .promotional-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+            background-size: 100px 100px;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .promotional-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .promotional-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .promotional-text {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .promotional-button {
+            background: var(--text-primary);
+            color: var(--primary);
+            border: none;
+            font-weight: 600;
+            padding: 12px 30px;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .promotional-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            color: var(--primary);
+        }
+
+        .discount-badge {
+            display: inline-block;
+            padding: 5px 15px;
+            background: var(--accent);
+            color: var(--dark);
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(255, 209, 102, 0.7);
+            animation: pulse 2s infinite;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(6, 214, 160, 0.05), rgba(58, 134, 255, 0.05));
+        }
+
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, var(--light-green), transparent 70%);
+            z-index: 0;
+        }
+
+        .testimonial-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 15px;
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--tertiary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .testimonial-card::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2rem;
+            color: var(--card-border);
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .testimonial-rating {
+            display: flex;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid var(--tertiary);
+            box-shadow: var(--glow-green);
+        }
+
+        .testimonial-info {
+            flex: 1;
+        }
+
+        .testimonial-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 5px;
+        }
+
+        .testimonial-position {
+            font-size: 0.85rem;
+            color: var(--tertiary);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(131, 56, 236, 0.9), rgba(58, 134, 255, 0.9));
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1NiIgaGVpZ2h0PSIxMDAiPgo8cmVjdCB3aWR0aD0iNTYiIGhlaWdodD0iMTAwIiBmaWxsPSIjMTMxMzFBIj48L3JlY3Q+CjxwYXRoIGQ9Ik0yOCA2NkwwIDUwTDAgMTZMMjggMEw1NiAxNkw1NiA1MEwyOCA2NkwyOCAxMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIiBzdHJva2Utd2lkdGg9IjIiPjwvcGF0aD4KPHBhdGggZD0iTTI4IDBMMjggMzRMMCA1MEwwIDE2TDI4IDAiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIiBzdHJva2Utd2lkdGg9IjIiPjwvcGF0aD4KPC9zdmc+');
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-text {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary {
+            background: var(--text-primary);
+            color: var(--secondary);
+            border: none;
+            font-weight: 600;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+            color: var(--secondary);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--text-primary);
+            font-weight: 600;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--darker);
+            padding: 80px 0 40px;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            opacity: 0.5;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+            height: 40px;
+            width: auto;
+        }
+
+        .footer-about {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: var(--glow-blue);
+        }
+
+        .footer-heading {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .contact-icon {
+            width: 20px;
+            margin-right: 15px;
+            font-size: 1rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .contact-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .newsletter-form .form-control {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .newsletter-form .btn {
+            background: var(--primary);
+            border: none;
+            color: var(--text-primary);
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .copyright {
+            background: var(--darker);
+            padding: 20px 0;
+            position: relative;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: scale(0) rotate(180deg);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            z-index: 99;
+            box-shadow: var(--glow-blue);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+
+        .back-to-top:hover {
+            background: var(--secondary);
+            transform: scale(1.1);
+            box-shadow: var(--glow-purple);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1199px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-description {
+                font-size: 1.2rem;
+            }
+            
+            .path-title {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+            
+            .courses-hero, 
+            .career-paths, 
+            .course-categories, 
+            .testimonials-section, 
+            .cta-section {
+                padding: 60px 0;
+            }
+            
+            .hero-search {
+                max-width: 100%;
+            }
+            
+            .path-container {
+                margin-bottom: 30px;
+            }
+            
+            .category-tabs {
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-bottom: 15px;
+            }
+            
+            .category-tab {
+                white-space: nowrap;
+            }
+            
+            .cta-title {
+                font-size: 2.5rem;
+            }
+            
+            .cta-text {
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            .hero-search .form-control, 
+            .hero-search .btn {
+                height: 50px;
+            }
+            
+            .courses-hero, 
+            .career-paths, 
+            .course-categories, 
+            .testimonials-section, 
+            .cta-section {
+                padding: 50px 0;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            
+            .filter-title {
+                text-align: center;
+            }
+            
+            .form-select, .form-control {
+                margin-bottom: 15px;
+            }
+            
+            .filter-tags {
+                justify-content: center;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .cta-text {
+                font-size: 1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .cta-primary, .cta-secondary {
+                width: 100%;
+            }
+            
+            .footer {
+                padding: 50px 0 30px;
+            }
+            
+            .footer-col {
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .promotional-title {
+                font-size: 1.8rem;
+            }
+            
+            .promotional-text {
+                font-size: 1rem;
+            }
+            
+            .testimonial-card {
+                padding: 20px;
+            }
+            
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles -->
+    <div class="particles-container" id="particles-container"></div>
+    <div class="grid-bg"></div>
+
+    <!-- Top Bar -->
+    <div class="topbar py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="contact-info d-flex align-items-center">
+                        <a href="mailto:info@subeacademia.com" class="me-3 text-white text-decoration-none">
+                            <i class="fas fa-envelope me-1"></i> info@subeacademia.com
+                        </a>
+                        <a href="tel:+123456789" class="text-white text-decoration-none">
+                            <i class="fas fa-phone-alt me-1"></i> +123 456 789
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="ave.html" class="btn btn-sm btn-outline-light">Acceso Aula Virtual Evolutiva (AVE)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/img/logo.png" alt="SUBE Academia" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="cursos.html" aria-current="page">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="competencias.html">Competencias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="courses-hero">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Desarrolla las Competencias<br>del Futuro Digital</h1>
+                <p class="hero-description">Explora nuestro catálogo de cursos especializados en Inteligencia Artificial, Machine Learning y Data Science. Formación personalizada y adaptativa para profesionales de todos los niveles.</p>
+                <div class="hero-search">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Buscar cursos o competencias...">
+                        <button class="btn" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Filters -->
+    <section class="course-filters">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-lg-3 col-md-6">
+                    <div class="filter-title">Categoría</div>
+                    <select class="form-select" id="categoryFilter">
+                        <option value="">Todas las categorías</option>
+                        <option value="ia-generativa">IA Generativa</option>
+                        <option value="machine-learning">Machine Learning</option>
+                        <option value="data-science">Data Science</option>
+                        <option value="deep-learning">Deep Learning</option>
+                        <option value="nlp">Procesamiento de Lenguaje Natural</option>
+                        <option value="computer-vision">Visión por Computadora</option>
+                        <option value="reinforcement-learning">Aprendizaje Reforzado</option>
+                        <option value="data-engineering">Ingeniería de Datos</option>
+                        <option value="cloud-computing">Computación en la Nube para IA</option>
+                    </select>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="filter-title">Nivel</div>
+                    <select class="form-select" id="levelFilter">
+                        <option value="">Todos los niveles</option>
+                        <option value="principiante">Principiante</option>
+                        <option value="intermedio">Intermedio</option>
+                        <option value="avanzado">Avanzado</option>
+                        <option value="especializado">Especializado</option>
+                    </select>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="filter-title">Formato</div>
+                    <select class="form-select" id="formatFilter">
+                        <option value="">Todos los formatos</option>
+                        <option value="autogestionado">Autogestionado</option>
+                        <option value="tutorizado">Tutorizado</option>
+                        <option value="bootcamp">Bootcamp</option>
+                        <option value="especializado">Programa Especializado</option>
+                        <option value="certificacion">Certificación</option>
+                        <option value="masterclass">Masterclass</option>
+                        <option value="workshop">Workshop</option>
+                    </select>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="filter-title">Competencias</div>
+                    <select class="form-select" id="competencyFilter">
+                        <option value="">Todas las competencias</option>
+                        <option value="pensamiento-analitico">Pensamiento Analítico e Innovación</option>
+                        <option value="aprendizaje-continuo">Aprendizaje Activo y Continuo</option>
+                        <option value="resolucion-problemas">Resolución de Problemas Complejos</option>
+                        <option value="pensamiento-critico">Pensamiento Crítico y Análisis</option>
+                        <option value="creatividad">Creatividad e Iniciativa</option>
+                        <option value="competencias-digitales">Competencias Digitales</option>
+                        <option value="liderazgo">Liderazgo e Influencia Social</option>
+                        <option value="inteligencia-emocional">Inteligencia Emocional</option>
+                        <option value="trabajo-equipo">Trabajo en Equipo</option>
+                    </select>
+                </div>
+            </div>
+            <div class="filter-tags mt-4">
+                <div class="filter-tag active">Todos</div>
+                <div class="filter-tag">Más populares</div>
+                <div class="filter-tag">Recién lanzados</div>
+                <div class="filter-tag">Mejor valorados</div>
+                <div class="filter-tag">Ofertas especiales</div>
+                <div class="filter-tag">Certificados</div>
+                <div class="filter-tag">Con mentorías</div>
+                <div class="filter-tag">Corta duración</div>
+                <div class="filter-tag">Intensivos</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Career Paths Section -->
+    <section class="career-paths" id="career-paths">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Rutas de Aprendizaje</h2>
+            <p class="section-subtitle" data-aos="fade-up">Caminos formativos diseñados para guiarte desde principiante hasta experto</p>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up">
+                    <div class="path-container">
+                        <div class="path-header">
+                            <div class="path-title">Data Science Path</div>
+                            <p class="path-description">Conviértete en un científico de datos de clase mundial con esta ruta completa</p>
+                        </div>
+                        <div class="path-steps">
+                            <div class="path-step">
+                                <div class="step-indicator">1</div>
+                                <div class="step-content">
+                                    <div class="step-title">Fundamentos</div>
+                                    <div class="step-courses">
+                                        <a href="curso-detalle.html?id=1" class="step-course">Introducción a Data Science</a>
+                                        <a href="curso-detalle.html?id=2" class="step-course">Python para Análisis de Datos</a>
+                                        <a href="curso-detalle.html?id=3" class="step-course">Estadística para Data Science</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="path-step">
+                                <div class="step-indicator">2</div>
+                                <div class="step-content">
+                                    <div class="step-title">Intermedio</div>
+                                    <div class="step-courses">
+                                        <a href="curso-detalle.html?id=4" class="step-course">Machine Learning Aplicado</a>
+                                        <a href="curso-detalle.html?id=5" class="step-course">Visualización Avanzada de Datos</a>
+                                        <a href="curso-detalle.html?id=6" class="step-course">Ingeniería de Features</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="path-step">
+                                <div class="step-indicator">3</div>
+                                <div class="step-content">
+                                    <div class="step-title">Avanzado</div>
+                                    <div class="step-courses">
+                                        <a href="curso-detalle.html?id=7" class="step-course">Deep Learning para Data Science</a>
+                                        <a href="curso-detalle.html?id=8" class="step-course">Procesamiento de Lenguaje Natural</a>
+                                        <a href="curso-detalle.html?id=9" class="step-course">Proyecto Capstone en Data Science</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="path-footer">
+                            <a href="ruta-data-science.html" class="btn btn-outline-primary">Ver Ruta Completa</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="path-container">
+                        <div class="path-header">
+                            <div class="path-title">Machine Learning Engineer</div>
+                            <p class="path-description">Domina las técnicas y herramientas para crear modelos de ML de producción</p>
+                        </div>
+                        <div class="path-steps">
+                            <div class="path-step">
+                                <div class="step-indicator">1</div>
+                                <div class="step-content">
+                                    <div class="step-title">Fundamentos</div>
+                                    <div class="step-courses">
+                                        <a href="curso-detalle.html?id=10" class="step-course">Fundamentos de Machine Learning</a>
+                                        <a href="curso-detalle.html?id=11" class="step-course">Programación Avanzada con Python</a>
+                                        <a href="curso-detalle.html?id=12" class="step-course">Matemáticas para ML</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="path-step">
+                                <div class="step-indicator">2</div>
+                                <div class="step-content">
+                                    <div class="step-title">Intermedio</div>
+                                    <div class="step-courses">
+                                        <a href="curso-detalle.html?id=13" class="step-course">Modelos Avanzados de ML</a>
+                                        <a href="curso-detalle.html?id=14" class="step-course">MLOps: Operacionalización de ML</a>
+                                        <a href="curso-detalle.html?id=15" class="step-course">Implementación de ML en la Nube</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="path-step">
+                                <div class="step-indicator">3</div>
+                                <div class="step-content">
+                                    <div class="step-title">Avanzado</div>
+                                    <div class="step-courses">
+                                        <a href="curso-detalle.html?id=16" class="step-course">Arquitecturas Avanzadas de DL</a>
+                                        <a href="curso-detalle.html?id=17" class="step-course">Sistemas Distribuidos para ML</a>
+                                        <a href="curso-detalle.html?id=18" class="step-course">Proyecto de Infraestructura de ML</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="path-footer">
+                            <a href="ruta-ml-engineer.html" class="btn btn-outline-primary">Ver Ruta Completa</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="path-container">
+                        <div class="path-header">
+                            <div class="path-title">IA Generativa Specialist</div>
+                            <p class="path-description">Aprende a desarrollar y utilizar modelos generativos de última generación</p>
+                        </div>
+                        <div class="path-steps">
+                            <div class="path-step">
+                                <div class="step-indicator">1</div>
+                                <div class="step-content">
+                                    <div class="step-title">Fundamentos</div>
+                                    <div class="step-courses">
+                                        <a href="curso-detalle.html?id=19" class="step-course">Introducción a IA Generativa</a>
+                                        <a href="curso-detalle.html?id=20" class="step-course">Fundamentos de Deep Learning</a>
+                                        <a href="curso-detalle.html?id=21" class="step-course">Procesamiento de Texto y NLP</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="path-step">
+                                <div class="step-indicator">2</div>
+                                <div class="step-content">
+                                    <div class="step-title">Intermedio</div>
+                                    <div class="step-courses">
+                                        <a href="curso-detalle.html?id=22" class="step-course">Modelos Generativos Avanzados</a>
+                                        <a href="curso-detalle.html?id=23" class="step-course">Modelos de Difusión</a>
+                                        <a href="curso-detalle.html?id=24" class="step-course">Fine-tuning de LLMs</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="path-step">
+                                <div class="step-indicator">3</div>
+                                <div class="step-content">
+                                    <div class="step-title">Avanzado</div>
+                                    <div class="step-courses">
+                                        <a href="curso-detalle.html?id=25" class="step-course">Implementación de IA Generativa</a>
+                                        <a href="curso-detalle.html?id=26" class="step-course">Ética en IA Generativa</a>
+                                        <a href="curso-detalle.html?id=27" class="step-course">Proyecto de IA Generativa Aplicada</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="path-footer">
+                            <a href="ruta-ia-generativa.html" class="btn btn-outline-primary">Ver Ruta Completa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-4">
+                <a href="rutas-aprendizaje.html" class="btn btn-primary">Ver Todas las Rutas de Aprendizaje</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promotional Banner -->
+    <section class="promotional-banner">
+        <div class="container">
+            <div class="promotional-content">
+                <div class="discount-badge">30% OFF</div>
+                <h2 class="promotional-title">¡Oferta Especial de Lanzamiento!</h2>
+                <p class="promotional-text">Por tiempo limitado, disfruta de un 30% de descuento en todos nuestros cursos de IA Generativa. Aprende las tecnologías que están transformando el mundo.</p>
+                <a href="oferta-especial.html" class="btn promotional-button">APROVECHAR OFERTA</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Categories -->
+    <section class="course-categories" id="categories">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Nuestros Cursos</h2>
+            <p class="section-subtitle" data-aos="fade-up">Explora nuestro catálogo completo de cursos en tecnologías avanzadas</p>
+            
+            <div class="category-tabs" data-aos="fade-up">
+                <div class="category-tab active" data-category="all">
+                    <i class="fas fa-th category-icon"></i>Todos
+                </div>
+                <div class="category-tab" data-category="ia-generativa">
+                    <i class="fas fa-robot category-icon"></i>IA Generativa
+                </div>
+                <div class="category-tab" data-category="machine-learning">
+                    <i class="fas fa-cogs category-icon"></i>Machine Learning
+                </div>
+                <div class="category-tab" data-category="data-science">
+                    <i class="fas fa-chart-bar category-icon"></i>Data Science
+                </div>
+                <div class="category-tab" data-category="deep-learning">
+                    <i class="fas fa-brain category-icon"></i>Deep Learning
+                </div>
+                <div class="category-tab" data-category="nlp">
+                    <i class="fas fa-comment-alt category-icon"></i>NLP
+                </div>
+                <div class="category-tab" data-category="computer-vision">
+                    <i class="fas fa-eye category-icon"></i>Computer Vision
+                </div>
+                <div class="category-tab" data-category="especializaciones">
+                    <i class="fas fa-award category-icon"></i>Certificaciones
+                </div>
+            </div>
+            
+            <div class="category-content" id="all-content" data-aos="fade-up">
+                <div class="subcategory-selector">
+                    <div class="subcategory-item active" data-subcategory="all">Todos</div>
+                    <div class="subcategory-item" data-subcategory="principiante">Principiante</div>
+                    <div class="subcategory-item" data-subcategory="intermedio">Intermedio</div>
+                    <div class="subcategory-item" data-subcategory="avanzado">Avanzado</div>
+                    <div class="subcategory-item" data-subcategory="autogestionado">Autogestionado</div>
+                    <div class="subcategory-item" data-subcategory="tutorizado">Tutorizado</div>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Curso 1 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-1.jpg" alt="Fundamentos de IA Generativa">
+                                <div class="course-badge bestseller">Bestseller</div>
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">IA Generativa</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(4.8)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">Fundamentos de IA Generativa</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 40 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Principiante
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 1,200+
+                                    </div>
+                                </div>
+                                <p class="course-description">Introducción completa al mundo de la IA generativa, sus aplicaciones y tecnologías fundamentales.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-1.jpg" alt="Dr. Alejandro Méndez" class="instructor-avatar">
+                                    <span class="instructor-name">Dr. Alejandro Méndez</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Pensamiento Analítico</div>
+                                    <div class="competency-tag">Comp. Digitales</div>
+                                    <div class="competency-tag">Creatividad</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$129.900</span>
+                                    <span class="current">$89.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=1" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Curso 2 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-2.jpg" alt="Machine Learning Avanzado">
+                                <div class="course-badge new">Nuevo</div>
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">Machine Learning</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>(4.9)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">Machine Learning Avanzado</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 60 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Avanzado
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 850+
+                                    </div>
+                                </div>
+                                <p class="course-description">Profundiza en algoritmos complejos y técnicas avanzadas para crear modelos predictivos potentes.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-2.jpg" alt="Dra. Carla Rodríguez" class="instructor-avatar">
+                                    <span class="instructor-name">Dra. Carla Rodríguez</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Resolución de Problemas</div>
+                                    <div class="competency-tag">Comp. Digitales</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$199.900</span>
+                                    <span class="current">$149.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=2" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Curso 3 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-3.jpg" alt="Data Science para Negocios">
+                                <div class="course-badge popular">Popular</div>
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">Data Science</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(4.7)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">Data Science para Negocios</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 50 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Intermedio
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 950+
+                                    </div>
+                                </div>
+                                <p class="course-description">Aprende a transformar datos en decisiones estratégicas para impulsar el crecimiento empresarial.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-3.jpg" alt="Ing. Martín Torres" class="instructor-avatar">
+                                    <span class="instructor-name">Ing. Martín Torres</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Pensamiento Analítico</div>
+                                    <div class="competency-tag">Liderazgo</div>
+                                    <div class="competency-tag">Pensamiento Crítico</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$169.900</span>
+                                    <span class="current">$129.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=3" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Curso 4 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-4.jpg" alt="Deep Learning Fundamentals">
+                                <div class="course-badge discount">-40%</div>
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">Deep Learning</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>(4.9)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">Deep Learning Fundamentals</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 45 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Principiante
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 780+
+                                    </div>
+                                </div>
+                                <p class="course-description">Aprende los fundamentos de redes neuronales profundas y sus aplicaciones prácticas en diversos campos.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-4.jpg" alt="Mg. Laura Sánchez" class="instructor-avatar">
+                                    <span class="instructor-name">Mg. Laura Sánchez</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Comp. Digitales</div>
+                                    <div class="competency-tag">Pensamiento Crítico</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$189.900</span>
+                                    <span class="current">$109.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=4" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Curso 5 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-5.jpg" alt="Procesamiento de Lenguaje Natural">
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">NLP</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <span>(4.1)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">Procesamiento de Lenguaje Natural</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 55 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Intermedio
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 650+
+                                    </div>
+                                </div>
+                                <p class="course-description">Domina las técnicas para procesar, analizar y generar lenguaje natural con algoritmos de IA.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-2.jpg" alt="Dra. Carla Rodríguez" class="instructor-avatar">
+                                    <span class="instructor-name">Dra. Carla Rodríguez</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Pensamiento Analítico</div>
+                                    <div class="competency-tag">Creatividad</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$159.900</span>
+                                    <span class="current">$139.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=5" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Curso 6 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-6.jpg" alt="Visión por Computadora">
+                                <div class="course-badge new">Nuevo</div>
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">Computer Vision</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(4.6)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">Visión por Computadora</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 60 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Avanzado
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 520+
+                                    </div>
+                                </div>
+                                <p class="course-description">Aprende a desarrollar sistemas que pueden interpretar y analizar imágenes y videos con Deep Learning.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-1.jpg" alt="Dr. Alejandro Méndez" class="instructor-avatar">
+                                    <span class="instructor-name">Dr. Alejandro Méndez</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Resolución de Problemas</div>
+                                    <div class="competency-tag">Comp. Digitales</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$179.900</span>
+                                    <span class="current">$159.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=6" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Curso 7 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-7.jpg" alt="Generación de Imágenes con IA">
+                                <div class="course-badge bestseller">Bestseller</div>
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">IA Generativa</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>(5.0)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">Generación de Imágenes con IA</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 48 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Intermedio
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 980+
+                                    </div>
+                                </div>
+                                <p class="course-description">Aprende a crear y manipular imágenes usando modelos de difusión y GAN con aplicaciones prácticas.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-5.jpg" alt="Dr. Roberto Vega" class="instructor-avatar">
+                                    <span class="instructor-name">Dr. Roberto Vega</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Creatividad</div>
+                                    <div class="competency-tag">Comp. Digitales</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$169.900</span>
+                                    <span class="current">$119.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=7" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Curso 8 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-8.jpg" alt="MLOps: Operacionalización de Modelos">
+                                <div class="course-badge popular">Popular</div>
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">Machine Learning</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(4.7)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">MLOps: Operacionalización de Modelos</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 65 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Avanzado
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 420+
+                                    </div>
+                                </div>
+                                <p class="course-description">Aprende a implementar el ciclo completo de desarrollo y despliegue de modelos de Machine Learning en producción.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-6.jpg" alt="Mg. Fernando Quintero" class="instructor-avatar">
+                                    <span class="instructor-name">Mg. Fernando Quintero</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Resolución de Problemas</div>
+                                    <div class="competency-tag">Trabajo en Equipo</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$199.900</span>
+                                    <span class="current">$159.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=8" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Curso 9 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-9.jpg" alt="Ciencia de Datos Python">
+                                <div class="course-badge discount">-35%</div>
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">Data Science</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <span>(4.0)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">Python para Ciencia de Datos</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 40 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Principiante
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 1,500+
+                                    </div>
+                                </div>
+                                <p class="course-description">Domina las principales librerías de Python para análisis y visualización de datos: Pandas, NumPy, Matplotlib y más.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-3.jpg" alt="Ing. Martín Torres" class="instructor-avatar">
+                                    <span class="instructor-name">Ing. Martín Torres</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Comp. Digitales</div>
+                                    <div class="competency-tag">Aprendizaje Continuo</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$129.900</span>
+                                    <span class="current">$84.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=9" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Curso 10 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-10.jpg" alt="Transformers y LLMs">
+                                <div class="course-badge new">Nuevo</div>
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">NLP</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(4.5)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">Transformers y Modelos de Lenguaje</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 55 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Avanzado
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 480+
+                                    </div>
+                                </div>
+                                <p class="course-description">Explora la arquitectura transformer y aprende a implementar y ajustar modelos de lenguaje avanzados como BERT, GPT y más.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-2.jpg" alt="Dra. Carla Rodríguez" class="instructor-avatar">
+                                    <span class="instructor-name">Dra. Carla Rodríguez</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Pensamiento Analítico</div>
+                                    <div class="competency-tag">Resolución de Problemas</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$189.900</span>
+                                    <span class="current">$169.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=10" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Curso 11 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-11.jpg" alt="Inteligencia Artificial Ética">
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">IA Ética</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>(4.9)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">Ética y Responsabilidad en IA</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 30 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Todos los niveles
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 750+
+                                    </div>
+                                </div>
+                                <p class="course-description">Analiza los desafíos éticos de la IA y aprende a desarrollar sistemas responsables, justos y transparentes.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-7.jpg" alt="Dra. Claudia Morales" class="instructor-avatar">
+                                    <span class="instructor-name">Dra. Claudia Morales</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Pensamiento Crítico</div>
+                                    <div class="competency-tag">Inteligencia Emocional</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$109.900</span>
+                                    <span class="current">$99.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=11" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Curso 12 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-12.jpg" alt="Reinforcement Learning">
+                                <div class="course-badge popular">Popular</div>
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">Reinforcement Learning</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(4.8)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">Aprendizaje por Refuerzo</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 60 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Avanzado
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 320+
+                                    </div>
+                                </div>
+                                <p class="course-description">Domina las técnicas que permiten a los agentes de IA aprender a través de la interacción con el entorno.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-1.jpg" alt="Dr. Alejandro Méndez" class="instructor-avatar">
+                                    <span class="instructor-name">Dr. Alejandro Méndez</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Resolución de Problemas</div>
+                                    <div class="competency-tag">Pensamiento Analítico</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$199.900</span>
+                                    <span class="current">$179.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=12" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Curso 13 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-13.jpg" alt="Big Data con Spark">
+                                <div class="course-badge bestseller">Bestseller</div>
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">Data Engineering</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>(4.9)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">Big Data con Apache Spark</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 55 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Intermedio
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 890+
+                                    </div>
+                                </div>
+                                <p class="course-description">Aprende a procesar grandes volúmenes de datos de forma distribuida con una de las herramientas más demandadas.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-8.jpg" alt="Ing. Ana Gómez" class="instructor-avatar">
+                                    <span class="instructor-name">Ing. Ana Gómez</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Comp. Digitales</div>
+                                    <div class="competency-tag">Resolución de Problemas</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$179.900</span>
+                                    <span class="current">$139.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=13" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Curso 14 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-14.jpg" alt="Seguridad en IA">
+                                <div class="course-badge new">Nuevo</div>
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">Seguridad IA</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(4.4)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">Seguridad y Privacidad en IA</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 45 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Avanzado
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 380+
+                                    </div>
+                                </div>
+                                <p class="course-description">Protege tus sistemas de IA contra ataques y vulnerabilidades mientras garantizas la privacidad de los datos.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-9.jpg" alt="Dr. Jorge Hernández" class="instructor-avatar">
+                                    <span class="instructor-name">Dr. Jorge Hernández</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Pensamiento Crítico</div>
+                                    <div class="competency-tag">Comp. Digitales</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$159.900</span>
+                                    <span class="current">$149.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=14" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Curso 15 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-15.jpg" alt="Data Visualization">
+                                <div class="course-badge discount">-25%</div>
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">Data Science</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <span>(4.2)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">Visualización Avanzada de Datos</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 35 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Intermedio
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 720+
+                                    </div>
+                                </div>
+                                <p class="course-description">Aprende a comunicar insights de datos de forma efectiva con técnicas avanzadas de visualización interactiva.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-4.jpg" alt="Mg. Laura Sánchez" class="instructor-avatar">
+                                    <span class="instructor-name">Mg. Laura Sánchez</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Creatividad</div>
+                                    <div class="competency-tag">Pensamiento Analítico</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$149.900</span>
+                                    <span class="current">$112.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=15" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Curso 16 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-16.jpg" alt="Chatbots con IA">
+                                <div class="course-badge popular">Popular</div>
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">IA Generativa</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(4.7)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">Desarrollo de Chatbots Avanzados</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 50 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Intermedio
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 680+
+                                    </div>
+                                </div>
+                                <p class="course-description">Crea asistentes virtuales inteligentes utilizando las últimas tecnologías de procesamiento de lenguaje natural.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-10.jpg" alt="Ing. Pablo Soto" class="instructor-avatar">
+                                    <span class="instructor-name">Ing. Pablo Soto</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Resolución de Problemas</div>
+                                    <div class="competency-tag">Creatividad</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$169.900</span>
+                                    <span class="current">$149.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=16" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Curso 17 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-17.jpg" alt="Cloud AI Services">
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">Cloud Computing</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>(4.8)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">IA en la Nube: AWS, Azure y GCP</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 60 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Intermedio
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 540+
+                                    </div>
+                                </div>
+                                <p class="course-description">Aprende a implementar soluciones de IA utilizando los servicios de los principales proveedores de nube.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-6.jpg" alt="Mg. Fernando Quintero" class="instructor-avatar">
+                                    <span class="instructor-name">Mg. Fernando Quintero</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Comp. Digitales</div>
+                                    <div class="competency-tag">Resolución de Problemas</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$189.900</span>
+                                    <span class="current">$169.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=17" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Curso 18 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-18.jpg" alt="Time Series Analysis">
+                                <div class="course-badge new">Nuevo</div>
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">Machine Learning</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(4.6)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">Análisis de Series Temporales</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 45 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Intermedio
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 420+
+                                    </div>
+                                </div>
+                                <p class="course-description">Aprende a analizar y predecir datos temporales utilizando técnicas estadísticas y modelos de machine learning.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-3.jpg" alt="Ing. Martín Torres" class="instructor-avatar">
+                                    <span class="instructor-name">Ing. Martín Torres</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Pensamiento Analítico</div>
+                                    <div class="competency-tag">Resolución de Problemas</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$159.900</span>
+                                    <span class="current">$139.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=18" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Curso 19 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-19.jpg" alt="Robótica con IA">
+                                <div class="course-badge popular">Popular</div>
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">Robótica IA</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                        <span>(4.7)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">Inteligencia Artificial para Robótica</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 70 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Avanzado
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 350+
+                                    </div>
+                                </div>
+                                <p class="course-description">Aplica técnicas de IA en sistemas robóticos para crear agentes autónomos capaces de percibir y actuar en el mundo real.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-11.jpg" alt="Dr. Gabriel Vargas" class="instructor-avatar">
+                                    <span class="instructor-name">Dr. Gabriel Vargas</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Resolución de Problemas</div>
+                                    <div class="competency-tag">Pensamiento Analítico</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$219.900</span>
+                                    <span class="current">$189.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=19" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Curso 20 -->
+                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/img/curso-20.jpg" alt="ModelOps">
+                                <div class="course-badge new">Nuevo</div>
+                            </div>
+                            <div class="course-content">
+                                <div class="course-meta">
+                                    <div class="course-category">Machine Learning</div>
+                                    <div class="course-rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <span>(5.0)</span>
+                                    </div>
+                                </div>
+                                <h3 class="course-title">ModelOps: Gobernanza de Modelos de IA</h3>
+                                <div class="course-stats">
+                                    <div class="course-stat">
+                                        <i class="far fa-clock"></i> 50 horas
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-signal"></i> Avanzado
+                                    </div>
+                                    <div class="course-stat">
+                                        <i class="fas fa-user-graduate"></i> 280+
+                                    </div>
+                                </div>
+                                <p class="course-description">Domina las mejores prácticas para gestionar el ciclo de vida completo de los modelos de IA en producción.</p>
+                                <div class="course-instructor">
+                                    <img src="assets/img/team-12.jpg" alt="Dra. Elena Paredes" class="instructor-avatar">
+                                    <span class="instructor-name">Dra. Elena Paredes</span>
+                                </div>
+                                <div class="course-competencies">
+                                    <div class="competency-tag">Liderazgo</div>
+                                    <div class="competency-tag">Trabajo en Equipo</div>
+                                </div>
+                            </div>
+                            <div class="course-footer">
+                                <div class="course-price">
+                                    <span class="original">$179.900</span>
+                                    <span class="current">$159.900</span>
+                                </div>
+                                <a href="curso-detalle.html?id=20" class="btn btn-outline-primary course-button">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Load More Courses Button -->
+                <div class="text-center mt-5" data-aos="fade-up">
+                    <a href="#" class="btn btn-primary load-more">Cargar Más Cursos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Lo que dicen nuestros alumnos</h2>
+            <p class="section-subtitle" data-aos="fade-up">Experiencias reales de profesionales que han transformado su carrera con nosotros</p>
+            
+            <div class="owl-carousel testimonial-carousel" data-aos="fade-up">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-content">"El curso de IA Generativa superó todas mis expectativas. Los profesores son expertos en su campo y el contenido está perfectamente estructurado para ir desde lo básico hasta lo más avanzado. Ahora estoy aplicando lo aprendido en proyectos reales en mi empresa."</p>
+                    <div class="testimonial-author">
+                        <img src="assets/img/testimonial-1.jpg" alt="María González" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">María González</div>
+                            <div class="testimonial-position">Data Scientist, Telefónica</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-content">"La ruta de Machine Learning Engineer me permitió transicionar de desarrollador a especialista en IA. Los proyectos prácticos y el sistema de mentorías marcaron la diferencia. Si buscas una formación práctica y actual, SUBE Academia es la mejor opción."</p>
+                    <div class="testimonial-author">
+                        <img src="assets/img/testimonial-2.jpg" alt="Carlos Vega" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Carlos Vega</div>
+                            <div class="testimonial-position">ML Engineer, Google</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-content">"Sin experiencia previa en programación, logré completar la ruta de Data Science gracias al enfoque pedagógico y al soporte constante. El énfasis en desarrollar competencias transversales ha sido clave para mi crecimiento profesional."</p>
+                    <div class="testimonial-author">
+                        <img src="assets/img/testimonial-3.jpg" alt="Laura Martínez" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <div class="testimonial-name">Laura Martínez</div>
+                            <div class="testimonial-position">Business Analyst, BBVA</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Comienza Tu Transformación Digital Hoy</h2>
+                <p class="cta-text">Da el primer paso hacia tu futuro profesional con nuestros programas especializados en IA y Data Science. Aprende con los mejores expertos de la industria.</p>
+                <div class="cta-buttons">
+                    <a href="inscripcion.html" class="btn cta-primary">INSCRÍBETE AHORA</a>
+                    <a href="asesoria.html" class="btn cta-secondary">SOLICITAR ASESORÍA</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <img src="assets/img/logo-footer.png" alt="SUBE Academia" class="footer-logo">
+                    <p class="footer-about">
+                        Academia especializada en formación de vanguardia en Inteligencia Artificial, Machine Learning y Data Science. Desarrollamos las competencias del futuro digital.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h3 class="footer-heading">Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="cursos.html">Cursos</a></li>
+                        <li><a href="competencias.html">Competencias</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h3 class="footer-heading">Cursos Populares</h3>
+                    <ul class="footer-links">
+                        <li><a href="curso-detalle.html?id=1">Fundamentos de IA Generativa</a></li>
+                        <li><a href="curso-detalle.html?id=7">Generación de Imágenes con IA</a></li>
+                        <li><a href="curso-detalle.html?id=13">Big Data con Apache Spark</a></li>
+                        <li><a href="curso-detalle.html?id=4">Deep Learning Fundamentals</a></li>
+                        <li><a href="curso-detalle.html?id=16">Desarrollo de Chatbots Avanzados</a></li>
+                        <li><a href="rutas-aprendizaje.html">Ver todas las rutas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h3 class="footer-heading">Contacto</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-text">
+                            Av. Providencia 1234, Oficina 502<br>
+                            Providencia, Santiago, Chile
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="contact-text">
+                            +56 2 2345 6789<br>
+                            +56 9 8765 4321
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-text">
+                            info@subeacademia.cl<br>
+                            contacto@subeacademia.cl
+                        </div>
+                    </div>
+                    <form class="newsletter-form mt-4">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Tu email" aria-label="Tu email">
+                            <button class="btn" type="submit">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="copyright">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0">© 2025 SUBE Academia. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="privacidad.html" class="me-3">Política de Privacidad</a>
+                    <a href="terminos.html">Términos y Condiciones</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Owl Carousel -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- AOS - Animate On Scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+        
+        $(document).ready(function() {
+            // Initialize Owl Carousel for testimonials
+            $(".testimonial-carousel").owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    },
+                    992: {
+                        items: 3
+                    }
+                }
+            });
+            
+            // Navbar scrolled effect
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 50) {
+                    $('#mainNav').addClass('scrolled');
+                    $('#backToTop').addClass('visible');
+                } else {
+                    $('#mainNav').removeClass('scrolled');
+                    $('#backToTop').removeClass('visible');
+                }
+            });
+            
+            // Back to top function
+            $('#backToTop').click(function() {
+                $('html, body').animate({scrollTop: 0}, 800);
+                return false;
+            });
+            
+            // Generate particles
+            function createParticles() {
+                const container = document.getElementById('particles-container');
+                const colors = ['#3A86FF', '#8338EC', '#06D6A0'];
+                
+                for (let i = 0; i < 50; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    
+                    // Random size
+                    const size = Math.random() * 5 + 3;
+                    particle.style.width = size + 'px';
+                    particle.style.height = size + 'px';
+                    
+                    // Random position
+                    particle.style.left = Math.random() * 100 + 'vw';
+                    
+                    // Random color
+                    const color = colors[Math.floor(Math.random() * colors.length)];
+                    particle.style.backgroundColor = color;
+                    
+                    // Random animation duration and delay
+                    const duration = Math.random() * 40 + 20;
+                    const delay = Math.random() * 10;
+                    particle.style.animationDuration = duration + 's';
+                    particle.style.animationDelay = delay + 's';
+                    
+                    container.appendChild(particle);
+                }
+            }
+            
+            createParticles();
+            
+            // Category tabs
+            $('.category-tab').click(function() {
+                $('.category-tab').removeClass('active');
+                $(this).addClass('active');
+                // Here you would add code to filter courses by category
+            });
+            
+            // Subcategory filter
+            $('.subcategory-item').click(function() {
+                $('.subcategory-item').removeClass('active');
+                $(this).addClass('active');
+                // Here you would add code to filter courses by subcategory
+            });
+            
+            // Filter tags
+            $('.filter-tag').click(function() {
+                $('.filter-tag').removeClass('active');
+                $(this).addClass('active');
+                // Here you would add code to apply the selected filter
+            });
+            
+            // Load more courses button
+            $('.load-more').click(function(e) {
+                e.preventDefault();
+                // Here you would add code to load more courses
+                alert('Cargando más cursos...');
+            });
+        });
+    </script>
+</body>
+</html>

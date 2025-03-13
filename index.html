@@ -1,0 +1,2788 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUBE Academia - Formación en Inteligencia Artificial</title>
+    <!-- Meta tags para SEO -->
+    <meta name="description" content="SUBE Academia: Formación especializada en Inteligencia Artificial, Machine Learning y Data Science. Cursos certificados para profesionales.">
+    <meta name="keywords" content="inteligencia artificial, machine learning, data science, cursos IA, formación tecnológica, certificaciones IA">
+    <meta name="author" content="SUBE Academia">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.subeacademia.cl/">
+    <meta property="og:title" content="SUBE Academia - Formación en Inteligencia Artificial">
+    <meta property="og:description" content="Formación especializada en Inteligencia Artificial, Machine Learning y Data Science. Cursos certificados para profesionales.">
+    <meta property="og:image" content="assets/img/og-image.jpg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.subeacademia.cl/">
+    <meta property="twitter:title" content="SUBE Academia - Formación en Inteligencia Artificial">
+    <meta property="twitter:description" content="Formación especializada en Inteligencia Artificial, Machine Learning y Data Science. Cursos certificados para profesionales.">
+    <meta property="twitter:image" content="assets/img/og-image.jpg">
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.subeacademia.cl/">
+
+    <style>
+        :root {
+            --primary: #3A86FF;
+            --secondary: #8338EC;
+            --tertiary: #06D6A0;
+            --accent: #FFD166;
+            --danger: #EF476F;
+            --dark: #0a0a1a;
+            --darker: #050510;
+            --light-blue: rgba(58, 134, 255, 0.2);
+            --light-purple: rgba(131, 56, 236, 0.2);
+            --light-green: rgba(6, 214, 160, 0.2);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --card-highlight: rgba(255, 255, 255, 0.05);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-tertiary: rgba(255, 255, 255, 0.5);
+            --glow-blue: 0 0 15px rgba(58, 134, 255, 0.7);
+            --glow-purple: 0 0 15px rgba(131, 56, 236, 0.7);
+            --glow-green: 0 0 15px rgba(6, 214, 160, 0.7);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            background-color: var(--dark);
+            color: var(--text-primary);
+            position: relative;
+            perspective: 1000px;
+        }
+        
+        /* Particles */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            opacity: 0.4;
+            pointer-events: none;
+            animation: float 60s linear infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            5% {
+                opacity: 0.4;
+            }
+            95% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Grid Background */
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), 
+                              linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            transform-style: preserve-3d;
+            transform: rotateX(75deg) translateY(-100px) translateZ(-100px);
+            perspective: 1000px;
+        }
+        
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* General Styles */
+        a {
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+        
+        .btn {
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            color: var(--text-primary);
+            box-shadow: var(--glow-blue);
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary), var(--tertiary));
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            z-index: -1;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glow-purple);
+        }
+        
+        .btn-primary:hover::before {
+            left: 0;
+        }
+        
+        .btn-outline-primary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-outline-primary:hover {
+            background: var(--primary);
+            color: var(--text-primary);
+            box-shadow: var(--glow-blue);
+            transform: translateY(-5px);
+        }
+        
+        .btn-outline-light {
+            background: transparent;
+            border: 1px solid var(--text-primary);
+            color: var(--text-primary);
+        }
+        
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            position: relative;
+            text-align: center;
+            color: var(--text-primary);
+            text-shadow: var(--glow-blue);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        /* Top Bar */
+        .topbar {
+            background: rgba(5, 5, 20, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--card-border);
+        }
+        
+        /* Navbar */
+        .navbar {
+            background-color: rgba(10, 10, 26, 0.8) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--card-border);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .navbar-light .navbar-nav .nav-link {
+            color: var(--text-primary);
+            font-weight: 500;
+            padding: 10px 15px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .navbar-light .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+        
+        .navbar-light .navbar-nav .nav-link:hover,
+        .navbar-light .navbar-nav .nav-link.active {
+            color: var(--primary);
+        }
+        
+        .navbar-light .navbar-nav .nav-link:hover::after,
+        .navbar-light .navbar-nav .nav-link.active::after {
+            width: 80%;
+        }
+        
+        .navbar-light .navbar-toggler {
+            border-color: var(--card-border);
+            background-color: var(--card-bg);
+        }
+        
+        /* Hero Carousel */
+        #heroCarousel {
+            perspective: 1000px;
+            margin-top: -16px; /* Remove gap between navbar and carousel */
+        }
+        
+        .carousel-item {
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        
+        .carousel-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(5,5,16,0.3), rgba(5,5,16,0.9));
+            z-index: 2;
+        }
+        
+        .carousel-item img {
+            filter: brightness(0.7) contrast(1.2);
+            transition: all 1s ease;
+            transform: translateZ(0);
+        }
+        
+        .carousel-item.active img {
+            transform: scale(1.05);
+            filter: brightness(0.6) contrast(1.4);
+        }
+        
+        .carousel-caption {
+            bottom: auto;
+            top: 50%;
+            transform: translateY(-50%) translateZ(50px);
+            z-index: 10;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-radius: 10px;
+            background: rgba(10, 10, 30, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            transform-style: preserve-3d;
+        }
+        
+        .carousel-caption h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            transform: translateZ(30px);
+            color: var(--text-primary);
+        }
+        
+        .carousel-caption p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            transform: translateZ(20px);
+            color: var(--text-secondary);
+        }
+        
+        .carousel-control-prev, 
+        .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            background: rgba(10, 10, 30, 0.5);
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--card-border);
+        }
+        
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(58, 134, 255, 0.1), transparent);
+        }
+        
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, var(--light-blue), transparent 70%);
+            z-index: 0;
+        }
+        
+        .about .section-title {
+            text-align: left;
+        }
+        
+        .about .section-title::after {
+            left: 0;
+            transform: none;
+        }
+        
+        .about .lead {
+            font-size: 1.4rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about p {
+            color: var(--text-tertiary);
+            margin-bottom: 2rem;
+        }
+        
+        .about img {
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
+            transition: all 0.5s ease;
+            border: 1px solid var(--card-border);
+        }
+        
+        .about img:hover {
+            transform: perspective(1000px) rotateY(0) rotateX(0);
+        }
+        
+        /* Study Areas */
+        .study-areas {
+            padding: 100px 0;
+            position: relative;
+            background: linear-gradient(135deg, rgba(131, 56, 236, 0.1), transparent);
+        }
+        
+        .study-areas::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, var(--light-purple), transparent 70%);
+            z-index: 0;
+        }
+        
+        .study-areas .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+        }
+        
+        .study-areas .card:hover {
+            transform: translateY(-20px) rotateX(10deg) rotateY(-10deg);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary);
+        }
+        
+        .study-areas .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(58, 134, 255, 0.1), rgba(131, 56, 236, 0.1));
+            opacity: 0;
+            transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+        
+        .study-areas .card:hover::after {
+            opacity: 1;
+        }
+        
+        .study-areas .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            filter: brightness(0.7) contrast(1.2);
+            transition: all 0.5s ease;
+            transform: translateZ(0);
+        }
+        
+        .study-areas .card:hover .card-img-top {
+            transform: translateZ(30px);
+            filter: brightness(1) contrast(1.2);
+        }
+        
+        .study-areas .card-body {
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border-top: 1px solid var(--card-border);
+            transform-style: preserve-3d;
+        }
+        
+        .study-areas .card-title {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transform: translateZ(20px);
+            transition: all 0.5s ease;
+        }
+        
+        .study-areas .card:hover .card-title {
+            color: var(--primary);
+            transform: translateZ(40px);
+        }
+        
+        .study-areas .card-text {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            transform: translateZ(10px);
+        }
+        
+        /* Featured Courses */
+        .featured-courses {
+            padding: 100px 0;
+            position: relative;
+            background: linear-gradient(135deg, rgba(6, 214, 160, 0.1), transparent);
+        }
+        
+        .featured-courses::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 70%, var(--light-green), transparent 70%);
+            z-index: 0;
+        }
+        
+        .course-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            height: 100%;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-20px) rotateX(5deg) rotateY(-5deg);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            border-color: var(--tertiary);
+        }
+        
+        .course-card .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            filter: brightness(0.7) contrast(1.2);
+            transition: all 0.5s ease;
+            transform: translateZ(0);
+        }
+        
+        .course-card:hover .card-img-top {
+            transform: translateZ(30px);
+            filter: brightness(1) contrast(1.2);
+        }
+        
+        .course-card .card-body {
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border-top: 1px solid var(--card-border);
+            transform-style: preserve-3d;
+        }
+        
+        .course-card .badge {
+            font-size: 0.8rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 500;
+            background: var(--secondary);
+            color: var(--text-primary);
+            transform: translateZ(25px);
+            box-shadow: var(--glow-purple);
+        }
+        
+        .course-card .badge.bg-success {
+            background: var(--tertiary) !important;
+            box-shadow: var(--glow-green);
+        }
+        
+        .course-card .badge.bg-warning {
+            background: var(--accent) !important;
+            color: var(--dark) !important;
+            box-shadow: 0 0 15px rgba(255, 209, 102, 0.7);
+        }
+        
+        .course-card .card-title {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transform: translateZ(20px);
+            transition: all 0.5s ease;
+        }
+        
+        .course-card:hover .card-title {
+            color: var(--tertiary);
+            transform: translateZ(40px);
+        }
+        
+        .course-card .card-text {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            transform: translateZ(10px);
+        }
+        
+        .course-card .card-footer {
+            background: transparent;
+            border-top: 1px solid var(--card-border);
+            padding: 1rem 1.5rem;
+        }
+        
+        /* Statistics */
+        .statistics {
+            padding: 80px 0;
+            position: relative;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            overflow: hidden;
+        }
+        
+        .statistics::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                             linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+            z-index: 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            transform-style: preserve-3d;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stat-item i {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+            transform: translateZ(30px);
+            transition: all 0.5s ease;
+        }
+        
+        .stat-item:hover i {
+            transform: translateZ(50px) scale(1.2);
+            color: white;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+        }
+        
+        .stat-item .counter {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: white;
+            transform: translateZ(20px);
+        }
+        
+        .stat-item p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.2rem;
+            transform: translateZ(10px);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            position: relative;
+            background: linear-gradient(135deg, rgba(58, 134, 255, 0.1), rgba(131, 56, 236, 0.1));
+        }
+        
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 50%, var(--light-blue), transparent 70%);
+            z-index: 0;
+        }
+        
+        .testimonial-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 10px;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transform-style: preserve-3d;
+        }
+        
+        .testimonial-item:hover {
+            transform: translateY(-15px) rotateX(5deg) rotateY(-5deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .testimonial-item img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary);
+            box-shadow: var(--glow-blue);
+            transform: translateZ(30px);
+            transition: all 0.5s ease;
+        }
+        
+        .testimonial-item:hover img {
+            transform: translateZ(50px) scale(1.1);
+        }
+        
+        .testimonial-item h5 {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            transform: translateZ(20px);
+        }
+        
+        .testimonial-item p.text-muted {
+            color: var(--tertiary) !important;
+            font-size: 0.9rem;
+            transform: translateZ(15px);
+        }
+        
+        .testimonial-item p.mb-0 {
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 1rem;
+            transform: translateZ(10px);
+        }
+        
+        .testimonial-item .text-warning {
+            transform: translateZ(25px);
+        }
+        
+        .testimonial-item .fas.fa-star {
+            color: var(--accent);
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-item:hover .fas.fa-star {
+            text-shadow: 0 0 10px rgba(255, 209, 102, 0.7);
+        }
+        
+        /* Recent Posts */
+        .recent-posts {
+            padding: 100px 0;
+            position: relative;
+            background: linear-gradient(135deg, rgba(131, 56, 236, 0.1), rgba(6, 214, 160, 0.1));
+        }
+        
+        .recent-posts::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 70%, var(--light-purple), transparent 70%);
+            z-index: 0;
+        }
+        
+        .recent-posts .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            height: 100%;
+        }
+        
+        .recent-posts .card:hover {
+            transform: translateY(-20px) rotateX(5deg) rotateY(-5deg);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            border-color: var(--secondary);
+        }
+        
+        .recent-posts .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            filter: brightness(0.7) contrast(1.2);
+            transition: all 0.5s ease;
+            transform: translateZ(0);
+        }
+        
+        .recent-posts .card:hover .card-img-top {
+            transform: translateZ(30px);
+            filter: brightness(1) contrast(1.2);
+        }
+        
+        .recent-posts .card-body {
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border-top: 1px solid var(--card-border);
+            transform-style: preserve-3d;
+        }
+        
+        .recent-posts .text-muted {
+            color: var(--text-tertiary) !important;
+            transform: translateZ(15px);
+        }
+        
+        .recent-posts .badge {
+            font-size: 0.8rem;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transform: translateZ(25px);
+        }
+        
+        .recent-posts .badge.bg-primary {
+            background: var(--primary) !important;
+            box-shadow: var(--glow-blue);
+        }
+        
+        .recent-posts .badge.bg-info {
+            background: var(--secondary) !important;
+            color: white !important;
+            box-shadow: var(--glow-purple);
+        }
+        
+        .recent-posts .badge.bg-success {
+            background: var(--tertiary) !important;
+            box-shadow: var(--glow-green);
+        }
+        
+        .recent-posts .card-title {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transform: translateZ(20px);
+            transition: all 0.5s ease;
+        }
+        
+        .recent-posts .card:hover .card-title {
+            color: var(--secondary);
+            transform: translateZ(40px);
+        }
+        
+        .recent-posts .card-text {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            transform: translateZ(10px);
+        }
+        
+        .recent-posts .btn-link {
+            color: var(--secondary);
+            font-weight: 500;
+            transform: translateZ(15px);
+            transition: all 0.3s ease;
+        }
+        
+        .recent-posts .btn-link:hover {
+            color: var(--tertiary);
+            transform: translateZ(25px);
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            padding: 80px 0;
+            position: relative;
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            overflow: hidden;
+        }
+        
+        .newsletter::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, var(--light-blue), transparent 70%);
+            z-index: 0;
+        }
+        
+        .newsletter::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle at 90% 10%, var(--light-purple), transparent 70%);
+            z-index: 0;
+        }
+        
+        .newsletter .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .newsletter h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+        
+        .newsletter p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .newsletter .form-control {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            padding: 12px 20px;
+            border-radius: 5px 0 0 5px;
+            height: auto;
+        }
+        
+        .newsletter .form-control:focus {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary);
+            box-shadow: none;
+        }
+        
+        .newsletter .form-control::placeholder {
+            color: var(--text-tertiary);
+        }
+        
+        .newsletter .input-group .btn {
+            border-radius: 0 5px 5px 0;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+        
+        .newsletter .form-check-input {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-color: var(--card-border);
+        }
+        
+        .newsletter .form-check-input:checked {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .newsletter .form-check-label {
+            color: var(--text-tertiary);
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 80px 0 40px;
+            position: relative;
+            background: var(--darker);
+            border-top: 1px solid var(--card-border);
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            opacity: 0.5;
+        }
+        
+        .footer-heading {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 3px;
+        }
+        
+        .footer p {
+            color: var(--text-tertiary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer .list-unstyled li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer .list-unstyled a {
+            color: var(--text-tertiary);
+            transition: all 0.3s ease;
+        }
+        
+        .footer .list-unstyled a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+            display: inline-block;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+        
+        .social-links a:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: var(--glow-blue);
+        }
+        
+        /* Copyright */
+        .copyright {
+            background: var(--darker);
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .copyright small {
+            color: var(--text-tertiary);
+        }
+        
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transform: scale(0) rotate(180deg);
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            z-index: 99;
+            box-shadow: var(--glow-blue);
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+        
+        .back-to-top:hover {
+            background: var(--secondary);
+            transform: scale(1.1);
+            box-shadow: var(--glow-purple);
+        }
+        
+        /* Preloader */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .preloader.loaded {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .spinner {
+            width: 80px;
+            height: 80px;
+            perspective: 800px;
+        }
+        
+        .cube-wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: spin 3s infinite linear;
+        }
+        
+        .cube {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+        }
+        
+        .cube-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(58, 134, 255, 0.8);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(58, 134, 255, 0.5) inset;
+        }
+        
+        .cube-face-front {
+            transform: translateZ(40px);
+        }
+        
+        .cube-face-back {
+            transform: rotateY(180deg) translateZ(40px);
+        }
+        
+        .cube-face-right {
+            transform: rotateY(90deg) translateZ(40px);
+        }
+        
+        .cube-face-left {
+            transform: rotateY(-90deg) translateZ(40px);
+        }
+        
+        .cube-face-top {
+            transform: rotateX(90deg) translateZ(40px);
+        }
+        
+        .cube-face-bottom {
+            transform: rotateX(-90deg) translateZ(40px);
+        }
+        
+        @keyframes spin {
+            0% {
+                transform: rotateX(0) rotateY(0) rotateZ(0);
+            }
+            100% {
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 991px) {
+            .carousel-caption h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about, .study-areas, .featured-courses, .testimonials, .recent-posts {
+                padding: 70px 0;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .about img {
+                margin-top: 3rem;
+                transform: none !important;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .carousel-caption {
+                padding: 1rem;
+                max-width: 90%;
+            }
+            
+            .carousel-caption h1 {
+                font-size: 1.8rem;
+                margin-bottom: 1rem;
+            }
+            
+            .carousel-caption p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .about, .study-areas, .featured-courses, .testimonials, .recent-posts {
+                padding: 50px 0;
+            }
+            
+            .stat-item {
+                margin-bottom: 2rem;
+            }
+            
+            .stat-item i {
+                font-size: 2.5rem;
+            }
+            
+            .stat-item .counter {
+                font-size: 2rem;
+            }
+            
+            .footer-heading {
+                margin-top: 2rem;
+            }
+            
+            .study-areas .card:hover,
+            .course-card:hover,
+            .recent-posts .card:hover,
+            .testimonial-item:hover {
+                transform: translateY(-10px);
+            }
+        }
+        
+        /* Carousel fade effect */
+        .carousel-fade .carousel-item {
+          opacity: 0;
+          transition: opacity 0.6s ease-in-out;
+        }
+        
+        .carousel-fade .carousel-item.active {
+          opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="spinner">
+            <div class="cube-wrapper">
+                <div class="cube">
+                    <div class="cube-face cube-face-front"></div>
+                    <div class="cube-face cube-face-back"></div>
+                    <div class="cube-face cube-face-right"></div>
+                    <div class="cube-face cube-face-left"></div>
+                    <div class="cube-face cube-face-top"></div>
+                    <div class="cube-face cube-face-bottom"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Elements -->
+    <div class="particles-container" id="particles-container"></div>
+    <div class="grid-bg"></div>
+
+    <!-- Top Bar -->
+    <div class="topbar py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="contact-info d-flex align-items-center">
+                        <a href="mailto:info@subeacademia.com" class="me-3 text-white text-decoration-none">
+                            <i class="fas fa-envelope me-1"></i> info@subeacademia.com
+                        </a>
+                        <a href="tel:+123456789" class="text-white text-decoration-none">
+                            <i class="fas fa-phone-alt me-1"></i> +123 456 789
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="ave.html" class="btn btn-sm btn-outline-light">Acceso Aula Virtual Evolutiva (AVE)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/img/logo.png" alt="SUBE Academia" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html" aria-current="page">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="nosotros.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cursos.html">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="competencias.html">Competencias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section Dinámico -->
+<section id="hero" class="hero-section">
+    <!-- Elementos 3D de fondo -->
+    <div class="hero-bg">
+        <div class="neural-network">
+            <div class="nodes-container"></div>
+        </div>
+        <div class="floating-elements">
+            <div class="floating-cube"></div>
+            <div class="floating-sphere"></div>
+            <div class="floating-pyramid"></div>
+            <div class="floating-ring"></div>
+        </div>
+        <div class="grid-overlay"></div>
+    </div>
+    
+    <!-- Contenido principal -->
+    <div class="container hero-content">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h1 class="hero-title">
+                    <span class="title-line">Desarrollando</span>
+                    <span class="title-line"><span class="highlight">Competencias</span> para</span>
+                    <span class="title-line">la Era Digital</span>
+                </h1>
+                <div class="hero-subtitle">
+                    <div class="typing-container">
+                        <span class="static-text">Formación</span>
+                        <span class="dynamic-text" id="dynamic-text"></span>
+                    </div>
+                    <p class="hero-description">Revolucionamos la educación adaptándonos a tu forma de aprender. Domina las tecnologías que transformarán el futuro.</p>
+                </div>
+                <div class="hero-buttons">
+                    <a href="cursos.html" class="btn btn-primary btn-glow">Explorar Cursos</a>
+                    <a href="competencias.html" class="btn btn-outline-light btn-glow-light">Conocer Competencias</a>
+                </div>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block">
+                <div class="hero-3d-object">
+                    <div class="brain-hologram">
+                        <div class="brain-container">
+                            <div class="brain-hemisphere left"></div>
+                            <div class="brain-hemisphere right"></div>
+                            <div class="brain-connection"></div>
+                            <div class="data-stream"></div>
+                        </div>
+                        <div class="hologram-ring"></div>
+                        <div class="hologram-ring"></div>
+                        <div class="hologram-ring"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Indicadores de scroll -->
+    <div class="scroll-indicator">
+        <div class="mouse">
+            <div class="wheel"></div>
+        </div>
+        <div class="chevrons">
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+        </div>
+    </div>
+
+    <!-- Contador de competencias -->
+    <div class="competency-counter">
+        <div class="counter-item">
+            <span class="counter-number" id="competencyCount">13</span>
+            <span class="counter-label">Competencias Clave</span>
+        </div>
+        <div class="counter-item">
+            <span class="counter-number" id="studentsCount">3500+</span>
+            <span class="counter-label">Estudiantes</span>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Estilos para la nueva sección Hero */
+    :root {
+        --primary: #3A86FF;
+        --secondary: #8338EC;
+        --tertiary: #06D6A0;
+        --accent: #FFD166;
+        --danger: #EF476F;
+        --dark: #0a0a1a;
+        --darker: #050510;
+        --text-primary: #ffffff;
+        --text-secondary: rgba(255, 255, 255, 0.7);
+        --glow-blue: 0 0 15px rgba(58, 134, 255, 0.7);
+        --glow-purple: 0 0 15px rgba(131, 56, 236, 0.7);
+        --glow-green: 0 0 15px rgba(6, 214, 160, 0.7);
+    }
+    
+    .hero-section {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background: linear-gradient(135deg, #050510, #0a0a2a);
+        perspective: 1000px;
+        z-index: 1;
+    }
+    
+    /* Fondo y elementos 3D */
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    
+    .grid-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(rgba(58, 134, 255, 0.03) 1px, transparent 1px),
+                         linear-gradient(90deg, rgba(58, 134, 255, 0.03) 1px, transparent 1px);
+        background-size: 50px 50px;
+        transform: perspective(1000px) rotateX(60deg) translateZ(-100px) scale(3);
+        transform-origin: center center;
+        animation: gridMove 20s linear infinite;
+        z-index: -1;
+    }
+    
+    @keyframes gridMove {
+        0% {
+            transform: perspective(1000px) rotateX(60deg) translateZ(-100px) translateY(0) scale(3);
+        }
+        100% {
+            transform: perspective(1000px) rotateX(60deg) translateZ(-100px) translateY(50px) scale(3);
+        }
+    }
+    
+    .neural-network {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    
+    .nodes-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .node {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background: var(--primary);
+        border-radius: 50%;
+        box-shadow: 0 0 10px var(--primary);
+        opacity: 0.6;
+    }
+    
+    .connection {
+        position: absolute;
+        height: 1px;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        opacity: 0.2;
+        transform-origin: left center;
+        z-index: -1;
+    }
+    
+    .floating-elements {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    
+    .floating-cube, .floating-sphere, .floating-pyramid, .floating-ring {
+        position: absolute;
+        opacity: 0.2;
+        transform-style: preserve-3d;
+    }
+    
+    .floating-cube {
+        top: 20%;
+        left: 15%;
+        width: 80px;
+        height: 80px;
+        background: rgba(58, 134, 255, 0.2);
+        border: 1px solid rgba(58, 134, 255, 0.5);
+        box-shadow: 0 0 20px rgba(58, 134, 255, 0.5);
+        animation: floatCube 15s ease-in-out infinite;
+    }
+    
+    .floating-sphere {
+        top: 70%;
+        left: 80%;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: radial-gradient(circle at 30% 30%, rgba(131, 56, 236, 0.4), rgba(131, 56, 236, 0.1));
+        border: 1px solid rgba(131, 56, 236, 0.5);
+        box-shadow: 0 0 20px rgba(131, 56, 236, 0.5);
+        animation: floatSphere 18s ease-in-out infinite;
+    }
+    
+    .floating-pyramid {
+        top: 65%;
+        left: 10%;
+        width: 120px;
+        height: 120px;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        background: rgba(6, 214, 160, 0.2);
+        border: 1px solid rgba(6, 214, 160, 0.5);
+        box-shadow: 0 0 20px rgba(6, 214, 160, 0.5);
+        animation: floatPyramid 20s ease-in-out infinite;
+    }
+    
+    .floating-ring {
+        top: 30%;
+        left: 75%;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 8px solid rgba(255, 209, 102, 0.3);
+        box-shadow: 0 0 20px rgba(255, 209, 102, 0.5);
+        transform: rotateX(75deg);
+        animation: floatRing 25s linear infinite;
+    }
+    
+    @keyframes floatCube {
+        0%, 100% {
+            transform: translateY(0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        }
+        50% {
+            transform: translateY(-30px) rotateX(180deg) rotateY(180deg) rotateZ(180deg);
+        }
+    }
+    
+    @keyframes floatSphere {
+        0%, 100% {
+            transform: translateY(0) scale(1);
+        }
+        50% {
+            transform: translateY(-40px) scale(1.2);
+        }
+    }
+    
+    @keyframes floatPyramid {
+        0%, 100% {
+            transform: translateY(0) rotateZ(0deg);
+        }
+        50% {
+            transform: translateY(-50px) rotateZ(180deg);
+        }
+    }
+    
+    @keyframes floatRing {
+        0% {
+            transform: rotateX(75deg) rotateY(0deg) rotateZ(0deg);
+        }
+        100% {
+            transform: rotateX(75deg) rotateY(360deg) rotateZ(360deg);
+        }
+    }
+    
+    /* Contenido principal */
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 100px 0;
+    }
+    
+    .hero-title {
+        font-size: 4rem;
+        font-weight: 900;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+        color: var(--text-primary);
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+    
+    .title-line {
+        display: block;
+        transform: translateY(50px);
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards;
+    }
+    
+    .title-line:nth-child(1) {
+        animation-delay: 0.5s;
+    }
+    
+    .title-line:nth-child(2) {
+        animation-delay: 0.8s;
+    }
+    
+    .title-line:nth-child(3) {
+        animation-delay: 1.1s;
+    }
+    
+    .highlight {
+        position: relative;
+        color: var(--primary);
+        text-shadow: var(--glow-blue);
+    }
+    
+    .hero-subtitle {
+        margin-bottom: 2.5rem;
+        transform: translateY(30px);
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards 1.4s;
+    }
+    
+    .typing-container {
+        display: flex;
+        align-items: center;
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+        color: var(--text-primary);
+    }
+    
+    .static-text {
+        margin-right: 0.5rem;
+    }
+    
+    .dynamic-text {
+        color: var(--tertiary);
+        position: relative;
+    }
+    
+    .dynamic-text::after {
+        content: "|";
+        position: absolute;
+        right: -8px;
+        color: var(--tertiary);
+        animation: blink 0.7s infinite;
+    }
+    
+    @keyframes blink {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0;
+        }
+    }
+    
+    .hero-description {
+        font-size: 1.2rem;
+        font-weight: 400;
+        line-height: 1.6;
+        color: var(--text-secondary);
+        max-width: 600px;
+    }
+    
+    .hero-buttons {
+        transform: translateY(30px);
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards 1.7s;
+    }
+    
+    .btn-glow {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        box-shadow: var(--glow-blue);
+        transition: all 0.5s ease;
+    }
+    
+    .btn-glow::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: all 0.5s ease;
+        z-index: -1;
+    }
+    
+    .btn-glow:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(58, 134, 255, 0.4);
+    }
+    
+    .btn-glow:hover::before {
+        left: 100%;
+    }
+    
+    .btn-glow-light {
+        border: 1px solid var(--text-primary);
+        color: var(--text-primary);
+        background: transparent;
+        transition: all 0.5s ease;
+    }
+    
+    .btn-glow-light:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-5px);
+    }
+    
+    /* Objeto 3D del cerebro */
+    .hero-3d-object {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        transform: translateY(30px);
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards 2s;
+    }
+    
+    .brain-hologram {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 300px;
+        height: 300px;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+    }
+    
+    .brain-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        animation: brainRotate 20s linear infinite;
+    }
+    
+    .brain-hemisphere {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 120px;
+        height: 160px;
+        background: rgba(58, 134, 255, 0.1);
+        border: 1px solid rgba(58, 134, 255, 0.5);
+        box-shadow: 0 0 20px rgba(58, 134, 255, 0.5) inset;
+        border-radius: 70% 70% 50% 50% / 60% 60% 40% 40%;
+        transform-style: preserve-3d;
+    }
+    
+    .brain-hemisphere.left {
+        left: 25%;
+        transform: translateY(-50%) rotateY(-20deg);
+    }
+    
+    .brain-hemisphere.right {
+        right: 25%;
+        transform: translateY(-50%) rotateY(20deg);
+    }
+    
+    .brain-connection {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 100px;
+        background: rgba(131, 56, 236, 0.2);
+        border: 1px solid rgba(131, 56, 236, 0.5);
+        box-shadow: 0 0 20px rgba(131, 56, 236, 0.5) inset;
+        border-radius: 30%;
+    }
+    
+    .data-stream {
+        position: absolute;
+        top: 10%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .data-particle {
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        background: var(--tertiary);
+        border-radius: 50%;
+        box-shadow: 0 0 10px var(--tertiary);
+        opacity: 0.8;
+    }
+    
+    .hologram-ring {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid var(--primary);
+        border-radius: 50%;
+        opacity: 0.4;
+    }
+    
+    .hologram-ring:nth-child(1) {
+        width: 350px;
+        height: 350px;
+        animation: ringPulse 3s ease-in-out infinite;
+    }
+    
+    .hologram-ring:nth-child(2) {
+        width: 370px;
+        height: 100px;
+        transform: translate(-50%, -50%) rotateX(80deg);
+        animation: ringRotate 10s linear infinite;
+    }
+    
+    .hologram-ring:nth-child(3) {
+        width: 370px;
+        height: 100px;
+        transform: translate(-50%, -50%) rotateX(80deg) rotateZ(60deg);
+        animation: ringRotate 15s linear infinite reverse;
+    }
+    
+    @keyframes brainRotate {
+        0% {
+            transform: rotateY(0) rotateX(0);
+        }
+        100% {
+            transform: rotateY(360deg) rotateX(10deg);
+        }
+    }
+    
+    @keyframes ringPulse {
+        0%, 100% {
+            opacity: 0.2;
+            transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+            opacity: 0.6;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+    }
+    
+    @keyframes ringRotate {
+        0% {
+            transform: translate(-50%, -50%) rotateX(80deg) rotateZ(0);
+        }
+        100% {
+            transform: translate(-50%, -50%) rotateX(80deg) rotateZ(360deg);
+        }
+    }
+    
+    /* Indicador de scroll */
+    .scroll-indicator {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--text-secondary);
+        opacity: 0;
+        animation: fadeIn 0.8s ease forwards 2.5s;
+    }
+    
+    .mouse {
+        width: 26px;
+        height: 40px;
+        border: 2px solid var(--text-secondary);
+        border-radius: 20px;
+        position: relative;
+        margin-bottom: 10px;
+    }
+    
+    .wheel {
+        width: 6px;
+        height: 6px;
+        background: var(--text-secondary);
+        border-radius: 50%;
+        position: absolute;
+        top: 6px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: mouseWheel 1.5s ease infinite;
+    }
+    
+    @keyframes mouseWheel {
+        0% {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        100% {
+            opacity: 0;
+            transform: translateX(-50%) translateY(15px);
+        }
+    }
+    
+    .chevrons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .chevron {
+        width: 20px;
+        height: 8px;
+        border-bottom: 2px solid var(--text-secondary);
+        border-right: 2px solid var(--text-secondary);
+        transform: rotate(45deg);
+        margin-bottom: -4px;
+        animation: chevronDown 1.5s ease infinite;
+    }
+    
+    .chevron:nth-child(1) {
+        animation-delay: 0s;
+    }
+    
+    .chevron:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    
+    .chevron:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+    
+    @keyframes chevronDown {
+        0%, 100% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+    }
+    
+    /* Contador de competencias */
+    .competency-counter {
+        position: absolute;
+        bottom: 40px;
+        right: 40px;
+        display: flex;
+        gap: 20px;
+        opacity: 0;
+        animation: fadeIn 0.8s ease forwards 2.8s;
+    }
+    
+    .counter-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--text-primary);
+    }
+    
+    .counter-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--tertiary);
+        text-shadow: var(--glow-green);
+    }
+    
+    .counter-label {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+    }
+    
+    /* Animaciones generales */
+    @keyframes fadeInUp {
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+    
+    /* Responsive */
+    @media (max-width: 1199px) {
+        .hero-title {
+            font-size: 3.5rem;
+        }
+        
+        .typing-container {
+            font-size: 1.6rem;
+        }
+    }
+    
+    @media (max-width: 991px) {
+        .hero-title {
+            font-size: 3rem;
+        }
+        
+        .hero-3d-object {
+            height: 350px;
+        }
+        
+        .competency-counter {
+            right: 20px;
+        }
+    }
+    
+    @media (max-width: 767px) {
+        .hero-section {
+            min-height: 90vh;
+        }
+        
+        .hero-content {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+        }
+        
+        .typing-container {
+            font-size: 1.4rem;
+            justify-content: center;
+        }
+        
+        .hero-description {
+            margin: 0 auto;
+        }
+        
+        .hero-3d-object {
+            display: none;
+        }
+        
+        .competency-counter {
+            bottom: 20px;
+            right: 50%;
+            transform: translateX(50%);
+        }
+    }
+    
+    @media (max-width: 479px) {
+        .hero-title {
+            font-size: 2rem;
+        }
+        
+        .typing-container {
+            font-size: 1.2rem;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .scroll-indicator {
+            display: none;
+        }
+        
+        .competency-counter {
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Crear nodos y conexiones para la red neuronal
+        const nodesContainer = document.querySelector('.nodes-container');
+        const nodeCount = 50;
+        const nodes = [];
+        
+        // Crear nodos
+        for (let i = 0; i < nodeCount; i++) {
+            const node = document.createElement('div');
+            node.classList.add('node');
+            
+            // Posición aleatoria
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            
+            node.style.left = `${x}%`;
+            node.style.top = `${y}%`;
+            
+            // Tamaño aleatorio
+            const size = Math.random() * 4 + 2;
+            node.style.width = `${size}px`;
+            node.style.height = `${size}px`;
+            
+            // Color aleatorio
+            const colors = ['var(--primary)', 'var(--secondary)', 'var(--tertiary)'];
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            node.style.backgroundColor = color;
+            node.style.boxShadow = `0 0 10px ${color}`;
+            
+            nodesContainer.appendChild(node);
+            nodes.push({
+                element: node,
+                x: x,
+                y: y
+            });
+            
+            // Animación de pulso
+            node.style.animation = `pulse ${Math.random() * 3 + 2}s ease-in-out infinite`;
+        }
+        
+        // Crear conexiones entre nodos
+        for (let i = 0; i < nodes.length; i++) {
+            for (let j = i + 1; j < nodes.length; j++) {
+                // Conectar solo nodos cercanos
+                const dx = nodes[i].x - nodes[j].x;
+                const dy = nodes[i].y - nodes[j].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < 20) {
+                    const connection = document.createElement('div');
+                    connection.classList.add('connection');
+                    
+                    // Calcular posición y longitud
+                    const x1 = nodes[i].x;
+                    const y1 = nodes[i].y;
+                    const x2 = nodes[j].x;
+                    const y2 = nodes[j].y;
+                    
+                    const length = distance;
+                    const angle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
+                    
+                    connection.style.width = `${length}%`;
+                    connection.style.left = `${x1}%`;
+                    connection.style.top = `${y1}%`;
+                    connection.style.transform = `rotate(${angle}deg)`;
+                    
+                    nodesContainer.appendChild(connection);
+                }
+            }
+        }
+        
+        // Crear partículas de datos para el cerebro
+        const dataStream = document.querySelector('.data-stream');
+        const particleCount = 30;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('data-particle');
+            
+            // Posición aleatoria
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            const z = Math.random() * 100 - 50;
+            
+            particle.style.left = `${x}%`;
+            particle.style.top = `${y}%`;
+            particle.style.transform = `translateZ(${z}px)`;
+            
+            // Animación
+            const duration = Math.random() * 3 + 2;
+            const delay = Math.random() * 2;
+            
+            particle.style.animation = `dataTravel ${duration}s ease-in-out ${delay}s infinite`;
+            
+            dataStream.appendChild(particle);
+        }
+        
+        // Efecto de tipado para texto dinámico
+        const dynamicText = document.getElementById('dynamic-text');
+        const phrases = [
+            "adaptativa",
+            "innovadora",
+            "personalizada",
+            "revolucionaria",
+            "transformadora"
+        ];
+        
+        let currentPhrase = 0;
+        let currentChar = 0;
+        let isTyping = true;
+        
+        function typeEffect() {
+            const phrase = phrases[currentPhrase];
+            
+            if (isTyping) {
+                // Escribiendo
+                dynamicText.textContent = phrase.substring(0, currentChar + 1);
+                currentChar++;
+                
+                if (currentChar === phrase.length) {
+                    isTyping = false;
+                    setTimeout(typeEffect, 2000); // Pausa al final de la frase
+                } else {
+                    setTimeout(typeEffect, 100); // Velocidad de escritura
+                }
+            } else {
+                // Borrando
+                dynamicText.textContent = phrase.substring(0, currentChar);
+                currentChar--;
+                
+                if (currentChar === 0) {
+                    isTyping = true;
+                    currentPhrase = (currentPhrase + 1) % phrases.length; // Siguiente frase
+                    setTimeout(typeEffect, 500); // Pausa antes de escribir la siguiente frase
+                } else {
+                    setTimeout(typeEffect, 50); // Velocidad de borrado
+                }
+            }
+        }
+        
+        // Iniciar efecto de tipado
+        setTimeout(typeEffect, 1000); // Retraso inicial
+        
+        // Animación de contador para estadísticas
+        const competencyCount = document.getElementById('competencyCount');
+        const studentsCount = document.getElementById('studentsCount');
+        
+        // Función para animar contadores
+        function animateCounter(element, target, duration, isText = false) {
+            let startTime = null;
+            const start = 0;
+            
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = Math.min((timestamp - startTime) / duration, 1);
+                
+                if (!isText) {
+                    const value = Math.floor(progress * (target - start) + start);
+                    element.textContent = value;
+                } else {
+                    // Para textos como "3500+"
+                    const numericPart = parseInt(target);
+                    const value = Math.floor(progress * numericPart);
+                    element.textContent = value + "+";
+                }
+                
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            }
+            
+            window.requestAnimationFrame(step);
+        }
+        
+        // Iniciar animaciones de contador después de 3 segundos
+        setTimeout(() => {
+            animateCounter(competencyCount, 13, 2000);
+            animateCounter(studentsCount, 3500, 2000, true);
+        }, 3000);
+        
+        // Paralaje en movimiento del ratón
+        document.addEventListener('mousemove', function(e) {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            
+            // Mover elementos flotantes
+            const floatingElements = document.querySelectorAll('.floating-cube, .floating-sphere, .floating-pyramid, .floating-ring');
+            floatingElements.forEach(element => {
+                const depth = Math.random() * 5 + 2;
+                element.style.transform = `translate(${moveX * depth}px, ${moveY * depth}px)`;
+            });
+            
+            // Mover cerebro holográfico
+            const brainContainer = document.querySelector('.brain-container');
+            if (brainContainer) {
+                brainContainer.style.transform = `rotateY(${moveX * 5}deg) rotateX(${-moveY * 5}deg)`;
+            }
+        });
+    });
+</script>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="section-title">Sobre Nosotros</h2>
+                    <p class="lead">SUBE Academia es una institución líder en formación especializada en Inteligencia Artificial y tecnologías emergentes.</p>
+                    <p>Nuestro enfoque combina la excelencia académica con la aplicación práctica, preparando a los profesionales para enfrentar los desafíos tecnológicos del futuro.</p>
+                    <a href="nosotros.html" class="btn btn-outline-primary">Conocer Más</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="assets/img/about/LogoSUBEACADEMIA.png" alt="Sobre SUBE Academia" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Study Areas -->
+    <section class="study-areas">
+        <div class="container">
+            <h2 class="section-title">Áreas de Estudio</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="assets/img/area-ia-generativa.jpg" class="card-img-top" alt="IA Generativa">
+                        <div class="card-body">
+                            <h3 class="card-title">IA Generativa</h3>
+                            <p class="card-text">Aprende a crear contenido innovador utilizando modelos avanzados como GPT, DALL-E y más.</p>
+                            <a href="cursos.html?area=ia-generativa" class="btn btn-sm btn-primary">Ver Cursos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="assets/img/area-machine-learning.jpg" class="card-img-top" alt="Machine Learning">
+                        <div class="card-body">
+                            <h3 class="card-title">Machine Learning</h3>
+                            <p class="card-text">Domina algoritmos y técnicas para crear sistemas que aprenden y mejoran automáticamente.</p>
+                            <a href="cursos.html?area=machine-learning" class="btn btn-sm btn-primary">Ver Cursos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100">
+                        <img src="assets/img/area-data-science.jpg" class="card-img-top" alt="Data Science">
+                        <div class="card-body">
+                            <h3 class="card-title">Data Science</h3>
+                            <p class="card-text">Desarrolla habilidades para extraer conocimiento y valor de los datos a gran escala.</p>
+                            <a href="cursos.html?area=data-science" class="btn btn-sm btn-primary">Ver Cursos</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Courses -->
+    <section class="featured-courses">
+        <div class="container">
+            <h2 class="section-title">Cursos Destacados</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card card h-100">
+                        <img src="assets/img/curso-1.jpg" class="card-img-top" alt="Fundamentos de IA Generativa">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Bestseller</span>
+                            <h3 class="card-title">Fundamentos de IA Generativa</h3>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span><i class="far fa-clock"></i> 40 horas</span>
+                                <span><i class="fas fa-user-graduate"></i> 1,200+ estudiantes</span>
+                            </div>
+                            <p class="card-text">Introducción completa al mundo de la IA generativa, sus aplicaciones y tecnologías fundamentales.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="curso.html?id=1" class="btn btn-primary w-100">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card card h-100">
+                        <img src="assets/img/curso-2.jpg" class="card-img-top" alt="Machine Learning Avanzado">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Nuevo</span>
+                            <h3 class="card-title">Machine Learning Avanzado</h3>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span><i class="far fa-clock"></i> 60 horas</span>
+                                <span><i class="fas fa-user-graduate"></i> 850+ estudiantes</span>
+                            </div>
+                            <p class="card-text">Profundiza en algoritmos complejos y técnicas avanzadas para crear modelos predictivos potentes.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="curso.html?id=2" class="btn btn-primary w-100">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="course-card card h-100">
+                        <img src="assets/img/curso-3.jpg" class="card-img-top" alt="Data Science Aplicado">
+                        <div class="card-body">
+                            <span class="badge bg-warning mb-2">Popular</span>
+                            <h3 class="card-title">Data Science Aplicado</h3>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span><i class="far fa-clock"></i> 50 horas</span>
+                                <span><i class="fas fa-user-graduate"></i> 950+ estudiantes</span>
+                            </div>
+                            <p class="card-text">Aprende a aplicar técnicas de análisis de datos para resolver problemas reales del mundo empresarial.</p>
+                        </div>
+                        <div class="card-footer">
+                            <a href="curso.html?id=3" class="btn btn-primary w-100">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="cursos.html" class="btn btn-outline-primary">Ver Todos los Cursos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="stat-item">
+                        <i class="fas fa-user-graduate fa-3x mb-3"></i>
+                        <h2 class="counter">3,500+</h2>
+                        <p>Estudiantes</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6 mb-4 mb-md-0">
+                    <div class="stat-item">
+                        <i class="fas fa-laptop-code fa-3x mb-3"></i>
+                        <h2 class="counter">25+</h2>
+                        <p>Cursos</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <i class="fas fa-certificate fa-3x mb-3"></i>
+                        <h2 class="counter">1,200+</h2>
+                        <p>Certificaciones</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-item">
+                        <i class="fas fa-award fa-3x mb-3"></i>
+                        <h2 class="counter">98%</h2>
+                        <p>Satisfacción</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Lo Que Dicen Nuestros Estudiantes</h2>
+            <div class="owl-carousel testimonial-carousel">
+                <div class="testimonial-item">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="assets/img/testimonials/testimonial-1.jpg" alt="Testimonial" class="rounded-circle me-3" width="60">
+                        <div>
+                            <h5 class="mb-0">María González</h5>
+                            <p class="text-muted mb-0">Data Scientist</p>
+                        </div>
+                    </div>
+                    <p class="mb-0">"Los cursos de SUBE Academia transformaron mi carrera. La combinación de teoría y práctica me permitió aplicar lo aprendido inmediatamente en mi trabajo."</p>
+                    <div class="text-warning mt-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="assets/img/testimonials/testimonial-2.jpg" alt="Testimonial" class="rounded-circle me-3" width="60">
+                        <div>
+                            <h5 class="mb-0">Carlos Rodríguez</h5>
+                            <p class="text-muted mb-0">Ingeniero de ML</p>
+                        </div>
+                    </div>
+                    <p class="mb-0">"El programa de Machine Learning Avanzado es excepcional. Los instructores son expertos en la industria y el contenido está actualizado con las últimas tendencias."</p>
+                    <div class="text-warning mt-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-item">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="assets/img/testimonials/testimonial-3.jpg" alt="Testimonial" class="rounded-circle me-3" width="60">
+                        <div>
+                            <h5 class="mb-0">Ana Martínez</h5>
+                            <p class="text-muted mb-0">Desarrolladora IA</p>
+                        </div>
+                    </div>
+                    <p class="mb-0">"La calidad de la enseñanza y el soporte continuo hacen que SUBE Academia destaque. Logré desarrollar proyectos complejos de IA generativa gracias a su formación."</p>
+                    <div class="text-warning mt-2">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Blog Posts -->
+    <section class="recent-posts">
+        <div class="container">
+            <h2 class="section-title">Últimas Publicaciones del Blog</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
+                        <img src="assets/img/blog/post-1.jpg" class="card-img-top" alt="Tendencias IA 2023">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="text-muted me-3"><i class="far fa-calendar-alt me-1"></i> 15 Oct 2023</span>
+                                <span class="badge bg-primary">Tendencias</span>
+                            </div>
+                            <h3 class="card-title h5">Tendencias en IA que Dominarán el 2023</h3>
+                            <p class="card-text">Descubre las tecnologías emergentes en inteligencia artificial que están transformando industrias este año.</p>
+                            <a href="blog/tendencias-ia-2023.html" class="btn btn-link p-0">Leer más <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
+                        <img src="assets/img/blog/post-2.jpg" class="card-img-top" alt="Ética en IA">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="text-muted me-3"><i class="far fa-calendar-alt me-1"></i> 28 Sep 2023</span>
+                                <span class="badge bg-info">Ética</span>
+                            </div>
+                            <h3 class="card-title h5">Ética y Responsabilidad en el Desarrollo de IA</h3>
+                            <p class="card-text">Analizamos los desafíos éticos que enfrentan los desarrolladores y empresas en la implementación de sistemas de IA.</p>
+                            <a href="blog/etica-responsabilidad-ia.html" class="btn btn-link p-0">Leer más <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card h-100">
+                        <img src="assets/img/blog/post-3.jpg" class="card-img-top" alt="Carreras en IA">
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="text-muted me-3"><i class="far fa-calendar-alt me-1"></i> 10 Sep 2023</span>
+                                <span class="badge bg-success">Carreras</span>
+                            </div>
+                            <h3 class="card-title h5">5 Carreras Prometedoras en el Campo de la IA</h3>
+                            <p class="card-text">Explora las oportunidades laborales más demandadas en el ámbito de la inteligencia artificial y cómo prepararte.</p>
+                            <a href="blog/carreras-prometedoras-ia.html" class="btn btn-link p-0">Leer más <i class="fas fa-arrow-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <a href="blog.html" class="btn btn-outline-primary">Ver Todas las Publicaciones</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 text-center">
+                    <h2>Suscríbete a Nuestro Newsletter</h2>
+                    <p>Recibe actualizaciones sobre nuevos cursos, eventos y las últimas tendencias en IA directamente en tu bandeja de entrada.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Tu correo electrónico" required>
+                            <button class="btn btn-primary" type="submit">Suscribirse</button>
+                        </div>
+                        <div class="form-check text-start">
+                            <input class="form-check-input" type="checkbox" id="privacyCheck" required>
+                            <label class="form-check-label small" for="privacyCheck">
+                                Acepto recibir comunicaciones y la <a href="privacidad.html" class="text-white">política de privacidad</a>
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <!-- About Column -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="footer-heading">SUBE Academia</h5>
+                    <p>Formación especializada en Inteligencia Artificial, Machine Learning y Data Science para profesionales.</p>
+                    <div class="social-links mt-3">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <!-- Links Column 1 -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                    <h5 class="footer-heading">Enlaces</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="cursos.html">Cursos</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <!-- Links Column 2 -->
+                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                    <h5 class="footer-heading">Cursos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="cursos.html?area=ia-generativa">IA Generativa</a></li>
+                        <li><a href="cursos.html?area=machine-learning">Machine Learning</a></li>
+                        <li><a href="cursos.html?area=data-science">Data Science</a></li>
+                        <li><a href="cursos.html?area=deep-learning">Deep Learning</a></li>
+                        <li><a href="cursos.html?area=nlp">Procesamiento de Lenguaje Natural</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Column -->
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="footer-heading">Contacto</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i>Santiago, Chile</li>
+                        <li class="mb-2"><i class="fas fa-phone-alt me-2"></i>+123 456 789</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i>info@subeacademia.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container text-center">
+            <small>© 2023 SUBE Academia. Todos los derechos reservados.</small>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    <script src="assets/js/firebase-config.js"></script>
+    
+    <script>
+        // Preloader
+        window.addEventListener('load', function() {
+            // Hide preloader regardless of Firebase initialization status
+            setTimeout(function() {
+                const preloader = document.getElementById('preloader');
+                if (preloader) {
+                    preloader.classList.add('loaded');
+                }
+            }, 1000);
+            
+            // Log Firebase initialization status separately
+            try {
+                if (typeof firebase !== 'undefined' && firebase.app()) {
+                    console.log('Firebase initialized successfully');
+                } else {
+                    console.error('Firebase not initialized properly');
+                }
+            } catch (error) {
+                console.error('Error checking Firebase initialization:', error);
+            }
+        });
+        
+        // Navbar scroll
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                document.getElementById('mainNav').classList.add('scrolled');
+            } else {
+                document.getElementById('mainNav').classList.remove('scrolled');
+            }
+            
+            // Back to top button
+            if (window.scrollY > 300) {
+                document.getElementById('backToTop').classList.add('visible');
+            } else {
+                document.getElementById('backToTop').classList.remove('visible');
+            }
+        });
+        
+        // Create particles
+        function createParticles() {
+            const container = document.getElementById('particles-container');
+            const colors = ['#3A86FF', '#8338EC', '#06D6A0'];
+            
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random properties
+                const size = Math.random() * 10 + 5;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const left = Math.random() * 100;
+                const delay = Math.random() * 60;
+                
+                // Apply styles
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.backgroundColor = color;
+                particle.style.left = `${left}%`;
+                particle.style.animationDelay = `${delay}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Owl Carousel initialization
+        $(document).ready(function() {
+            $(".testimonial-carousel").owlCarousel({
+                loop: true,
+                margin: 20,
+                nav: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    768: {
+                        items: 2
+                    },
+                    992: {
+                        items: 3
+                    }
+                },
+                navText: [
+                    "<i class='fas fa-chevron-left'></i>",
+                    "<i class='fas fa-chevron-right'></i>"
+                ]
+            });
+        });
+        
+        // Back to top button click
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // 3D card effect for study areas
+        const cards = document.querySelectorAll('.study-areas .card, .course-card, .recent-posts .card');
+        cards.forEach(card => {
+            card.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const rotateX = (y - centerY) / 15;
+                const rotateY = (centerX - x) / 15;
+                
+                this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+            });
+        });
+        
+        // Initialize Firebase and handle any initialization errors
+        try {
+            const db = firebase.firestore();
+            
+            // Rest of your Firestore code
+            async function getBlogPosts() {
+                try {
+                    const querySnapshot = await db.collection('blog-posts').get();
+                    // Process the blog posts
+                } catch (error) {
+                    console.error('Error getting blog posts:', error);
+                }
+            }
+        } catch (error) {
+            console.error('Error initializing Firebase:', error);
+        }
+        
+        // Initialize particles
+        createParticles();
+    </script>
+</body>
+</html>

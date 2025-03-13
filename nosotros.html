@@ -1,0 +1,2722 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros - SUBE Academia</title>
+    <!-- Meta tags para SEO -->
+    <meta name="description" content="Conoce a SUBE Academia: Nuestra misión, visión y equipo de expertos en Inteligencia Artificial, Machine Learning y Data Science.">
+    <meta name="keywords" content="SUBE Academia, equipo IA, expertos inteligencia artificial, misión, visión, valores">
+    <meta name="author" content="SUBE Academia">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.subeacademia.cl/nosotros.html">
+    <meta property="og:title" content="Nosotros - SUBE Academia">
+    <meta property="og:description" content="Conoce a SUBE Academia: Nuestra misión, visión y equipo de expertos en Inteligencia Artificial, Machine Learning y Data Science.">
+    <meta property="og:image" content="assets/img/og-nosotros.jpg">
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.subeacademia.cl/nosotros.html">
+    <meta property="twitter:title" content="Nosotros - SUBE Academia">
+    <meta property="twitter:description" content="Conoce a SUBE Academia: Nuestra misión, visión y equipo de expertos en Inteligencia Artificial, Machine Learning y Data Science.">
+    <meta property="twitter:image" content="assets/img/og-nosotros.jpg">
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.subeacademia.cl/nosotros.html">
+
+    <style>
+        :root {
+            --primary: #3A86FF;
+            --secondary: #8338EC;
+            --tertiary: #06D6A0;
+            --accent: #FFD166;
+            --danger: #EF476F;
+            --dark: #0a0a1a;
+            --darker: #050510;
+            --light-blue: rgba(58, 134, 255, 0.2);
+            --light-purple: rgba(131, 56, 236, 0.2);
+            --light-green: rgba(6, 214, 160, 0.2);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --card-highlight: rgba(255, 255, 255, 0.05);
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-tertiary: rgba(255, 255, 255, 0.5);
+            --glow-blue: 0 0 15px rgba(58, 134, 255, 0.7);
+            --glow-purple: 0 0 15px rgba(131, 56, 236, 0.7);
+            --glow-green: 0 0 15px rgba(6, 214, 160, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            background-color: var(--dark);
+            color: var(--text-primary);
+            position: relative;
+            perspective: 1000px;
+        }
+
+        /* Particles */
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            opacity: 0.4;
+            pointer-events: none;
+            animation: float 60s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            5% {
+                opacity: 0.4;
+            }
+            95% {
+                opacity: 0.4;
+            }
+            100% {
+                transform: translateY(-20vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Grid Background */
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(58, 134, 255, 0.03) 1px, transparent 1px), 
+                            linear-gradient(90deg, rgba(58, 134, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            transform-style: preserve-3d;
+            transform: rotateX(75deg) translateY(-100px) translateZ(-100px);
+            perspective: 1000px;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .btn {
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
+            color: var(--text-primary);
+            box-shadow: var(--glow-blue);
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary), var(--tertiary));
+            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            z-index: -1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--glow-purple);
+        }
+
+        .btn-primary:hover::before {
+            left: 0;
+        }
+
+        .btn-outline-primary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline-primary:hover {
+            background: var(--primary);
+            color: var(--text-primary);
+            box-shadow: var(--glow-blue);
+            transform: translateY(-5px);
+        }
+
+        .btn-outline-light {
+            background: transparent;
+            border: 1px solid var(--text-primary);
+            color: var(--text-primary);
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            position: relative;
+            text-align: center;
+            color: var(--text-primary);
+            text-shadow: var(--glow-blue);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .highlight-text {
+            color: var(--tertiary);
+            text-shadow: var(--glow-green);
+        }
+
+        /* Top Bar */
+        .topbar {
+            background: rgba(5, 5, 20, 0.95) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: rgba(10, 10, 26, 0.8) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--card-border);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding-top: 5px;
+            padding-bottom: 5px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-light .navbar-nav .nav-link {
+            color: var(--text-primary);
+            font-weight: 500;
+            padding: 10px 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .navbar-light .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover,
+        .navbar-light .navbar-nav .nav-link.active {
+            color: var(--primary);
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover::after,
+        .navbar-light .navbar-nav .nav-link.active::after {
+            width: 80%;
+        }
+
+        .navbar-light .navbar-toggler {
+            border-color: var(--card-border);
+            background-color: var(--card-bg);
+        }
+
+        /* Hero Section */
+        .page-hero {
+            position: relative;
+            padding: 120px 0 100px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, var(--light-blue), transparent 70%);
+            z-index: 0;
+        }
+
+        .page-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, var(--light-purple), transparent 70%);
+            z-index: 0;
+        }
+
+        .page-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            text-shadow: var(--glow-blue);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        .hero-description {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards 0.3s;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards 0.6s;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--tertiary);
+            text-shadow: var(--glow-green);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .hero-image-container {
+            position: relative;
+            height: 100%;
+            transform-style: preserve-3d;
+            opacity: 0;
+            transform: translateX(30px);
+            animation: fadeInRight 0.8s forwards 0.9s;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
+            transition: all 0.5s ease;
+            border: 1px solid var(--card-border);
+        }
+
+        .hero-image:hover {
+            transform: perspective(1000px) rotateY(0) rotateX(0);
+        }
+
+        .hero-glow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            opacity: 0.1;
+            filter: blur(20px);
+            z-index: -1;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .shape {
+            position: absolute;
+            opacity: 0.2;
+            transform-style: preserve-3d;
+            animation: float 15s ease-in-out infinite alternate;
+        }
+
+        .shape-1 {
+            top: 20%;
+            left: 10%;
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+
+        .shape-2 {
+            top: 60%;
+            left: 5%;
+            width: 120px;
+            height: 120px;
+            border: 2px solid var(--secondary);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+
+        .shape-3 {
+            top: 30%;
+            right: 10%;
+            width: 100px;
+            height: 100px;
+            background: var(--tertiary);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(58, 134, 255, 0.05), transparent);
+        }
+
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, var(--light-blue), transparent 70%);
+            z-index: 0;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: all 0.5s ease;
+            border: 1px solid var(--card-border);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: all 0.5s ease;
+        }
+
+        .about-image:hover {
+            transform: translateY(-10px);
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(58, 134, 255, 0.2), rgba(131, 56, 236, 0.2));
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -30%;
+            width: 160%;
+            height: 160%;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            opacity: 0.1;
+            z-index: 0;
+            animation: rotateGlow 10s linear infinite;
+        }
+
+        @keyframes rotateGlow {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .about-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .about-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            margin-top: 15px;
+            border-radius: 3px;
+        }
+
+        .about-lead {
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: var(--tertiary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(131, 56, 236, 0.05), transparent);
+        }
+
+        .timeline-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 50%, var(--light-purple), transparent 70%);
+            z-index: 0;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            z-index: 1;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary), var(--tertiary));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+            perspective: 1000px;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background: var(--primary);
+            border: 3px solid var(--tertiary);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: var(--glow-blue);
+        }
+
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background: var(--card-bg);
+            position: relative;
+            border-radius: 10px;
+            border: 1px solid var(--card-border);
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .timeline-date {
+            color: var(--tertiary);
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: var(--glow-green);
+        }
+
+        .timeline-title {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .timeline-text {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Mission Vision Values */
+        .mission-vision {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(6, 214, 160, 0.05), transparent);
+        }
+
+        .mission-vision::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 70%, var(--light-green), transparent 70%);
+            z-index: 0;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            transform-style: preserve-3d;
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            overflow: hidden;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-15px) rotateX(5deg) rotateY(-5deg);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-body {
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .icon-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(58, 134, 255, 0.1), rgba(131, 56, 236, 0.1));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            transition: all 0.5s ease;
+            box-shadow: 0 0 20px rgba(58, 134, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card:hover .icon-box {
+            transform: translateZ(30px) scale(1.1);
+            box-shadow: 0 0 30px rgba(58, 134, 255, 0.5);
+        }
+
+        .icon-box i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            text-shadow: var(--glow-blue);
+            transition: all 0.5s ease;
+        }
+
+        .card:hover .icon-box i {
+            transform: scale(1.2);
+        }
+
+        .card-title {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            transition: all 0.5s ease;
+        }
+
+        .card:hover .card-title {
+            color: var(--primary);
+            transform: translateZ(20px);
+        }
+
+        .card-text {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+            transition: all 0.5s ease;
+        }
+
+        .card:hover .card-text {
+            transform: translateZ(10px);
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(58, 134, 255, 0.05), rgba(131, 56, 236, 0.05));
+        }
+
+        .team-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, var(--light-blue), transparent 70%);
+            z-index: 0;
+        }
+
+        .team-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-card:hover {
+            transform: translateY(-15px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .team-img-container {
+            position: relative;
+            padding-top: 100%;
+            overflow: hidden;
+        }
+
+        .team-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.5s ease;
+        }
+
+        .team-card:hover .team-img {
+            transform: scale(1.05);
+        }
+
+        .team-img-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, var(--darker), transparent);
+            opacity: 0.7;
+        }
+
+        .team-content {
+            padding: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .team-name {
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            text-shadow: var(--glow-blue);
+        }
+
+        .team-position {
+            color: var(--tertiary);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .team-bio {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .team-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: var(--glow-blue);
+        }
+
+        /* Achievements Section */
+        .achievements-section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(131, 56, 236, 0.05), rgba(6, 214, 160, 0.05));
+        }
+
+        .achievements-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 70%, var(--light-purple), transparent 70%);
+            z-index: 0;
+        }
+
+        .achievement-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .achievement-item:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            border-color: var(--secondary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .achievement-icon {
+            color: var(--secondary);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: var(--glow-purple);
+            transition: all 0.5s ease;
+        }
+
+        .achievement-item:hover .achievement-icon {
+            transform: translateZ(30px) scale(1.2);
+        }
+
+        .achievement-title {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: all 0.5s ease;
+        }
+
+        .achievement-item:hover .achievement-title {
+            color: var(--secondary);
+            transform: translateZ(20px);
+        }
+
+        .achievement-text {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+            transition: all 0.5s ease;
+        }
+
+        .achievement-item:hover .achievement-text {
+            transform: translateZ(10px);
+        }
+
+        /* Partnerships Section */
+        .partnerships-section {
+            padding: 100px 0;
+            position: relative;
+            background: linear-gradient(135deg, rgba(6, 214, 160, 0.05), rgba(58, 134, 255, 0.05));
+        }
+
+        .partnerships-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, var(--light-green), transparent 70%);
+            z-index: 0;
+        }
+
+        .partners-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .partner-item {
+            width: 180px;
+            height: 100px;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            transition: all 0.5s ease;
+            filter: grayscale(100%) brightness(0.8);
+            opacity: 0.7;
+            transform-style: preserve-3d;
+        }
+
+        .partner-item:hover {
+            transform: translateY(-10px) scale(1.05);
+            filter: grayscale(0%) brightness(1);
+            opacity: 1;
+            border-color: var(--tertiary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .partner-logo {
+            max-width: 100%;
+            max-height: 70px;
+            transition: all 0.5s ease;
+        }
+
+        .partner-item:hover .partner-logo {
+            transform: translateZ(20px);
+        }
+
+        /* Methodology Section */
+        .methodology-section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(58, 134, 255, 0.05), rgba(131, 56, 236, 0.05));
+        }
+
+        .methodology-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, var(--light-blue), transparent 70%);
+            z-index: 0;
+        }
+
+        .methodology-image {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+            border: 1px solid var(--card-border);
+        }
+
+        .methodology-image img {
+            width: 100%;
+            height: auto;
+            transition: all 0.5s ease;
+        }
+
+        .methodology-image:hover {
+            transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
+        }
+
+        .methodology-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(58, 134, 255, 0.2), rgba(131, 56, 236, 0.2));
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        .methodology-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .methodology-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .methodology-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            margin-top: 15px;
+            border-radius: 3px;
+        }
+
+        .methodology-subtitle {
+            color: var(--tertiary);
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            text-shadow: var(--glow-green);
+        }
+
+        .methodology-text {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .methodology-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .methodology-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            flex-shrink: 0;
+            box-shadow: var(--glow-blue);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .methodology-feature:hover .feature-icon {
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        .feature-content {
+            flex: 1;
+        }
+
+        .feature-title {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .feature-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(131, 56, 236, 0.05), rgba(6, 214, 160, 0.05));
+        }
+
+        .testimonials-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 50%, var(--light-purple), transparent 70%);
+            z-index: 0;
+        }
+
+        .testimonial-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 10px;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transition: all 0.5s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .testimonial-item:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(-5deg);
+            border-color: var(--secondary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .testimonial-item::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            color: var(--card-border);
+            font-size: 3rem;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+            padding-bottom: 2rem;
+        }
+
+        .testimonial-text {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            transition: all 0.5s ease;
+        }
+
+        .testimonial-item:hover .testimonial-text {
+            transform: translateZ(20px);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--secondary);
+            box-shadow: var(--glow-purple);
+            transition: all 0.5s ease;
+        }
+
+        .testimonial-item:hover .author-img {
+            transform: translateZ(30px) scale(1.1);
+        }
+
+        .author-info {
+            flex: 1;
+        }
+
+        .author-name {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            font-size: 1.1rem;
+        }
+
+        .author-title {
+            color: var(--tertiary);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-rating {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Certifications Section */
+        .certifications-section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(6, 214, 160, 0.05), rgba(58, 134, 255, 0.05));
+        }
+
+        .certifications-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 70%, var(--light-green), transparent 70%);
+            z-index: 0;
+        }
+
+        .certification-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .certification-item:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            border-color: var(--tertiary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .certification-icon {
+            color: var(--tertiary);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: var(--glow-green);
+            transition: all 0.5s ease;
+        }
+
+        .certification-item:hover .certification-icon {
+            transform: translateZ(30px) scale(1.2);
+        }
+
+        .certification-title {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            transition: all 0.5s ease;
+        }
+
+        .certification-item:hover .certification-title {
+            color: var(--tertiary);
+            transform: translateZ(20px);
+        }
+
+        .certification-text {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+            transition: all 0.5s ease;
+        }
+
+        .certification-item:hover .certification-text {
+            transform: translateZ(10px);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+            background-size: 100px 100px;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            color: var(--text-primary);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-text {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-cta-primary {
+            background: var(--text-primary);
+            color: var(--primary);
+            border: none;
+            font-weight: 600;
+            padding: 12px 30px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cta-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            color: var(--primary);
+        }
+
+        .btn-cta-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--text-primary);
+            font-weight: 600;
+            padding: 10px 28px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-cta-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            color: var(--text-primary);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--darker);
+            padding: 80px 0 40px;
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            opacity: 0.5;
+        }
+
+        .footer-logo {
+            margin-bottom: 1.5rem;
+            height: 40px;
+            width: auto;
+        }
+
+        .footer-about {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-5px);
+            box-shadow: var(--glow-blue);
+        }
+
+        .footer-heading {
+            color: var(--text-primary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .contact-icon {
+            width: 20px;
+            margin-right: 10px;
+            font-size: 1rem;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .contact-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .newsletter-form .form-control {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .newsletter-form .form-control:focus {
+            box-shadow: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .newsletter-form .btn {
+            background: var(--primary);
+            border: none;
+            color: var(--text-primary);
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: var(--glow-purple);
+        }
+
+        .copyright {
+            background: var(--darker);
+            padding: 20px 0;
+            position: relative;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .copyright-text {
+            color: var(--text-tertiary);
+            font-size: 0.9rem;
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0);
+            }
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+            100% {
+                transform: translateY(0) rotate(0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1199px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-description {
+                font-size: 1.2rem;
+            }
+            
+            .hero-stats {
+                gap: 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-description {
+                font-size: 1.1rem;
+            }
+            
+            .hero-image-container {
+                margin-top: 3rem;
+            }
+            
+            .page-hero {
+                padding: 80px 0 60px;
+                text-align: center;
+            }
+            
+            .hero-stats {
+                justify-content: center;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .about-section, 
+            .timeline-section, 
+            .mission-vision, 
+            .team-section, 
+            .achievements-section, 
+            .partnerships-section, 
+            .methodology-section, 
+            .testimonials-section, 
+            .certifications-section {
+                padding: 70px 0;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                left: 22px;
+            }
+            
+            .methodology-image {
+                margin-bottom: 3rem;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .about-section, 
+            .timeline-section, 
+            .mission-vision, 
+            .team-section, 
+            .achievements-section, 
+            .partnerships-section, 
+            .methodology-section, 
+            .testimonials-section, 
+            .certifications-section {
+                padding: 60px 0;
+            }
+            
+            .about-image {
+                margin-bottom: 2rem;
+            }
+            
+            .about-title, 
+            .methodology-title {
+                font-size: 2rem;
+            }
+            
+            .about-lead, 
+            .methodology-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+            
+            .cta-text {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .partner-item {
+                width: 140px;
+                height: 80px;
+            }
+            
+            .partner-logo {
+                max-height: 50px;
+            }
+            
+            .footer {
+                padding: 60px 0 30px;
+            }
+            
+            .footer-col {
+                margin-bottom: 2rem;
+            }
+        }
+        
+        @media (max-width: 575px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .about-title, 
+            .methodology-title {
+                font-size: 1.8rem;
+            }
+            
+            .cta-title {
+                font-size: 1.8rem;
+            }
+            
+            .team-card {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles -->
+    <div class="particles-container" id="particles-container"></div>
+    <div class="grid-bg"></div>
+
+    <!-- Top Bar -->
+    <div class="topbar py-2">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="contact-info d-flex align-items-center">
+                        <a href="mailto:info@subeacademia.com" class="me-3 text-white text-decoration-none">
+                            <i class="fas fa-envelope me-1"></i> info@subeacademia.com
+                        </a>
+                        <a href="tel:+123456789" class="text-white text-decoration-none">
+                            <i class="fas fa-phone-alt me-1"></i> +123 456 789
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="ave.html" class="btn btn-sm btn-outline-light">Acceso Aula Virtual Evolutiva (AVE)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/img/logo.png" alt="SUBE Academia" height="50">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="nosotros.html" aria-current="page">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cursos.html">Cursos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="competencias.html">Competencias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1 class="hero-title">Innovando en Educación para la Era Digital</h1>
+                    <p class="hero-description">SUBE Academia es una institución líder en formación especializada en Inteligencia Artificial y tecnologías emergentes, preparando profesionales para los desafíos del futuro.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">5,000+</div>
+                            <div class="stat-label">Estudiantes</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">25+</div>
+                            <div class="stat-label">Programas</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">97%</div>
+                            <div class="stat-label">Satisfacción</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="hero-image-container">
+                        <img src="assets/img/about-main.jpg" alt="SUBE Academia" class="hero-image">
+                        <div class="hero-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="historia">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <div class="about-image">
+                        <img src="assets/img/about-history.jpg" alt="Nuestra Historia">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="about-content">
+                        <h2 class="about-title">Nuestra Historia</h2>
+                        <p class="about-lead">Desde 2020, transformando la educación tecnológica en Latinoamérica</p>
+                        <p class="about-text">SUBE Academia nació con una visión clara: democratizar el acceso al conocimiento en Inteligencia Artificial. Fundada por un grupo de expertos en tecnología y educación, nuestra academia surgió como respuesta a la creciente demanda de profesionales capacitados en el campo de la IA y tecnologías emergentes en Latinoamérica.</p>
+                        <p class="about-text">Comenzamos con tan solo 3 programas formativos y hoy contamos con más de 25 cursos especializados, adaptados a las necesidades cambiantes del mercado laboral y las últimas tendencias tecnológicas.</p>
+                        <p class="about-text">Desde entonces, hemos formado a más de 5,000 estudiantes de diversos países, contribuyendo al desarrollo tecnológico de la región y al crecimiento profesional de cada uno de nuestros alumnos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section" id="trayectoria">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Nuestra Trayectoria</h2>
+            <p class="section-subtitle" data-aos="fade-up">Un viaje de crecimiento e innovación constante</p>
+            
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020</div>
+                        <h3 class="timeline-title">Fundación</h3>
+                        <p class="timeline-text">SUBE Academia inicia operaciones con 3 programas formativos en IA y Machine Learning básico. Formamos a nuestros primeros 150 estudiantes.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2021</div>
+                        <h3 class="timeline-title">Expansión Regional</h3>
+                        <p class="timeline-text">Ampliamos nuestra oferta a 10 programas y comenzamos a recibir estudiantes de toda Latinoamérica. Alcanzamos los 1,000 graduados.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022</div>
+                        <h3 class="timeline-title">Lanzamiento de AVE</h3>
+                        <p class="timeline-text">Desarrollamos e implementamos nuestra plataforma de Aula Virtual Evolutiva (AVE), con tecnología adaptativa para personalizar la experiencia de aprendizaje.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023</div>
+                        <h3 class="timeline-title">Alianzas Estratégicas</h3>
+                        <p class="timeline-text">Establecemos colaboraciones con empresas líderes del sector tecnológico y universidades de prestigio, potenciando la empleabilidad de nuestros graduados.</p>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <div class="timeline-date">Hoy</div>
+                        <h3 class="timeline-title">Referentes en IA</h3>
+                        <p class="timeline-text">Con más de 5,000 estudiantes formados, nos consolidamos como institución líder en educación en Inteligencia Artificial y tecnologías emergentes en Latinoamérica.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Vision Values -->
+    <section class="mission-vision" id="mision-vision">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Misión, Visión y Valores</h2>
+            <p class="section-subtitle" data-aos="fade-up">Los pilares que guían nuestro trabajo diario</p>
+            
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <div class="icon-box">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3 class="card-title">Misión</h3>
+                            <p class="card-text">Formar profesionales altamente capacitados en Inteligencia Artificial y tecnologías emergentes, a través de una educación de calidad, accesible y orientada a la aplicación práctica en el mundo real.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <div class="icon-box">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3 class="card-title">Visión</h3>
+                            <p class="card-text">Ser reconocidos como la institución líder en formación especializada en IA en Latinoamérica, creando una comunidad global de profesionales que impulsen la transformación digital en sus organizaciones y sociedades.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100">
+                        <div class="card-body text-center">
+                            <div class="icon-box">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <h3 class="card-title">Valores</h3>
+                            <p class="card-text">Excelencia académica, innovación constante, ética en la aplicación de la tecnología, colaboración y compromiso con el desarrollo sostenible a través de soluciones tecnológicas responsables.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section" id="equipo">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Nuestro Equipo</h2>
+            <p class="section-subtitle" data-aos="fade-up">Expertos apasionados por la tecnología y la educación</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up">
+                    <div class="team-card">
+                        <div class="team-img-container">
+                            <img src="assets/img/team-1.jpg" alt="Dr. Alejandro Méndez" class="team-img">
+                            <div class="team-img-overlay"></div>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="team-name">Dr. Alejandro Méndez</h3>
+                            <p class="team-position">Director Académico</p>
+                            <p class="team-bio">PhD en Ciencias de la Computación con especialización en Machine Learning. 15+ años de experiencia en investigación y desarrollo de IA.</p>
+                            <div class="team-social">
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-card">
+                        <div class="team-img-container">
+                            <img src="assets/img/team-2.jpg" alt="Dra. Carla Rodríguez" class="team-img">
+                            <div class="team-img-overlay"></div>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="team-name">Dra. Carla Rodríguez</h3>
+                            <p class="team-position">Directora de Innovación</p>
+                            <p class="team-bio">Especialista en IA Generativa y Procesamiento de Lenguaje Natural. Ex investigadora en OpenAI y profesora universitaria.</p>
+                            <div class="team-social">
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-card">
+                        <div class="team-img-container">
+                            <img src="assets/img/team-3.jpg" alt="Ing. Martín Torres" class="team-img">
+                            <div class="team-img-overlay"></div>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="team-name">Ing. Martín Torres</h3>
+                            <p class="team-position">Director de Tecnología</p>
+                            <p class="team-bio">Ingeniero de Software con amplia experiencia en desarrollo de plataformas educativas y sistemas de IA aplicada.</p>
+                            <div class="team-social">
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-card">
+                        <div class="team-img-container">
+                            <img src="assets/img/team-4.jpg" alt="Mg. Laura Sánchez" class="team-img">
+                            <div class="team-img-overlay"></div>
+                        </div>
+                        <div class="team-content">
+                            <h3 class="team-name">Mg. Laura Sánchez</h3>
+                            <p class="team-position">Directora de Experiencia Educativa</p>
+                            <p class="team-bio">Magíster en Tecnología Educativa. Especialista en diseño de experiencias de aprendizaje innovadoras y metodologías activas.</p>
+                            <div class="team-social">
+                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fas fa-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="achievements-section" id="logros">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Nuestros Logros</h2>
+            <p class="section-subtitle" data-aos="fade-up">Hitos que marcan la diferencia en nuestra trayectoria</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3 class="achievement-title">Premio a la Innovación Educativa 2022</h3>
+                        <p class="achievement-text">Reconocimiento otorgado por la Asociación Latinoamericana de Tecnología Educativa por nuestro sistema de aprendizaje adaptativo.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="achievement-title">5,000+ Estudiantes Formados</h3>
+                        <p class="achievement-text">Más de cinco mil profesionales han completado nuestros programas con una tasa de empleabilidad del 87% en los primeros 6 meses.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-globe-americas"></i>
+                        </div>
+                        <h3 class="achievement-title">Presencia en 12 Países</h3>
+                        <p class="achievement-text">Nuestra comunidad educativa se extiende por toda Latinoamérica, con estudiantes de México a Argentina, enriqueciendo la diversidad de experiencias.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3 class="achievement-title">Más de 50 Alianzas Empresariales</h3>
+                        <p class="achievement-text">Colaboramos con empresas líderes del sector tecnológico para ofrecer prácticas, proyectos reales y oportunidades laborales a nuestros estudiantes.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-newspaper"></i>
+                        </div>
+                        <h3 class="achievement-title">Reconocimiento en Medios</h3>
+                        <p class="achievement-text">Destacados en publicaciones especializadas como Forbes Tech, MIT Technology Review en Español y El Economista por nuestro impacto en la educación tecnológica.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="achievement-item">
+                        <div class="achievement-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3 class="achievement-title">Desarrollo de Proyectos Innovadores</h3>
+                        <p class="achievement-text">Nuestros estudiantes y graduados han creado más de 200 proyectos con impacto real en diversos sectores, desde salud hasta sostenibilidad.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partnerships Section -->
+    <section class="partnerships-section" id="alianzas">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Alianzas Estratégicas</h2>
+            <p class="section-subtitle" data-aos="fade-up">Colaboramos con líderes de la industria para potenciar tu formación</p>
+            
+            <div class="partners-container">
+                <div class="partner-item" data-aos="fade-up">
+                    <img src="assets/img/partners/partner-1.png" alt="Partner 1" class="partner-logo">
+                </div>
+                <div class="partner-item" data-aos="fade-up" data-aos-delay="50">
+                    <img src="assets/img/partners/partner-2.png" alt="Partner 2" class="partner-logo">
+                </div>
+                <div class="partner-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="assets/img/partners/partner-3.png" alt="Partner 3" class="partner-logo">
+                </div>
+                <div class="partner-item" data-aos="fade-up" data-aos-delay="150">
+                    <img src="assets/img/partners/partner-4.png" alt="Partner 4" class="partner-logo">
+                </div>
+                <div class="partner-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="assets/img/partners/partner-5.png" alt="Partner 5" class="partner-logo">
+                </div>
+                <div class="partner-item" data-aos="fade-up" data-aos-delay="250">
+                    <img src="assets/img/partners/partner-6.png" alt="Partner 6" class="partner-logo">
+                </div>
+                <div class="partner-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="assets/img/partners/partner-7.png" alt="Partner 7" class="partner-logo">
+                </div>
+                <div class="partner-item" data-aos="fade-up" data-aos-delay="350">
+                    <img src="assets/img/partners/partner-8.png" alt="Partner 8" class="partner-logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Section -->
+    <section class="methodology-section" id="metodologia">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="methodology-image">
+                        <img src="assets/img/methodology.jpg" alt="Nuestra Metodología">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="methodology-content">
+                        <h2 class="methodology-title">Nuestra Metodología</h2>
+                        <p class="methodology-subtitle">Aprende haciendo, adaptándote al futuro</p>
+                        <p class="methodology-text">En SUBE Academia hemos desarrollado una metodología única que combina aprendizaje adaptativo, práctica basada en proyectos reales y mentorías personalizadas con expertos de la industria.</p>
+                        
+                        <div class="methodology-features">
+                            <div class="methodology-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4 class="feature-title">Aprendizaje Adaptativo</h4>
+                                    <p class="feature-text">Nuestra plataforma AVE se adapta a tu ritmo y estilo de aprendizaje, optimizando tu experiencia educativa para maximizar resultados.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="methodology-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-project-diagram"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4 class="feature-title">Aprendizaje Basado en Proyectos</h4>
+                                    <p class="feature-text">Desarrolla proyectos reales que resuelven problemas de la industria, aplicando de inmediato los conocimientos adquiridos.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="methodology-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-users-cog"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4 class="feature-title">Mentorías Personalizadas</h4>
+                                    <p class="feature-text">Accede a sesiones de mentoría con expertos de la industria que te guiarán en tu proceso de aprendizaje y desarrollo profesional.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="methodology-feature">
+                                <div class="feature-icon">
+                                    <i class="fas fa-network-wired"></i>
+                                </div>
+                                <div class="feature-content">
+                                    <h4 class="feature-title">Comunidad Colaborativa</h4>
+                                    <p class="feature-text">Forma parte de una comunidad activa de estudiantes y profesionales, compartiendo conocimientos y oportunidades.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section" id="testimonios">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Testimonios</h2>
+            <p class="section-subtitle" data-aos="fade-up">Lo que dicen nuestros estudiantes sobre su experiencia</p>
+            
+            <div class="owl-carousel testimonial-carousel">
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Los cursos de SUBE Academia transformaron mi carrera. La combinación de teoría y práctica me permitió aplicar lo aprendido inmediatamente en mi trabajo, logrando un ascenso en menos de 6 meses."</p>
+                        <div class="testimonial-author">
+                            <img src="assets/img/testimonials/testimonial-1.jpg" alt="María Gómez" class="author-img">
+                            <div class="author-info">
+                                <div class="author-name">María Gómez</div>
+                                <div class="author-title">Data Scientist en Globant</div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Lo que más valoro de mi experiencia en SUBE Academia es la calidad de los instructores y la relevancia del contenido. Todo lo que aprendí pude implementarlo directamente en proyectos reales, lo que catapultó mi portfolio profesional."</p>
+                        <div class="testimonial-author">
+                            <img src="assets/img/testimonials/testimonial-2.jpg" alt="Carlos Vega" class="author-img">
+                            <div class="author-info">
+                                <div class="author-name">Carlos Vega</div>
+                                <div class="author-title">ML Engineer en Microsoft</div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Después de probar varias plataformas educativas, SUBE Academia marcó la diferencia. Su enfoque de aprendizaje adaptativo me permitió avanzar a mi ritmo mientras recibía retroalimentación personalizada, fundamental para mi desarrollo."</p>
+                        <div class="testimonial-author">
+                            <img src="assets/img/testimonials/testimonial-3.jpg" alt="Ana Martínez" class="author-img">
+                            <div class="author-info">
+                                <div class="author-name">Ana Martínez</div>
+                                <div class="author-title">IA Developer en Mercado Libre</div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Como profesional que buscaba reinventarse, SUBE Academia me brindó no solo conocimientos técnicos sólidos, sino también una red de contactos invaluable. Hoy lidero proyectos de IA en mi empresa gracias a esta formación."</p>
+                        <div class="testimonial-author">
+                            <img src="assets/img/testimonials/testimonial-4.jpg" alt="Roberto Sánchez" class="author-img">
+                            <div class="author-info">
+                                <div class="author-name">Roberto Sánchez</div>
+                                <div class="author-title">Tech Lead en Banco Santander</div>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="certifications-section" id="certificaciones">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Certificaciones y Garantías</h2>
+            <p class="section-subtitle" data-aos="fade-up">Compromiso con la calidad y la excelencia educativa</p>
+            
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="certification-item">
+                        <div class="certification-icon">
+                            <i class="fas fa-certificate"></i>
+                            </div>
+                            <h3 class="certification-title">Certificaciones Reconocidas</h3>
+                            <p class="certification-text">Nuestras certificaciones están avaladas por organizaciones internacionales y reconocidas por las principales empresas del sector tecnológico, potenciando tu credibilidad profesional.</p>
+                            </div>
+                        </div>
+
+<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+<div class="certification-item">
+<div class="certification-icon">
+    <i class="fas fa-shield-alt"></i>
+</div>
+<h3 class="certification-title">Garantía de Satisfacción</h3>
+<p class="certification-text">Ofrecemos garantía de satisfacción de 30 días. Si no estás conforme con tu experiencia de aprendizaje, te reembolsamos el 100% del valor del curso, sin preguntas.</p>
+</div>
+</div>
+
+<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+<div class="certification-item">
+<div class="certification-icon">
+    <i class="fas fa-sync-alt"></i>
+</div>
+<h3 class="certification-title">Contenido Actualizado</h3>
+<p class="certification-text">Nos comprometemos a mantener nuestros programas actualizados con las últimas tecnologías y tendencias del mercado. Actualizamos nuestros cursos trimestralmente.</p>
+</div>
+</div>
+
+<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+<div class="certification-item">
+<div class="certification-icon">
+    <i class="fas fa-graduation-cap"></i>
+</div>
+<h3 class="certification-title">ISO 21001:2018</h3>
+<p class="certification-text">Cumplimos con los estándares internacionales para organizaciones educativas, garantizando un sistema de gestión de calidad en todos nuestros procesos formativos.</p>
+</div>
+</div>
+
+<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+<div class="certification-item">
+<div class="certification-icon">
+    <i class="fas fa-user-tie"></i>
+</div>
+<h3 class="certification-title">Instructores Certificados</h3>
+<p class="certification-text">Todos nuestros instructores cuentan con certificaciones avanzadas en sus especialidades y experiencia práctica en la industria, asegurando una formación de calidad.</p>
+</div>
+</div>
+
+<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+<div class="certification-item">
+<div class="certification-icon">
+    <i class="fas fa-handshake"></i>
+</div>
+<h3 class="certification-title">Compromiso con tu Éxito</h3>
+<p class="certification-text">Nuestro acompañamiento continúa después de graduarte, con acceso a actualizaciones, comunidad de alumni y oportunidades de networking profesional.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Diversity and Inclusion Section -->
+<section class="methodology-section" id="diversidad">
+<div class="container">
+<div class="row align-items-center">
+<div class="col-lg-6" data-aos="fade-left">
+<div class="methodology-content">
+<h2 class="methodology-title">Diversidad e Inclusión</h2>
+<p class="methodology-subtitle">Creemos en una tecnología accesible para todos</p>
+<p class="methodology-text">En SUBE Academia estamos comprometidos con crear un entorno educativo diverso e inclusivo, donde todos los talentos tengan la oportunidad de desarrollarse en el campo de la Inteligencia Artificial y tecnologías emergentes.</p>
+
+<div class="methodology-features">
+    <div class="methodology-feature">
+        <div class="feature-icon">
+            <i class="fas fa-award"></i>
+        </div>
+        <div class="feature-content">
+            <h4 class="feature-title">Programa de Becas</h4>
+            <p class="feature-text">Otorgamos más de 100 becas anuales para estudiantes de grupos subrepresentados en el ámbito tecnológico.</p>
+        </div>
+    </div>
+    
+    <div class="methodology-feature">
+        <div class="feature-icon">
+            <i class="fas fa-universal-access"></i>
+        </div>
+        <div class="feature-content">
+            <h4 class="feature-title">Plataforma Accesible</h4>
+            <p class="feature-text">Nuestra AVE cumple con estándares WCAG 2.1 para garantizar accesibilidad a personas con diferentes capacidades.</p>
+        </div>
+    </div>
+    
+    <div class="methodology-feature">
+        <div class="feature-icon">
+            <i class="fas fa-globe"></i>
+        </div>
+        <div class="feature-content">
+            <h4 class="feature-title">Contenido Multilingüe</h4>
+            <p class="feature-text">Ofrecemos nuestros contenidos principales en español, portugués e inglés para eliminar barreras lingüísticas.</p>
+        </div>
+    </div>
+    
+    <div class="methodology-feature">
+        <div class="feature-icon">
+            <i class="fas fa-hands-helping"></i>
+        </div>
+        <div class="feature-content">
+            <h4 class="feature-title">Mentoría para Mujeres en Tech</h4>
+            <p class="feature-text">Programa especial de mentoría para impulsar el liderazgo femenino en el sector tecnológico.</p>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="col-lg-6" data-aos="fade-right">
+<div class="methodology-image">
+<img src="assets/img/diversity.jpg" alt="Diversidad e Inclusión">
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Media Recognition Section -->
+<section class="achievements-section" id="prensa">
+<div class="container">
+<h2 class="section-title" data-aos="fade-up">Reconocimiento en Medios</h2>
+<p class="section-subtitle" data-aos="fade-up">SUBE Academia en la prensa especializada</p>
+
+<div class="row g-4">
+<div class="col-md-6" data-aos="fade-up">
+<div class="achievement-item">
+<div class="achievement-icon">
+    <i class="fas fa-newspaper"></i>
+</div>
+<h3 class="achievement-title">"Revolucionando la Educación Tecnológica"</h3>
+<p class="achievement-text">"SUBE Academia está transformando la forma en que se enseñan las habilidades tecnológicas en Latinoamérica, con un enfoque revolucionario basado en la adaptabilidad y los proyectos prácticos." - <strong>Forbes Tech, 2023</strong></p>
+</div>
+</div>
+
+<div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+<div class="achievement-item">
+<div class="achievement-icon">
+    <i class="fas fa-newspaper"></i>
+</div>
+<h3 class="achievement-title">"Cerrando la Brecha de Talento en IA"</h3>
+<p class="achievement-text">"Con un modelo educativo innovador, SUBE Academia está contribuyendo significativamente a cerrar la brecha de talento en Inteligencia Artificial que enfrenta la región." - <strong>MIT Technology Review en Español, 2022</strong></p>
+</div>
+</div>
+
+<div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+<div class="achievement-item">
+<div class="achievement-icon">
+    <i class="fas fa-newspaper"></i>
+</div>
+<h3 class="achievement-title">"Entre las 20 EdTech más Prometedoras"</h3>
+<p class="achievement-text">"SUBE Academia se posiciona entre las 20 startups educativas más prometedoras de Latinoamérica, destacando por su plataforma de aprendizaje adaptativo y su enfoque en tecnologías emergentes." - <strong>El Economista, 2023</strong></p>
+</div>
+</div>
+
+<div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+<div class="achievement-item">
+<div class="achievement-icon">
+    <i class="fas fa-newspaper"></i>
+</div>
+<h3 class="achievement-title">"Formando a los Líderes Tecnológicos del Futuro"</h3>
+<p class="achievement-text">"El enfoque único de SUBE Academia, combinando teoría avanzada con aplicación práctica, está formando a la próxima generación de líderes en el ámbito tecnológico latinoamericano." - <strong>TechCrunch Latam, 2022</strong></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+<div class="container">
+<div class="cta-content" data-aos="fade-up">
+<h2 class="cta-title">¿Listo para Transformar tu Futuro Profesional?</h2>
+<p class="cta-text">Únete a nuestra comunidad y desarrolla las competencias tecnológicas que el mercado demanda. Da el primer paso hacia una carrera exitosa en Inteligencia Artificial.</p>
+<div class="cta-buttons">
+<a href="cursos.html" class="btn btn-cta-primary">Explorar Programas</a>
+<a href="contacto.html" class="btn btn-cta-secondary">Hablar con un Asesor</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+<div class="container">
+<div class="row">
+<!-- Company Info -->
+<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+<img src="assets/img/logo-white.png" alt="SUBE Academia" class="footer-logo">
+<p class="footer-about">SUBE Academia es una institución líder en formación especializada en Inteligencia Artificial, Machine Learning y Data Science en Latinoamérica.</p>
+<div class="footer-social">
+<a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+<a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+<a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+<a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+<a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+
+<!-- Quick Links -->
+<div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+<h5 class="footer-heading">Enlaces Rápidos</h5>
+<ul class="footer-links">
+<li><a href="index.html">Inicio</a></li>
+<li><a href="nosotros.html">Nosotros</a></li>
+<li><a href="cursos.html">Cursos</a></li>
+<li><a href="competencias.html">Competencias</a></li>
+<li><a href="blog.html">Blog</a></li>
+<li><a href="contacto.html">Contacto</a></li>
+</ul>
+</div>
+
+<!-- Contact Info -->
+<div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+<h5 class="footer-heading">Contacto</h5>
+<div class="contact-item">
+<div class="contact-icon">
+    <i class="fas fa-map-marker-alt"></i>
+</div>
+<div class="contact-text">Av. Principal 123, Santiago, Chile</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">
+    <i class="fas fa-phone"></i>
+</div>
+<div class="contact-text">+123 456 789</div>
+</div>
+<div class="contact-item">
+<div class="contact-icon">
+    <i class="fas fa-envelope"></i>
+</div>
+<div class="contact-text">info@subeacademia.com</div>
+</div>
+</div>
+
+<!-- Newsletter -->
+<div class="col-lg-3 col-md-6">
+<h5 class="footer-heading">Newsletter</h5>
+<p class="footer-about">Suscríbete para recibir las últimas noticias y actualizaciones.</p>
+<form class="newsletter-form">
+<div class="input-group mb-3">
+    <input type="email" class="form-control" placeholder="Tu email" required>
+    <button class="btn" type="submit">Suscribir</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+</footer>
+
+<!-- Copyright -->
+<div class="copyright">
+<div class="container">
+<p class="copyright-text">&copy; 2023 SUBE Academia. Todos los derechos reservados.</p>
+</div>
+</div>
+
+<!-- Scripts -->
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- Bootstrap Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Owl Carousel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- AOS - Animate On Scroll -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Initialize AOS
+AOS.init({
+duration: 800,
+once: true,
+offset: 100
+});
+
+// Create particles
+function createParticles() {
+const container = document.getElementById('particles-container');
+const colors = ['#3A86FF', '#8338EC', '#06D6A0'];
+
+for (let i = 0; i < 30; i++) {
+const particle = document.createElement('div');
+particle.classList.add('particle');
+
+// Random properties
+const size = Math.random() * 10 + 5;
+const color = colors[Math.floor(Math.random() * colors.length)];
+const left = Math.random() * 100;
+const delay = Math.random() * 60;
+
+// Apply styles
+particle.style.width = `${size}px`;
+particle.style.height = `${size}px`;
+particle.style.backgroundColor = color;
+particle.style.left = `${left}%`;
+particle.style.animationDelay = `${delay}s`;
+
+container.appendChild(particle);
+}
+}
+
+// Initialize particles
+createParticles();
+
+// Navbar scroll effect
+window.addEventListener('scroll', function() {
+const navbar = document.getElementById('mainNav');
+if (window.scrollY > 50) {
+navbar.classList.add('scrolled');
+} else {
+navbar.classList.remove('scrolled');
+}
+});
+
+// Initialize testimonial carousel
+$('.testimonial-carousel').owlCarousel({
+loop: true,
+margin: 20,
+nav: true,
+dots: true,
+autoplay: true,
+autoplayTimeout: 5000,
+autoplayHoverPause: true,
+responsive: {
+0: {
+items: 1
+},
+768: {
+items: 2
+},
+992: {
+items: 2
+}
+},
+navText: [
+"<i class='fas fa-arrow-left'></i>",
+"<i class='fas fa-arrow-right'></i>"
+]
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+
+document.querySelector(this.getAttribute('href')).scrollIntoView({
+behavior: 'smooth'
+});
+});
+});
+});
+</script>
+</body>
+</html>
